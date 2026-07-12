@@ -482,6 +482,10 @@ Aux quatre questions posées en introduction, l'état de l'art vérifié répond
 
 Cette revue a été produite avec l'assistance d'un pipeline de recherche multi-agents fondé sur des agents LLM (Claude, Anthropic), selon la méthodologie décrite en section 2 : décomposition de la question, recherche parallèle, extraction d'énoncés falsifiables, vérification adverse indépendante par consultation des sources primaires, et double passe de vérification bibliographique et factuelle. L'édition du 7 juillet 2026 procède d'une passe de mise à jour dédiée conduite selon le même dispositif (recherche multi-angles, extraction d'énoncés, vérification adverse à trois votants en deux rondes ; cf. section 2.2). L'édition bonifiée du 12 juillet 2026 ajoute deux thématiques (couches transactionnelle et sémantique) au moyen de deux pipelines de recherche multi-agents distincts, complétés d'une passe de contre-vérification directe des sources primaires — spécifications, dépôts officiels, communiqués datés et pages d'abstract arXiv — et d'un rafraîchissement des faits périssables (cf. section 2.2). L'auteur a défini la question de recherche, la structure et les critères de vérification, et assume la responsabilité éditoriale du texte. Aucun financement externe n'a été reçu ; l'auteur ne déclare aucun conflit d'intérêts. La présente version constitue le manuscrit préparé pour dépôt en révision par les pairs.
 
+```{=typst}
+#pagebreak(weak: true)
+```
+
 # Références {-}
 
 ::: {#refs}
