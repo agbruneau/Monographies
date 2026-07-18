@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://agbruneau.github.io/Monographies/2%20-%20OrchestrationAgentique/">
+<link rel="canonical" href="https://agbruneau.github.io/Monographies/1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23070a0e'/%3E%3Ctext%20x='16'%20y='24'%20font-family='Georgia,serif'%20font-style='italic'%20font-size='24'%20text-anchor='middle'%20fill='%2335b9dd'%3E%CE%A0%3C/text%3E%3C/svg%3E">
 <title>L'autonomie encadrée — Interopérabilité et orchestration agentique dans les services financiers canadiens</title>
 <meta name="author" content="André-Guy Bruneau, M. Sc. IT">
 <meta name="description" content="Monographie « L'autonomie encadrée » (24 chapitres, 29 pièces, 387 p.) : les processus sous exigence réglementaire stricte s'exécutent dans des cadres déterministes qui orchestrent les agents, jamais l'inverse. Protocoles ouverts (MCP, A2A, AP2, AGNTCY), cadre réglementaire canadien (E-23, AMF, ACVM, cadre bancaire, Lynx/RTR) et blueprint d'intégration d'entreprise. État des lieux 2024-2026 ; socle factuel de 46 entrées à niveaux de preuve. André-Guy Bruneau, M. Sc. IT.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://agbruneau.github.io/Monographies/2%20-%20OrchestrationAgentique/">
+<meta property="og:url" content="https://agbruneau.github.io/Monographies/1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:title" content="L'autonomie encadrée — Monographie">
 <meta property="og:description" content="Sous exigence réglementaire stricte, le cadre déterministe impose le processus et invoque les agents : les agents n'orchestrent pas le processus. Présentation de la monographie et de sa méthode.">
@@ -71,6 +71,8 @@ main:focus{outline:none}
 a{color:inherit}
 strong{color:#fff;font-weight:600}
 em{font-style:italic}
+/* exposants (1er, no) : neutraliser leur effet sur la hauteur de ligne */
+sup{font-size:.64em;line-height:0;vertical-align:super}
 p{margin:0 0 1.05em}p:last-child{margin-bottom:0}
 
 /* grain + vignette */
@@ -553,7 +555,7 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:rel
   <a href="#verdict"><span class="no">12</span>Verdict</a>
   <a href="Monographie.pdf"><span class="no">PDF</span>Monographie</a>
   <a href="Synthese%20Monographie.pdf"><span class="no">PDF</span>Synthèse</a>
-  <a href="../Veille%20Technologique.pdf"><span class="no">PDF</span>Veille technologique</a>
+  <a href="../../Veille%20Technologique.pdf"><span class="no">PDF</span>Veille technologique</a>
 </div>
 
 <nav class="rail" id="rail" aria-label="Repères de section">
@@ -729,300 +731,318 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:rel
   </div>
 </div></section>
 
-<!-- ======================= AGENT PROBABILISTE ======================= -->
-<section id="agent"><div class="wrap">
+<!-- ======================= ORCHESTRATION · OO1–OO4 ======================= -->
+<section id="orchestration"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">04</span>Chapitre 2 · IA agentique</div>
-    <h2><span class="lm"><span>L'agent, un système</span></span>
-        <span class="lm"><span>d'intégration <em>à part entière</em></span></span></h2>
-    <p class="sec-lead" data-rise>L'agent fondé sur un grand modèle de langage consomme des outils, mobilise une mémoire, se coordonne avec d'autres agents.
-      Ses modes de défaillance propres exigent une <em>discipline d'ingénierie</em>, non une confiance aveugle dans le modèle.</p>
+    <div class="kicker" data-rise><span class="sno">04</span>Chapitre 5 · la taxonomie des options d'orchestration</div>
+    <h2><span class="lm"><span>Où le processus</span></span>
+        <span class="lm"><span>est‑il <em>écrit</em> ?</span></span></h2>
+    <p class="sec-lead" data-rise>À la question ouverte « ce système est‑il agentique ? », la taxonomie substitue une question fermée : où le processus est‑il écrit,
+      et qui peut s'en écarter ? Quatre options se lisent sur deux axes — ce que l'agent <em>sait</em> du processus, et ce qu'il <em>commande</em> de son enchaînement.</p>
   </div>
   <div class="grid g4" data-stagger>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Boucle agentique</div>
-      <h3>Une boucle, pas une intelligence</h3>
-      <p>Perception, raisonnement, planification, action puis observation : une boucle de contrôle outillée, qui itère jusqu'à un critère d'arrêt — non une intelligence.</p>
-      <span class="chip confirme">objet d'ingénierie</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Outils &amp; invocation</div>
-      <h3>L'outil comme contrat</h3>
-      <p>L'accès aux outils (MCP) est une discipline d'interface : granularité épousant une intention, noms univoques, idempotence. Quand le catalogue grossit, les outils pertinents sont sélectionnés par récupération sémantique.</p>
-      <span class="chip norm">contrat lisible par le modèle</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Mémoire, contexte &amp; RAG</div>
-      <h3>Il récupère plus qu'il ne se souvient</h3>
-      <p>La fiabilité en production se joue sur la politique de gestion du contexte : fiabilité, coût et latence dépendent de la même variable — on ne les optimise pas séparément.</p>
-      <span class="chip norm">ancrage informationnel</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Sûreté &amp; défaillances</div>
-      <h3>Quand la donnée devient instruction</h3>
-      <p>Injection par la donnée devenue instruction, dérive, modes d'échec propres aux collectifs d'agents : la menace est propre au substrat, pas au seul modèle. Sécurité, sûreté et alignement forment une discipline à part.</p>
-      <span class="chip verrou">sécurité du substrat</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">1</div>
+      <div class="idx">OO1</div>
+      <h3>Agentique agnostique au processus</h3>
+      <p>L'agent ignore le processus et en commande l'enchaînement. Dans le scénario d'éclairage rapporté par le préprint, c'est la configuration dont l'assurance de correction est la plus faible — et celle que ses auteurs jugent « inacceptable » sous exigences strictes d'exécution et de documentation.</p>
+      <span class="chip hypothese">non encadré</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">2</div>
+      <div class="idx">OO2</div>
+      <h3>Agentique consciente d'un cadre</h3>
+      <p>L'agent connaît le processus mais en garde le commandement. Le passage de OO2 à OO3 est la seule discontinuité de la série : OO1/OO2 et OO3/OO4 se distinguent par ce que l'agent sait — franchir OO2 change ce qu'il <em>commande</em>.</p>
+      <span class="chip probable">la discontinuité</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">3</div>
+      <div class="idx">OO3</div>
+      <h3>Le processus invoque des agents</h3>
+      <p>L'orchestration de processus commande l'enchaînement et invoque des agents agnostiques. La main qui commande passe au cadre : c'est la première des deux positions que le principe directeur de l'ouvrage retient.</p>
+      <span class="chip confirme">position retenue</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">4</div>
+      <div class="idx">OO4</div>
+      <h3>Orchestration d'agents conscients</h3>
+      <p>Le cadre orchestre explicitement des agents qui connaissent le processus. Les transitions entre options sont fluides : ce n'est pas une échelle de maturité, c'est un continuum d'encadrement dont chaque position a son prix.</p>
+      <span class="chip confirme">position retenue</span></div>
   </div>
-</div></section>
-
-<!-- ======================= PATRONS ======================= -->
-<section id="patrons"><div class="wrap">
-  <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">05</span>Chapitre 1 · le socle d'intégration</div>
-    <h2><span class="lm"><span>Les patrons éprouvés,</span></span>
-        <span class="lm"><span><em>réinterprétés</em></span></span></h2>
-    <p class="sec-lead" data-rise>L'agentivité n'abolit pas les patrons d'intégration : leur zone de validité, jadis implicite,
-      doit être ré‑explicitée. L'invariant demeure ; c'est le mécanisme qui migre — et l'idempotence se gagne désormais
-      au niveau de l'<em>effet</em>, non du comportement.</p>
-  </div>
-  <div class="grid g4" data-stagger>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Idempotence</div>
-      <h3>Outbox transactionnel</h3>
-      <p>Atomicité entre la mutation d'état et la publication d'événement : exactement un effet par mutation validée, via une clé d'idempotence stable scellée hors du contrôle de l'agent.</p>
-      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Compensation</div>
-      <h3>Saga</h3>
-      <p>La transaction longue se décompose en étapes compensables : à défaut d'atomicité, un effet net correct reconstruit par compensation sémantique.</p>
-      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Médiation</div>
-      <h3>Format pivot &amp; médiateur</h3>
-      <p>Un intermédiaire et un format pivot ramènent la complexité d'intégration de N×N à un ordre linéaire — la dette d'intégration résorbée par découplage (Hohpe &amp; Woolf, 2003).</p>
-      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Modernisation</div>
-      <h3>Strangler Fig <span style="font-style:italic;color:var(--ink-mute);font-size:.62em;letter-spacing:0">Newman, 2020</span></h3>
-      <p>Une façade route l'ancien et le nouveau jusqu'à vider l'hérité de ses responsabilités. Vertu : la réversibilité étape par étape ; risque : la « façade éternelle ».</p>
-      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
+  <div class="band" data-rise style="margin-top:46px">
+    <div>
+      <p>Cinq propriétés objectivent le choix — autonomie, spécificité de tâche, réactivité, assurance de correction, traçabilité —
+        et sept critères qualitatifs le documentent, <strong>sans pondération ni fonction de score</strong>. Réserve dirimante, portée partout dans l'ouvrage :
+        la taxonomie repose sur une <strong>source unique</strong>, un préprint versé le 30 juin 2026, non révisé par les pairs, dont les auteurs déclarent eux‑mêmes
+        des menaces à la validité. Aucune reproduction indépendante, aucune application documentée à un processus d'institution financière.</p>
+    </div>
+    <div class="formula">
+      <span class="lab">Le déplacement décisif</span>
+      <span class="big">l'agent commande &nbsp;<span style="color:var(--accent)">&#8669;</span>&nbsp; le cadre commande</span>
+      <small>« La taxonomie OO1–OO4 n'est pas une recommandation. » Elle nomme un continuum ; elle ne dit pas où s'y placer.</small>
+    </div>
   </div>
 </div></section>
 
 <!-- ======================= PROTOCOLES ======================= -->
 <section id="protocoles"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">06</span>L'écosystème émergent</div>
-    <h2><span class="lm"><span>Trois protocoles, lus</span></span>
-        <span class="lm"><span>à la lumière <em>du cadre</em></span></span></h2>
-    <p class="sec-lead" data-rise>Complémentaires, non rivaux — relier un agent à ses outils <em>versus</em> relier des agents entre eux.
-      À juin 2026, la connectivité est largement résolue ; l'identité et l'autorité déléguées restent le front le moins stabilisé.</p>
+    <div class="kicker" data-rise><span class="sno">05</span>Partie I · les protocoles ouverts</div>
+    <h2><span class="lm"><span>Quatre protocoles,</span></span>
+        <span class="lm"><span>quatre <em>trajectoires</em></span></span></h2>
+    <p class="sec-lead" data-rise>Quatre protocoles issus de trois entreprises, nés entre novembre 2024 et septembre 2025.
+      Trois sont aujourd'hui placés sous gouvernance de fondation ; pour le quatrième, <strong>le socle ne documente aucun transfert</strong> —
+      absence de documentation, non fait négatif vérifié.</p>
   </div>
-  <div class="grid g3" data-stagger>
+  <div class="grid g4" data-stagger>
     <div class="card"><div class="glow"></div>
       <div class="idx">MCP · Anthropic</div>
-      <h3>Model Context Protocol</h3>
-      <p>Intégration <em>verticale</em> agent ↔ outils et données. Révision courante <strong>2025‑11‑25</strong> ;
-        une Release Candidate <strong>2026‑07‑28</strong> existe, marquée explicitement <em>non finale</em>.</p>
-      <span class="chip confirme">rév. 2025‑11‑25</span></div>
+      <h3>L'agent et ses outils</h3>
+      <p>Interface client‑serveur sur JSON‑RPC 2.0, assortie d'un <em>cadre d'autorisation</em> fondé sur OAuth — le socle impose de dire « cadre », jamais « sécurisé » : la sécurité dépend de l'implémentation. Gouvernance transférée à l'Agentic AI Foundation en décembre 2025.</p>
+      <span class="chip confirme">révision 2025‑11‑25</span></div>
     <div class="card"><div class="glow"></div>
       <div class="idx">A2A · Linux Foundation</div>
-      <h3>Agent2Agent</h3>
-      <p>Axe <em>horizontal</em> agent ↔ agent. Version <strong>1.0</strong> stabilisée début 2026 : Agent Card signée (JWS/JCS), modèle de Task, transports HTTP / JSON‑RPC / gRPC. Plus de 150 organisations soutiennent le protocole.</p>
-      <span class="chip confirme">v1.0 · LF</span></div>
+      <h3>La délégation entre pairs</h3>
+      <p>Première spécification stable : multi‑protocole (JSON sur HTTP, gRPC, JSON‑RPC), multi‑location d'entreprise, cartes d'agents signées. Le socle ne documente ni l'ancrage de confiance, ni la révocation, ni la gouvernance des clés de ces signatures.</p>
+      <span class="chip confirme">v1.0 · Apache 2.0</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">ANP · W3C CG</div>
-      <h3>Agent Network Protocol</h3>
-      <p>« Le HTTP de l'internet agentique » : décentralisé et pair‑à‑pair, identifiants W3C (<code>did:wba</code>), sémantique JSON‑LD/schema.org et négociation méta‑protocole. Tributaire des DID, maturité visée vers 2027.</p>
-      <span class="chip probable">décentralisé · DID</span></div>
+      <div class="idx">AP2 · Google ⚠</div>
+      <h3>La transaction agentique</h3>
+      <p>Protocole compagnon d'A2A dédié aux transactions pilotées par agents, annoncé le 16 septembre 2025. Le socle n'en porte ni la structure de message, ni le mandat, ni la preuve d'intention — et aucune source ne documente son articulation aux rails canadiens.</p>
+      <span class="chip hypothese">anatomie absente du socle</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">AGNTCY · Cisco</div>
+      <h3>La couche d'infrastructure</h3>
+      <p>Ouvert en mars 2025 avec LangChain et Galileo, placé sous Linux Foundation le 29 juillet 2025 : annuaires de découverte et transport SLIM. Des analyses tierces relèvent un chevauchement avec A2A — observation attribuée, non endossée.</p>
+      <span class="chip probable">infrastructure déclarée</span></div>
+  </div>
+  <div class="band" data-rise style="margin-top:46px">
+    <div>
+      <p><strong>Ce que la gouvernance ne dit pas.</strong> Le passage sous fondation neutre ne change rien à la sûreté : le socle documente les transferts
+        sans énoncer aucun rapport entre gouvernance et sûreté. Trois surfaces d'attaque sont nommées — empoisonnement d'outils, injection d'invites,
+        empoisonnement de mémoire — <em>sans</em> identifiant de vulnérabilité ni incident public daté. Et les métriques d'adoption sont auto‑déclarées :
+        la notion d'« organisation de soutien » n'est définie nulle part.</p>
+    </div>
+    <div class="formula">
+      <span class="lab">Chapitre 4 · les risques protocolaires</span>
+      <span class="big">établir <em>qui parle</em>, jamais <em>ce qui est dit</em></span>
+      <small>« Un protocole ouvert et gouverné de façon neutre demeure un format d'échange. »</small>
+    </div>
   </div>
 </div></section>
 
-<!-- ======================= VERROU ======================= -->
-<section aria-label="Le verrou">
+<!-- ======================= VERROU · LE PIVOT ======================= -->
+<section aria-label="Le principe directeur">
   <div class="verrou-stage"><div class="gq" aria-hidden="true">&#928;</div><div class="wrap">
-    <blockquote class="vq" id="vq">«&nbsp;L'accord sur la structure d'un message ne garantit pas l'accord sur <span class="hl">l'intention</span> qu'il <span class="hl">porte</span>.&nbsp;»</blockquote>
+    <blockquote class="vq" id="vq">«&nbsp;Sous exigence réglementaire stricte, le processus est <span class="hl">imposé de façon déterministe</span> par le cadre, qui <span class="hl">invoque</span> les agents.&nbsp;»</blockquote>
     <div class="verrou-note" data-rise>
-      <p>C'est le verrou de recherche central de l'horizon : faire remonter l'alignement d'intentions du niveau applicatif — où une invite est interprétée
-      par un grand modèle — vers le <strong>protocole lui‑même</strong>, soit le passage d'un contrat <em>syntaxique</em> à un contrat <em>sémantique</em>.
-      La proposition de l'ouvrage est nette : ce verrou restera largement ouvert au‑delà de 2030.</p>
+      <p>C'est le pivot de l'ouvrage — le <strong>chapitre 13</strong>, celui qu'il faut contester en premier. Il traduit onze exigences canadiennes lues en contraintes
+      d'architecture : neuf en produisent une, une seule n'en produit rien. Mais la forme de cette table mesure d'abord <strong>ce que le socle a extrait</strong>,
+      non l'exigence propre des textes. Le pont n'est pas une déduction : c'est un raisonnement, et chaque ligne dérivée porte le marqueur « inférence d'auteur ».</p>
     </div>
   </div></div>
 </section>
 
-<!-- ======================= INDUSTRIALISATION ======================= -->
-<section id="industrialisation"><div class="wrap">
+<!-- ======================= CADRE CANADIEN ======================= -->
+<section id="canada"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">07</span>Chapitre 4 · à l'échelle de l'entreprise</div>
-    <h2><span class="lm"><span>Industrialiser sous</span></span>
-        <span class="lm"><span>gouvernance, <em>non décréter</em></span></span></h2>
-    <p class="sec-lead" data-rise>À l'échelle de l'entreprise, l'enjeu décisif devient le <em>plan de contrôle</em> :
-      intégration de l'héritage applicatif, identités non humaines, gouvernance et conformité conditionnent toute mise en production.</p>
+    <div class="kicker" data-rise><span class="sno">06</span>Partie III · le cadre réglementaire canadien</div>
+    <h2><span class="lm"><span>Pas de loi fédérale,</span></span>
+        <span class="lm"><span>mais <em>quatre instruments</em></span></span></h2>
+    <p class="sec-lead" data-rise>Le Canada n'a pas de régime fédéral contraignant propre aux systèmes d'IA depuis la mort du projet de loi C‑27 à la prorogation du 6 janvier 2025.
+      La charge réglementaire effective repose donc sur des instruments sectoriels datés — et « l'absence d'une loi fédérale sur l'IA n'est pas une permission ».</p>
   </div>
   <div class="grid g4" data-stagger>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Plan de contrôle</div>
-      <h3>Placer, ne pas subir</h3>
-      <p>L'acte fondateur n'est pas le choix d'une plateforme : c'est le placement explicite d'un plan de contrôle entre les agents et les systèmes critiques, et l'intégration de l'héritage applicatif au tissu existant.</p>
-      <span class="chip norm">Chapitre 4 · architecture de référence</span></div>
+      <div class="idx">BSIF · E‑23</div>
+      <h3>Le risque de modèle</h3>
+      <p>Publiée le 11 septembre 2025, en vigueur le 1<sup>er</sup> mai 2027. Elle ne nomme jamais l'agentique — vérification mécanique du texte intégral : « agentique », « agent(s) », « orchestration » = 0 occurrence —, mais sa définition de « modèle » englobe expressément l'IA. Fondée sur des principes, rédigée au conditionnel : elle <em>attend</em>, elle n'exige pas.</p>
+      <span class="chip probable">couverture = inférence d'analystes</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Identités non humaines</div>
-      <h3>La sûreté ne se compose pas</h3>
-      <p>Un agent sûr et un outil sûr, composés, ne donnent pas un système sûr : la frontière de confiance se déplace sur chaque arête. Le parc d'agents fait par ailleurs exploser les identités non humaines à authentifier, autoriser et révoquer.</p>
-      <span class="chip verrou">sécurité d'écosystème</span></div>
+      <div class="idx">Québec · article 12.1</div>
+      <h3>La seule disposition à l'impératif</h3>
+      <p>Opposable depuis le 22 septembre 2023 : informer, expliquer sur demande, et permettre la révision humaine de toute décision fondée <em>exclusivement</em> sur un traitement automatisé. Le fait générateur est l'absence d'humain dans la décision — la friction avec l'autonomie est structurelle.</p>
+      <span class="chip confirme">en vigueur · il oblige</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Observabilité &amp; FinOps</div>
-      <h3>Unitaire et probabiliste</h3>
-      <p>L'économie agentique se rapporte à l'inférence et son rendement reste conditionnel : observabilité, fiabilité et économie unitaire (FinOps) se mesurent en production. L'imputabilité, elle, ne se délègue jamais à un agent.</p>
-      <span class="chip norm">fiabilité en production</span></div>
+      <div class="idx">ACVM · avis 11‑348</div>
+      <h3>Le droit existant s'applique</h3>
+      <p>Publié le 5 décembre 2024 : les lois sur les valeurs mobilières s'appliquent aux systèmes d'IA, sans créer ni modifier aucune exigence. Sa définition capte l'agentique par son texte même, en nommant les niveaux variables d'autonomie et d'adaptativité après déploiement.</p>
+      <span class="chip confirme">sans date d'entrée en vigueur</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Gouvernance &amp; conformité</div>
-      <h3>La règle en amont</h3>
-      <p>AI Act, ISO 42001, RGPD et exigences sectorielles s'imposent en amont de l'architecture ; le plan de contrôle est la réponse : un patron, non un produit, qui rend la conformité traçable et la décision déléguée auditable.</p>
-      <span class="chip verrou">gouvernance &amp; conformité</span></div>
+      <div class="idx">AMF · ligne directrice IA ⚠</div>
+      <h3>Le texte que l'ouvrage n'a pas lu</h3>
+      <p>Finale depuis le 30 mars 2026, en vigueur le 1<sup>er</sup> mai 2027 — le même jour qu'E‑23. Son contenu article par article <strong>n'est pas au socle</strong> : le chapitre pivot n'en dérive aucune contrainte. C'est la lacune la plus coûteuse de l'ouvrage, exposée plutôt que comblée.</p>
+      <span class="chip hypothese">calendrier seul, contenu absent</span></div>
+  </div>
+  <div class="anchors" data-rise style="margin-top:26px">
+    <span class="chip norm">C‑27 mort à la prorogation · 6 janv. 2025</span>
+    <span class="chip norm">C‑36 · 1<sup>re</sup> lecture 15 juin 2026</span>
+    <span class="chip norm">Loi 25 (RLRQ, c. P‑39.1)</span>
+    <span class="chip norm">rapport conjoint BSIF‑ACFC · 24 sept. 2024</span>
   </div>
 </div></section>
 
-<!-- ======================= SECTEUR ======================= -->
-<section id="secteur"><div class="wrap">
+<!-- ======================= RAILS FINANCIERS ======================= -->
+<section id="rails"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">08</span>L'épreuve sectorielle · services financiers</div>
-    <h2><span class="lm"><span>Là où la barre de justification</span></span>
-        <span class="lm"><span>est, <em>par construction, plus haute</em></span></span></h2>
-    <p class="sec-lead" data-rise>Instancier le cadre sur un secteur régulé ne l'assouplit jamais : la conformité y devient une
-      <em>donnée d'architecture amont</em>. Le mécanisme des invariants est transverse au domaine ; leur calibrage, lui, est sectoriel.</p>
+    <div class="kicker" data-rise><span class="sno">07</span>Partie IV · l'interopérabilité financière canadienne</div>
+    <h2><span class="lm"><span>Légiférée, unifiée —</span></span>
+        <span class="lm"><span>et techniquement <em>indéterminée</em></span></span></h2>
+    <p class="sec-lead" data-rise>La couche financière canadienne a franchi le seuil qui sépare l'intention de l'obligation. Son interface, elle, n'existe pas encore :
+      le standard n'est pas désigné, le système en temps réel n'est pas en production, et aucune source ne relie les protocoles agentiques aux rails canadiens.</p>
+  </div>
+  <div class="grid g3" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Cadre bancaire · C‑15</div>
+      <h3>Une obligation certaine, une implémentation inconnue</h3>
+      <p>Loi sanctionnée le 26 mars 2026, supervision confiée à la Banque du Canada, règlement prépublié le 27 juin 2026 (commentaires clos le 26 août). Mais aucun organisme de normalisation technique n'est désigné par arrêté — <em>fait négatif vérifié</em> : « FDX », « FAPI », « OAuth » = zéro occurrence dans les textes officiels.</p>
+      <span class="chip confirme">fait négatif vérifié</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">ISO 20022 · Lynx et RTR</div>
+      <h3>Un rail accompli, un rail imminent</h3>
+      <p>La coexistence MT/MX a pris fin sur Lynx le 22 novembre 2025 : la migration est achevée. Le Real‑Time Rail, lui, n'est ni lancé ni en production à la mi‑juillet 2026 ; sa cible du T4 2026 a été successivement reportée — 2019, puis 2022, puis 2023, puis 2026.</p>
+      <span class="chip probable">cible T4 2026</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">AP2 sur les rails ⚠</div>
+      <h3>Une ignorance convertie en programme</h3>
+      <p>Aucune source ne documente l'articulation d'AP2 au RTR ou à Interac. Le chapitre ne comble pas la lacune : il énumère les conditions de possibilité et livre <strong>cinq questions falsifiables</strong>, chacune assortie de ce qui la trancherait.</p>
+      <span class="chip hypothese">lacune assumée</span></div>
+  </div>
+  <div class="anchors" data-rise style="margin-top:26px">
+    <span class="chip norm">Gazette du Canada, partie I · 27 juin 2026</span>
+    <span class="chip norm">règlement administratif n<sup>o</sup> 10 · en vigueur 24 août 2026</span>
+    <span class="chip norm">pacs.008 / pacs.009 · SWIFT CBPR+</span>
+    <span class="chip norm">accréditation par la Banque du Canada</span>
+  </div>
+</div></section>
+
+<!-- ======================= PRODUCTION ======================= -->
+<section id="production"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">08</span>Parties V et VI · l'adoption, puis la synthèse</div>
+    <h2><span class="lm"><span>En production avant</span></span>
+        <span class="lm"><span>la <em>règle</em></span></span></h2>
+    <p class="sec-lead" data-rise>Dix institutions financières canadiennes examinées, réparties en trois classes d'accès selon ce qu'elles publient. Toutes les métriques rapportées
+      sont <strong>auto‑déclarées</strong> et attribuées comme telles à chaque occurrence — le vocabulaire des communiqués ne mesure pas le degré réel d'industrialisation.</p>
   </div>
   <div class="grid g2" data-stagger>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Le patron sectoriel</div>
-      <h3>Autonomie graduée sous contrôle de finalité</h3>
-      <p>Il articule le degré d'autonomie de l'agent, la criticité de l'opération et l'exigence réglementaire. L'agentivité n'y est pas interdite — elle doit franchir une barre de justification que le régime fixe d'avance.</p></div>
+      <div class="idx">Ce que les institutions publient</div>
+      <h3>Gouverné en haut, muet sur l'erreur</h3>
+      <p>L'agentique est en production et gouvernée au niveau de la haute direction — chefs de l'IA siégeant aux comités de direction, revues éthiques préalables, approbation graduée par niveau de risque. Constat en creux, décisif : aucune des dix institutions ne publie de taux d'erreur, de nombre d'incidents, de périmètre de journalisation, ni de rattachement de ses contrôles à une exigence réglementaire nommée.</p>
+      <span class="chip probable">métriques auto‑déclarées</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Risque systémique</div>
-      <h3>La concentration, angle mort</h3>
-      <p>Une dépendance partagée à un même fournisseur de modèle transforme une défaillance locale en défaillance corrélée — un risque que les régimes reconnaissent sans le résoudre pour la délégation dynamique.</p></div>
+      <div class="idx">La matrice · chapitre 18</div>
+      <h3>Un tableau de vides</h3>
+      <p>Trois protocoles croisés avec cinq textes canadiens : quinze cellules, <strong>aucun lien documenté</strong> par une source du socle. Renversement du chapitre : les deux textes dont le contenu est le mieux établi — E‑23 par extraction intégrale, l'article 12.1 par son libellé officiel — sont ceux auxquels les protocoles ne répondent rien. Ce n'est pas de l'immaturité : ils répondent à une autre question.</p>
+      <span class="chip verrou">15 croisements · 0 lien</span></div>
   </div>
   <div class="anchors" data-rise style="margin-top:26px">
-    <span class="chip confirme">Bancaire</span>
-    <span class="chip confirme">Assurance de dommages (IARD)</span>
-    <span class="chip confirme">Assurance de personnes</span>
-    <span class="chip confirme">Patrimoine &amp; actifs</span>
-    <span class="chip confirme">Services TI financiers</span>
-  </div>
-  <div class="anchors" data-rise style="margin-top:14px">
-    <span class="chip norm">EU AI Act · Annexe III</span>
-    <span class="chip norm">DORA</span>
-    <span class="chip norm">OSFI E‑23</span>
-    <span class="chip norm">AMF (Québec)</span>
-    <span class="chip norm">NAIC Model Bulletin</span>
-    <span class="chip norm">SR 26-2 / OCC (É.-U.)</span>
-    <span class="chip norm">FSB · risque systémique</span>
-  </div>
-</div></section>
-
-<!-- ======================= SOUVERAINETÉ ======================= -->
-<section id="souverainete"><div class="wrap">
-  <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">09</span>Chapitre 7 · le capstone prospectif</div>
-    <h2><span class="lm"><span>Projeter l'arc,</span></span>
-        <span class="lm"><span>sans céder à la <em>prédiction</em></span></span></h2>
-    <p class="sec-lead" data-rise>Le chapitre 7 projette l'arc des six chapitres sur 2027–2032 en triant chaque énoncé sur l'avenir :
-      <strong>PROGRAMMÉ</strong> (engagement daté), <strong>PROJETÉ</strong> (prévision millésimée d'analyste), <strong>SPÉCULATIF</strong> (pari de recherche).</p>
-  </div>
-  <div class="grid g4" data-stagger>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">PROGRAMMÉ</div>
-      <h3>La grappe d'échéances de 2027</h3>
-      <p>Des dates fermes se concentrent : AMLR (10 juil. 2027), Data Act (12 jan. 2027), lignes directrices OSFI E‑23 et IA de l'AMF (1ᵉʳ mai 2027) ; l'annexe III de l'AI Act reportée au 2 déc. 2027 (Digital Omnibus adopté le 29 juin 2026, publication au JOUE à suivre).</p>
-      <span class="chip confirme">engagements datés</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">L'horloge dure</div>
-      <h3>La migration post‑quantique</h3>
-      <p>Le jalon le plus structurant : le calendrier NIST prévoit la dépréciation des algorithmes à clé publique classiques en 2030, leur interdiction en 2035 (NIST IR 8547, projet public initial). Il surplombe toute la confiance agentique.</p>
-      <span class="chip probable">2030 → 2035</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">Identité, par couche</div>
-      <h3>Une gouvernance qui bifurque</h3>
-      <p>La gouvernance se répartit entre forums — AAIF, FIDO, W3C, IETF (WIMSE), DIF. DID v1.1 en Candidate Recommendation ; Verifiable Credentials 2.1 visé en 2027. Pré‑standardisation, statut mixte.</p>
-      <span class="chip probable">pré‑standardisation</span></div>
-    <div class="card"><div class="glow"></div>
-      <div class="idx">SPÉCULATIF</div>
-      <h3>Souveraineté &amp; risque systémique</h3>
-      <p>Concentration sur un petit nombre de modèles de fondation, souveraineté des données, Splinternet agentique : des paris de recherche, présentés au statut explicitement spéculatif — jamais comme acquis.</p>
-      <span class="chip hypothese">paris de recherche</span></div>
+    <span class="chip norm">cinq zones de compensation Z1–Z5</span>
+    <span class="chip norm">cinq points de contrôle PC1–PC5</span>
+    <span class="chip norm">quatre couches de l'architecture de référence</span>
+    <span class="chip norm">inventorier · coter · encadrer · surveiller</span>
   </div>
 </div></section>
 
 <!-- ======================= LES 7 CHAPITRES ======================= -->
 <section id="parties"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">10</span>L'arc en sept temps</div>
-    <h2><span class="lm"><span>Les sept chapitres</span></span>
-        <span class="lm"><span><em>de la monographie</em></span></span></h2>
-    <p class="sec-lead" data-rise>Chaque chapitre suppose les précédents : les chapitres amont établissent les invariants que les chapitres aval mobilisent. Chaque vignette ouvre la source du chapitre dans le dépôt.</p>
+    <div class="kicker" data-rise><span class="sno">09</span>L'arc en sept parties</div>
+    <h2><span class="lm"><span>Vingt‑quatre chapitres,</span></span>
+        <span class="lm"><span><em>sept parties</em></span></span></h2>
+    <p class="sec-lead" data-rise>Commencer par l'<a href="monographie/00-avant-propos.md" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(53,185,221,.4)">avant‑propos</a> :
+      il expose la méthode, les niveaux de preuve et la convention de datation, sans lesquels les chapitres se lisent mal. Chaque vignette ouvre la première pièce de sa partie dans le dépôt ;
+      l'<a href="monographie/README.md" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(53,185,221,.4)">index de lecture</a> les donne toutes.</p>
   </div>
   <div class="parts-grid" data-stagger>
-    <a class="panel" href="Chapitres/Chapitre%201%20-%20Interoperabilite.md">
+    <a class="panel" href="monographie/01-partie-I/ch-01-genealogie-gouvernance.md">
       <div class="pno">I</div>
-      <h3>Interopérabilité des systèmes d'information</h3>
-      <p>Fondements et intégration d'entreprise. Le régime déterministe : patrimoine applicatif sédimenté, contrats figés, patrons d'intégration — l'état de référence sur lequel agiront les ruptures.</p>
-      <div class="pmeta"><span><b>Ch. 1</b> · Fondements</span><span class="go">Lire →</span></div></a>
-    <a class="panel" href="Chapitres/Chapitre%202%20-%20IA%20Agentique.md">
+      <h3>Fondements : les protocoles d'interopérabilité agentique</h3>
+      <p>Généalogie et gouvernance, anatomie de MCP et d'A2A v1.0, transaction agentique et couche d'infrastructure, taxonomie des risques protocolaires. Un protocole établit qui parle — jamais ce qui est dit.</p>
+      <div class="pmeta"><span><b>Ch. 1–4</b> · Protocoles</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="monographie/02-partie-II/ch-05-options-orchestration.md">
       <div class="pno">II</div>
-      <h3>IA agentique</h3>
-      <p>Ingénierie des systèmes agentiques fondés sur les grands modèles de langage : l'agent comme boucle de contrôle probabiliste, sa mémoire, ses outils, ses garanties et sa surface d'attaque.</p>
-      <div class="pmeta"><span><b>Ch. 2</b> · Exécutant probabiliste</span><span class="go">Lire →</span></div></a>
-    <a class="panel" href="Chapitres/Chapitre%203%20-%20Interoperabilite%20Agentique.md">
+      <h3>L'orchestration multi‑agents en entreprise</h3>
+      <p>La taxonomie OO1–OO4, le paradigme APM et l'autonomie encadrée, l'état daté et inégal des frameworks industriels, l'identité et les registres d'agents. Aucun produit ne décide du degré d'encadrement à la place de l'architecte.</p>
+      <div class="pmeta"><span><b>Ch. 5–8</b> · Orchestration</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="monographie/03-partie-III/ch-13-pont-frames.md">
       <div class="pno">III</div>
-      <h3>Interopérabilité agentique</h3>
-      <p>La convergence des deux mondes : MCP, A2A, ANP. Découverte, sémantique, identité, commerce et sécurité des frontières — lus à la lumière du fil conducteur : découplage, contrat, évolution.</p>
-      <div class="pmeta"><span><b>Ch. 3</b> · Protocoles</span><span class="go">Lire →</span></div></a>
-    <a class="panel" href="Chapitres/Chapitre%204%20-%20Interoperabilite%20Agentique%20en%20Entreprise.md">
+      <h3>Le cadre réglementaire canadien <span style="font-style:italic;color:var(--accent);font-size:.62em;letter-spacing:0">pivot</span></h3>
+      <p>E‑23, le vide fédéral de C‑27 à C‑36, le Québec (AMF et article 12.1), l'avis ACVM 11‑348 — puis le <strong>chapitre 13</strong>, le pont des contraintes réglementaires aux frames déterministes. C'est le chapitre à contester en premier.</p>
+      <div class="pmeta"><span><b>Ch. 9–13</b> · Réglementation</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="monographie/04-partie-IV/ch-14-cadre-bancaire.md">
       <div class="pno">IV</div>
-      <h3>… en entreprise</h3>
-      <p>Déploiement à l'échelle : héritage applicatif, identités non humaines, gouvernance et conformité. Industrialiser l'agentivité gouvernée sur le substrat hérité.</p>
-      <div class="pmeta"><span><b>Ch. 4</b> · Industrialiser</span><span class="go">Lire →</span></div></a>
-    <a class="panel" href="Chapitres/Chapitre%205%20-%20Interoperabilite%20Agentique%20dans%20le%20domaine%20financier.md">
+      <h3>L'interopérabilité financière canadienne</h3>
+      <p>Le cadre des services bancaires axés sur le consommateur, ISO 20022 — Lynx accompli, RTR imminent —, et la question prospective d'AP2 sur les rails canadiens, traitée en conditions de possibilité plutôt qu'en scénarios.</p>
+      <div class="pmeta"><span><b>Ch. 14–16</b> · Rails</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="monographie/05-partie-V/ch-17-etudes-de-cas.md">
       <div class="pno">V</div>
-      <h3>… dans le domaine financier</h3>
-      <p>Cinq sous-domaines régulés, sous le patron « autonomie graduée sous contrôle de finalité ». L'épreuve sectorielle, où la barre de justification est, par construction, plus haute.</p>
-      <div class="pmeta"><span><b>Ch. 5</b> · Épreuve sectorielle</span><span class="go">Lire →</span></div></a>
-    <a class="panel" href="Chapitres/Chapitre%206%20-%20Blueprint%20ArchiMate.md">
+      <h3>L'adoption par les institutions financières</h3>
+      <p>Dix institutions canadiennes, trois classes d'accès documentaire, cinq appuis extérieurs seulement. Ce que la production agentique canadienne publie d'elle‑même en 2025‑2026 — et ce qu'elle ne publie pas.</p>
+      <div class="pmeta"><span><b>Ch. 17</b> · Études de cas</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="monographie/06-partie-VI/ch-18-matrice.md">
       <div class="pno">VI</div>
-      <h3>Blueprint d'architecture ArchiMate</h3>
-      <p>Formalisation des chapitres 1 à 5 en un blueprint d'architecture d'entreprise ArchiMate — la synthèse architecturale du cadre.</p>
-      <div class="pmeta"><span><b>Ch. 6</b> · Blueprint</span><span class="go">Lire →</span></div></a>
-    <a class="panel capstone" href="Chapitres/Chapitre%207%20-%20Interoperabilite%20Agentique%20horizon%202027-2032.md">
+      <h3>Synthèse : l'architecture de référence</h3>
+      <p>La matrice protocoles × exigences, l'architecture de référence par couches, l'instrumentation et la feuille de route vers le 1<sup>er</sup> mai 2027, puis la frontière de la connaissance vérifiable : onze lacunes, six questions de recherche.</p>
+      <div class="pmeta"><span><b>Ch. 18–21</b> · Synthèse</span><span class="go">Lire →</span></div></a>
+    <a class="panel capstone" href="monographie/07-partie-VII/ch-22-principes-couches.md">
       <div class="pno">VII</div>
       <div class="cap-body">
-        <h3>Horizon 2027–2032</h3>
-        <p>Chapitre prospectif et capstone : projette l'arc des six chapitres et trie chaque énoncé sur l'avenir entre PROGRAMMÉ, PROJETÉ et SPÉCULATIF.</p>
+        <h3>Le blueprint : plateforme d'intégration d'entreprise</h3>
+        <p>Six principes directeurs instanciés en huit couches C1–C8 sur un portefeuille réel, la correspondance réglementaire et ses flux, puis les lacunes du blueprint et les conditions de sa revalidation.</p>
       </div>
-      <div class="pmeta"><span><b>Ch. 7</b> · Prospectif</span><span class="go">Lire →</span></div></a>
+      <div class="pmeta"><span><b>Ch. 22–24</b> · Blueprint</span><span class="go">Lire →</span></div></a>
   </div>
 </div></section>
 
-<!-- ======================= ANNEXE B · ADS ======================= -->
-<section id="ads"><div class="wrap">
+<!-- ======================= BLUEPRINT ======================= -->
+<section id="blueprint"><div class="wrap">
   <div class="sec-head">
-    <div class="kicker" data-rise><span class="sno">Annexe&nbsp;B</span>L'épreuve du déploiement</div>
-    <h2><span class="lm"><span>Du cadre à la</span></span>
-        <span class="lm"><span>solution <em>déployable</em></span></span></h2>
-    <p class="sec-lead" data-rise>Au‑delà du corps doctrinal, une <em>architecture détaillée de solution</em> (ADS) projette la monographie — surtout les chapitres 5 et 6 —
-      sur une entreprise fictive, la <strong>Coopérative financière Boréalis</strong>, et une pile <strong>IBM</strong> consolidée.
-      Un livrable d'ingénierie, prêt au déploiement, de nature distincte du corps doctrinal mais rendu dans le même volume.</p>
-    <p data-rise style="margin-top:26px"><a class="btn ghost" href="Chapitres/Annexe%20B%20-%20Architecture%20de%20Solutions.md" data-magnetic>Lire l'Annexe B (source) →</a>
-      <a class="btn ghost" href="Borealis-Go/Pr%C3%A9sentation%20Borealis-Go.pdf" data-magnetic>Voir la présentation (PDF) →</a>
-      <a class="btn ghost" href="https://github.com/agbruneau/InteroperabiliteAgentique/tree/main/Borealis-Go" data-magnetic>Explorer le dépôt de code →</a></p>
+    <div class="kicker" data-rise><span class="sno">Partie&nbsp;VII</span>L'épreuve du portefeuille réel</div>
+    <h2><span class="lm"><span>Le principe mis à</span></span>
+        <span class="lm"><span>l'épreuve d'un <em>catalogue</em></span></span></h2>
+    <p class="sec-lead" data-rise>Une architecture de référence ne se déploie pas : elle se choisit, se négocie, s'achète. La Partie VII prend un portefeuille réel —
+      celui d'<strong>IBM</strong> — et demande ce que le principe y devient : où il se loge, où il ne trouve rien, et à quel statut de disponibilité.
+      C'est un <strong>cas d'instanciation documenté par sources primaires</strong>, jamais une recommandation d'achat ni un verdict comparatif.</p>
+    <p data-rise style="margin-top:26px"><a class="btn ghost" href="monographie/07-partie-VII/ch-22-principes-couches.md" data-magnetic>Lire les principes et les couches →</a>
+      <a class="btn ghost" href="monographie/90-annexes/annexe-b-matrice.md" data-magnetic>Voir la matrice détaillée →</a>
+      <a class="btn ghost" href="https://github.com/agbruneau/Monographies/tree/main/1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique" data-magnetic>Explorer le dépôt →</a></p>
   </div>
   <div class="grid g4" data-stagger>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Le cas</div>
-      <h3>Boréalis sur pile IBM</h3>
-      <p>Une coopérative financière régulée instancie le patron sectoriel « autonomie graduée sous contrôle de finalité » sur une pile IBM consolidée : du plan de contrôle agentique jusqu'au substrat applicatif hérité.</p>
-      <span class="chip norm">ch. 5‑6 projetés</span></div>
+      <div class="idx">Huit couches</div>
+      <h3>C1 → C8</h3>
+      <p>Exposition et gouvernance des interactions ; intégration applicative et B2B ; messagerie et événements ; données ; couche agentique ; gouvernance IA et risque de modèle ; observabilité et opérations ; socle d'exécution et souveraineté. Chaque composant porte sa source, sa date et son statut.</p>
+      <span class="chip norm">six principes directeurs</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">Le livrable</div>
-      <h3>Prêt au déploiement</h3>
-      <p>Dix‑huit sections et six sous‑annexes : diagrammes, contrats d'interface, exigences non fonctionnelles, topologie de déploiement et runbooks d'exploitation — vingt‑huit diagrammes Mermaid intégrés (dont un <em>blueprint</em> d'ouverture en §0.1‑0.2).</p>
-      <span class="chip confirme">contrats · NFR · runbooks</span></div>
+      <div class="idx">La correspondance</div>
+      <h3>Cinq inférences, un lien documenté</h3>
+      <p>Sur sept correspondances entre le blueprint et la réglementation canadienne, cinq sont des <em>inférences d'auteur</em>, une seule est documentée — et pour un rôle opérationnel sur les rails de paiement, non pour une conformité. La septième est une attente réglementaire où il est interdit d'anticiper.</p>
+      <span class="chip probable">tableau B.3 · quatre statuts</span></div>
     <div class="card"><div class="glow"></div>
-      <div class="idx">La formalisation</div>
-      <h3>Vues ArchiMate&nbsp;4</h3>
-      <p>Les vues d'entreprise reprennent les stéréotypes du registre du chapitre 6 ; chaque arête d'interaction y est traitée comme une frontière de confiance, du plan de contrôle jusqu'aux identités non humaines.</p>
-      <span class="chip norm">registre ch. 6</span></div>
+      <div class="idx">Les faits négatifs</div>
+      <h3>Exposés au même rang</h3>
+      <p>Cinq faits négatifs figurent au corps, à égalité avec les capacités : dépréciations annoncées, position au Gartner MQ iPaaS non vérifiée, absence de lien documenté entre le portefeuille et E‑23 ou B‑13, absence d'architecture agentique propre aux services financiers.</p>
+      <span class="chip verrou">aucune conformité revendiquée</span></div>
     <div class="card"><div class="glow"></div>
       <div class="idx">La discipline ⚠</div>
-      <h3>Illustratif, jamais acquis</h3>
-      <p>Extraits de configuration illustratifs (aucun secret réel) ; statuts <em>preview</em> marqués ⚠, jamais présentés comme GA ; valeurs chiffrées — SLO, RPO/RTO, débits — posées comme hypothèses à calibrer.</p>
-      <span class="chip hypothese">hypothèses à calibrer</span></div>
+      <h3>Le statut avant la marque</h3>
+      <p>Les statuts de disponibilité sont rendus tels quels : ce qui est en préversion publique n'est jamais présenté comme généralement disponible — l'observabilité des agents, sur laquelle repose le cinquième principe, ne l'était pas à la date de gel. Les études d'analystes commandées sont attribuées à chaque occurrence.</p>
+      <span class="chip hypothese">daté du 16 juillet 2026</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= PÉREMPTION ======================= -->
+<section id="peremption"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">10</span>Ce qui se périme</div>
+    <h2><span class="lm"><span>L'ouvrage ne se périme</span></span>
+        <span class="lm"><span>pas <em>d'un bloc</em></span></span></h2>
+    <p class="sec-lead" data-rise>Chaque pièce porte sa date de gel de l'information — le 16 ou le 17 juillet 2026 pour les vingt‑quatre chapitres, consignées à un registre.
+      La conséquence est opératoire : un chapitre sur une disposition en vigueur depuis 2023 vieillit lentement, un chapitre sur des versions de protocoles vieillit vite.
+      Le protocole de revalidation amende <strong>le socle d'abord</strong>, les chapitres ensuite, jamais l'inverse.</p>
+  </div>
+  <div class="refs" data-stagger>
+    <div class="r"><b>28 juillet 2026</b><span>finalisation annoncée d'une révision majeure de la spécification MCP — protocole sans état, retrait de l'en‑tête de session : douze jours après le gel des chapitres qui la décrivent.</span></div>
+    <div class="r"><b>24 août 2026</b><span>entrée en vigueur du règlement administratif n<sup>o</sup> 10 du Real‑Time Rail, publié à la Gazette du Canada, partie II, le 1<sup>er</sup> juillet 2026 ; le socle n'en établit pas le contenu.</span></div>
+    <div class="r"><b>26 août 2026</b><span>clôture de la période de commentaires de soixante jours sur le règlement du cadre bancaire, prépublié le 27 juin 2026 — le texte final peut changer.</span></div>
+    <div class="r"><b>cible T4 2026</b><span>lancement visé du Real‑Time Rail, nativement ISO 20022, à l'issue des tests industriels ; la cible a déjà été reportée quatre fois.</span></div>
+    <div class="r"><b>date inconnue</b><span>arrêté ministériel désignant l'organisme de normalisation technique : le seul événement de péremption sans date, et celui qui porte le plus fort potentiel de réécriture.</span></div>
+    <div class="r"><b>1<sup>er</sup> mai 2027</b><span>entrées en vigueur, le même jour, d'E‑23 et de la ligne directrice IA de l'AMF — l'une fédérale, l'autre québécoise. « Une simultanéité se constate ; une concertation s'établirait. »</span></div>
   </div>
 </div></section>
 
@@ -1030,27 +1050,41 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:rel
 <section id="methode"><div class="wrap">
   <div class="sec-head">
     <div class="kicker" data-rise><span class="sno">11</span>Méthode</div>
-    <h2><span class="lm"><span>Le raisonnement précède</span></span>
-        <span class="lm"><span><em>l'autorité</em></span></span></h2>
-    <p class="sec-lead" data-rise>Tout énoncé factuel porte une source nominative, un millésime et, le cas échéant, un statut. Le socle documentaire est arrêté à juin 2026 ;
-      seul le chapitre prospectif déroge à cette borne, en triant explicitement chaque énoncé sur l'avenir.</p>
+    <h2><span class="lm"><span>Le niveau ne mesure pas</span></span>
+        <span class="lm"><span>la source, mais <em>l'épreuve</em></span></span></h2>
+    <p class="sec-lead" data-rise>Chaque affirmation factuelle centrale renvoie à une entrée du socle, et chaque entrée porte son niveau de preuve.
+      L'ordre est contre‑intuitif — <strong>[B] est sous [A]</strong> — parce qu'il ne mesure pas la proximité à la source, mais ce que l'affirmation a subi.
+      L'ouvrage a commis lui‑même cette confusion sur une entrée, et le raconte.</p>
   </div>
   <div class="anchors" data-rise style="margin-bottom:42px">
-    <span class="chip confirme">PROGRAMMÉ</span>
-    <span class="chip probable">PROJETÉ</span>
-    <span class="chip hypothese">SPÉCULATIF</span>
-    <span class="chip norm">à re‑vérifier</span>
+    <span class="chip confirme">[A] vote adversarial 3‑0</span>
+    <span class="chip probable">[B] source primaire lue et extraite</span>
+    <span class="chip hypothese">[C] repérage à confirmer</span>
+    <span class="chip verrou">R‑1 à R‑8 · garde‑fous</span>
+    <span class="chip norm">lecture de l'auteur</span>
+  </div>
+  <div class="band" data-rise style="margin-bottom:46px">
+    <div>
+      <p>Trois passes d'un harnais de recherche multi‑agents ont produit le socle : <strong>77 sources</strong> récupérées, <strong>384 affirmations</strong> extraites,
+        <strong>75</strong> soumises au vote adversarial à trois juges — <strong>69 confirmées</strong> à l'unanimité, 6 réfutées. Le plafond était budgétaire, et il est écrit
+        comme tel. Les vingt‑neuf pièces ont ensuite passé une boucle qualité incluant une <strong>relecture adversariale par un relecteur distinct du rédacteur</strong>.</p>
+    </div>
+    <div class="formula">
+      <span class="lab">Le résultat qui dit ce que vaut le reste</span>
+      <span class="big">tous les défauts lourds trouvés à la publication l'ont été par des relecteurs adversariaux</span>
+      <small>Aucun par l'auto‑contrôle de leur rédacteur. Un rédacteur ne vérifie pas ce qu'il croit avoir fait.</small>
+    </div>
   </div>
   <div class="sec-head" data-rise style="margin-bottom:24px">
-    <h3 class="subhead" style="font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem)">Un socle de résultats classiques, mobilisés sans complaisance</h3>
+    <h3 class="subhead" style="font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem)">Les textes et les travaux sur lesquels l'ouvrage s'adosse</h3>
   </div>
   <div class="refs" data-stagger>
-    <div class="r"><b>Parnas · 1972</b><span>le masquage de l'information fonde le découplage : un module n'expose qu'une interface stable.</span></div>
-    <div class="r"><b>Sheth &amp; Larson · 1990</b><span>l'interopérabilité, ou la coopération de systèmes hétérogènes, autonomes et distribués.</span></div>
-    <div class="r"><b>de Alfaro &amp; Henzinger · 2001</b><span>les automates d'interface : la compatibilité comportementale d'un contrat est décidable.</span></div>
-    <div class="r"><b>Honda et al. · 2008</b><span>les types de session disciplinent les protocoles de communication.</span></div>
-    <div class="r"><b>Confused deputy · 1988</b><span>Hardy nomme la confusion d'autorité qui hante toute délégation de droits.</span></div>
-    <div class="r"><b>Searle &amp; Austin · 1969/1962</b><span>les actes de langage (performatifs) fournissent le socle théorique de la sémantique des messages d'agents (FIPA-ACL).</span></div>
+    <div class="r"><b>BSIF · E‑23</b><span>ligne directrice sur la gestion du risque de modélisation, finale le 11 septembre 2025, en vigueur le 1<sup>er</sup> mai 2027 ; sa définition de « modèle » englobe expressément les méthodes d'IA et d'apprentissage automatique.</span></div>
+    <div class="r"><b>Loi 25 · article 12.1</b><span>en vigueur depuis le 22 septembre 2023 : informer, expliquer sur demande et permettre la révision humaine de toute décision fondée exclusivement sur un traitement automatisé.</span></div>
+    <div class="r"><b>ACVM · avis 11‑348</b><span>5 décembre 2024 : les lois existantes sur les valeurs mobilières s'appliquent aux systèmes d'IA, sans créer ni modifier aucune exigence.</span></div>
+    <div class="r"><b>AMF · ligne directrice IA</b><span>finale le 30 mars 2026, en vigueur le 1<sup>er</sup> mai 2027 — le seul texte du dispositif dont le contenu n'est pas au socle.</span></div>
+    <div class="r"><b>Manifeste APM · <i>Information Systems</i>, 2026</b><span>dix‑huit auteurs issus du séminaire Dagstuhl #25192 : l'autonomie encadrée comme mécanisme premier de gouvernance ; cité comme position argumentée, non comme fait établi.</span></div>
+    <div class="r"><b>Rinderle‑Ma, Mangler et al. · 2026</b><span>préprint non révisé par les pairs : la taxonomie OO1–OO4, cinq propriétés d'évaluation, et le verdict d'inacceptabilité de l'orchestration non encadrée sous exigences strictes.</span></div>
   </div>
 </div></section>
 
@@ -1058,25 +1092,26 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:rel
 <section id="verdict"><div class="wrap">
   <div class="sec-head">
     <div class="kicker" data-rise><span class="sno">12</span>Verdict</div>
-    <h2><span class="lm"><span>Trois tensions restent</span></span>
-        <span class="lm"><span><em>ouvertes</em></span></span></h2>
-    <p class="sec-lead" data-rise>À l'horizon, l'interopérabilité agentique cesse d'être un problème de transport. Le passage de messages est résolu au niveau syntaxique ; restent trois fronts d'un autre registre.</p>
+    <h2><span class="lm"><span>Trois fronts restent</span></span>
+        <span class="lm"><span><em>ouverts</em></span></span></h2>
+    <p class="sec-lead" data-rise>L'ouvrage se termine sur ce qu'il n'établit pas. Onze lacunes sont exposées plutôt que comblées, et trois d'entre elles
+      commandent la validité du reste — aucune n'attend une autorité : elles attendent une extraction, un texte, ou une réplication.</p>
   </div>
   <div data-stagger>
-    <div class="tension"><div class="t-n">Tension I</div>
-      <div><h3>Le verrou sémantique</h3>
-        <p>Partager le <em>sens</em> d'une intention déléguée, pas seulement la structure d'un message : faire remonter l'alignement vers le protocole. La proposition de l'ouvrage : largement ouvert au‑delà de 2030.</p></div></div>
-    <div class="tension"><div class="t-n">Tension II</div>
-      <div><h3>Les garanties composables</h3>
-        <p>Garantir un agent ne garantit pas la chaîne d'agents qui l'invoque. Obtenir des garanties composables sur des acteurs probabilistes — vérification à l'exécution, méthodes formelles — reste un chantier ouvert.</p></div></div>
-    <div class="tension"><div class="t-n">Tension III</div>
-      <div><h3>La science de l'évaluation</h3>
-        <p>Mesurer l'interopérabilité de façon reproductible ; et tracer de bout en bout les décisions déléguées, dont l'urgence croît avec le degré d'autonomie consenti — identité non humaine en tête.</p></div></div>
+    <div class="tension"><div class="t-n">Front I</div>
+      <div><h3>Le texte que l'ouvrage n'a pas lu</h3>
+        <p>La ligne directrice sur l'IA de l'AMF est finale depuis le 30 mars 2026 et entre en vigueur le 1<sup>er</sup> mai 2027 ; son contenu n'est pas au socle. De l'un des deux textes qui fixent l'échéance structurant toute la Partie III, le chapitre pivot ne dérive aucune contrainte. L'obstacle matériel est consigné — il n'autorise à supposer aucun contenu.</p></div></div>
+    <div class="tension"><div class="t-n">Front II</div>
+      <div><h3>Qu'est‑ce que « le modèle » d'un assemblage d'agents ?</h3>
+        <p>L'objet d'E‑23 est le modèle : c'est lui qu'on inventorie, qu'on cote, qu'on met hors service. Un système agentique compose plusieurs modèles, des outils et un enchaînement — et la ligne directrice ne dit pas s'il faut coter les composants, la composition, ou les deux. Ni le texte, ni le socle, ni cet ouvrage ne le comblent.</p></div></div>
+    <div class="tension"><div class="t-n">Front III</div>
+      <div><h3>Une convergence qui n'est pas indépendante</h3>
+        <p>Trois sources formulent le même principe d'encadrement déterministe, et elles se recoupent deux à deux. Trois énoncés qui se recoupent ne valent pas trois observateurs séparés. L'adjectif « indépendantes » a été retiré du socle en cours de rédaction — et aucune de ces sources ne parle du Canada ni de finance canadienne.</p></div></div>
   </div>
   <div class="callout" data-rise style="margin-top:40px">
-    <q>Une réinstanciation sous contrainte.</q>
-    <p>Les principes demeurent, les mécanismes se renouvellent. La responsabilité de l'architecte est de reconnaître l'invariant sous la nouveauté —
-      pour ne pas reconstruire à grands frais ce que des décennies d'intégration d'entreprise avaient déjà appris à découpler, à contractualiser et à faire évoluer.</p>
+    <q>Un registre de lacunes n'est pas un aveu de faiblesse : c'est un instrument de travail.</q>
+    <p>La thèse tient par ce qu'elle refuse : ne jamais présenter une inférence comme un fait, ne jamais confondre une absence de documentation avec un fait négatif vérifié,
+      ne jamais laisser une métrique auto‑déclarée perdre son attribution. <strong>Une architecture dont on connaît les zones aveugles reste utilisable — à condition de n'y rien bâtir de central.</strong></p>
   </div>
 </div></section>
 
@@ -1087,19 +1122,20 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:rel
   <div class="wrap"><div class="foot">
     <div>
       <div class="ftau" aria-hidden="true">&#928;</div>
-      <p>Monographie en science et génie informatique sur l'interopérabilité agentique en entreprise et en finance : un invariant transversal — découplage, contrat, évolution — réinstancié de l'intégration d'entreprise à la couche agentique.
-        Sept chapitres en spirale, du général au spécifique ; rendu FESP (Pandoc → Typst), socle documentaire arrêté à juin 2026.</p>
-      <div class="meta">André‑Guy Bruneau, M. Sc. IT · 2026<br>Licence Creative Commons Attribution 4.0 International (CC BY 4.0)<br>Citations vérifiées de façon adverse sur source primaire.</div>
+      <p>Monographie sur l'interopérabilité et l'orchestration agentique dans les services financiers canadiens : protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise.
+        Vingt‑quatre chapitres en sept parties ; rendu Pandoc → Typst. Socle factuel de 46 entrées à niveaux de preuve ; dates de gel des 16 et 17 juillet 2026.</p>
+      <div class="meta">André‑Guy Bruneau, M. Sc. IT · <code style="font-family:inherit">mono‑v1.0</code>, 17 juillet 2026<br>Licence Creative Commons Attribution 4.0 International (CC BY 4.0)<br>Aucun avis juridique ni conseil d'investissement · aucune recommandation de fournisseur.</div>
     </div>
     <div class="links">
       <a href="Monographie.pdf">→ Télécharger la monographie (PDF)</a>
       <a href="Synthese%20Monographie.pdf">→ Télécharger la synthèse (PDF)</a>
-      <a href="Veille%20Technologique.pdf">→ Télécharger la veille technologique (PDF)</a>
-      <a href="https://github.com/agbruneau/InteroperabiliteAgentique" target="_blank" rel="noopener noreferrer">→ Dépôt GitHub · sources et bibliographies</a>
+      <a href="monographie/README.md">→ Index de lecture des 29 pièces</a>
+      <a href="../../Veille%20Technologique.pdf">→ Veille technologique du dépôt (PDF)</a>
+      <a href="https://github.com/agbruneau/Monographies" target="_blank" rel="noopener noreferrer">→ Dépôt GitHub · sources et vérification</a>
       <a href="#top">→ Haut de page</a>
     </div>
   </div></div>
-  <div class="foot-giant" aria-hidden="true">découplage · contrat · évolution</div>
+  <div class="foot-giant" aria-hidden="true">encadrement · preuve · attribution · péremption</div>
 </footer>
 
 <a class="back-top" id="backtop" href="#top" aria-label="Haut de page">&#8593;</a>
@@ -1237,7 +1273,9 @@ document.querySelectorAll('.card').forEach(function(c){
 });
 
 /* ---------- three.js : treillis déterministe → nuage probabiliste ---------- */
-var glState={progress:0.12,target:0.12,opacity:0,mouse:new (hasThree?THREE.Vector2:Object)(0,0)};
+/* uProgress : 0 = treillis ordonné (le cadre), 1 = nuage dispersé (les agents).
+   Le Vol. II parcourt la course inverse du Vol. I : le nuage se referme en cadre. */
+var glState={progress:0.92,target:0.92,opacity:0,mouse:new (hasThree?THREE.Vector2:Object)(0,0)};
 if(hasThree){
   try{
     var canvas=document.getElementById('gl');
@@ -1424,16 +1462,16 @@ document.querySelectorAll('[data-count]').forEach(function(el){
   var tl=gsap.timeline({
     scrollTrigger:{trigger:stage,start:'top top',end:'+=110%',scrub:.6,pin:true,anticipatePin:1,
       onUpdate:function(self){
-        glState.target=.12+self.progress*.88; /* treillis → nuage */
+        glState.target=.92-self.progress*.86; /* nuage → treillis : l'encadrement */
         var p=self.progress;
         gsap.set('#op-t1',{scaleX:Math.min(p*3,1)});
         gsap.set('#op-t2',{scaleX:Math.max(Math.min((p-.33)*3,1),0)});
         gsap.set('#op-t3',{scaleX:Math.max(Math.min((p-.66)*3,1),0)});
         stage.classList.toggle('armed',p>.45);
       },
-      onLeave:function(){ glState.target=.25; },
-      onEnterBack:function(){ glState.target=1; },
-      onLeaveBack:function(){ glState.target=.12; }
+      onLeave:function(){ glState.target=.06; },
+      onEnterBack:function(){ glState.target=.06; },
+      onLeaveBack:function(){ glState.target=.92; }
     }
   });
   tl.to('#op-line',{scaleX:1,duration:.5,ease:'none'},0)
