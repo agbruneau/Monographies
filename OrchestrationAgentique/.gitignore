@@ -1,0 +1,14 @@
+# Artéfacts temporaires du pipeline PDF (build/build-pdf.sh)
+# Le rendu écrit ses fichiers intermédiaires dans un répertoire mktemp ; ceux-ci ne
+# servent qu'au débogage local et ne doivent pas être versionnés.
+build/.buildlog.txt
+build/.bl.txt
+build/pup.json
+build/.pup.json
+
+# PDF d'essai à la racine (rendus de contrôle, non livrables)
+_*.pdf
+*_test.pdf
+
+# Le livrable Monographie.pdf et son source assemblé Monographie.md sont versionnés
+# (comme dans le dépôt gabarit InteroperabiliteAgentique).

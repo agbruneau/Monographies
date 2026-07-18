@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://agbruneau.github.io/InteroperabiliteAgentique/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230a0908'/%3E%3Ctext%20x='16'%20y='24'%20font-family='Georgia,serif'%20font-style='italic'%20font-size='24'%20text-anchor='middle'%20fill='%23ff7a1a'%3E%CF%84%3C/text%3E%3C/svg%3E">
+<title>Interopérabilité agentique en entreprise dans le domaine des services financiers — Monographie</title>
+<meta name="author" content="André-Guy Bruneau, M. Sc. IT">
+<meta name="description" content="Monographie en science et génie informatique « Interopérabilité agentique d'entreprise » (sept chapitres + architecture de solution, 569 p.) : un invariant transversal — découplage, contrat, évolution — éprouvé du transport d'octets à la négociation entre agents (MCP, A2A, ANP), spécialisé en finance, formalisé en blueprint ArchiMate puis projeté en architecture de solution déployable (Annexe B). Horizon 2027-2032 ; socle documentaire arrêté à juin 2026. André-Guy Bruneau, M. Sc. IT.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://agbruneau.github.io/InteroperabiliteAgentique/">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:title" content="Interopérabilité agentique d'entreprise — Monographie">
+<meta property="og:description" content="La couche agentique n'invente pas une nouvelle théorie de l'interopérabilité : elle réinstancie l'ancienne à un niveau d'abstraction supérieur. Présentation de la monographie et de son cadre.">
+<meta name="theme-color" content="#0a0908">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interopérabilité agentique d'entreprise — Monographie">
+<meta name="twitter:description" content="« La couche agentique réinstancie l'intégration d'entreprise à un niveau d'abstraction supérieur. »">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Interopérabilité agentique en entreprise dans le domaine des services financiers",
+  "alternateName": "Interopérabilité agentique d'entreprise",
+  "headline": "Réinstancier l'intégration d'entreprise à l'ère des agents",
+  "author": { "@type": "Person", "name": "André-Guy Bruneau", "honorificSuffix": "M. Sc. IT" },
+  "inLanguage": "fr-CA",
+  "datePublished": "2026",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "numberOfPages": 569,
+  "genre": "Monographie scientifique",
+  "description": "Monographie en sept chapitres : un invariant transversal — découplage, contrat, évolution — éprouvé de l'intégration d'entreprise à la couche agentique (MCP, A2A, ANP), spécialisé en finance, formalisé en ArchiMate, puis projeté en architecture de solution déployable (Annexe B). Horizon 2027-2032 ; socle juin 2026."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   INTEROPÉRABILITÉ AGENTIQUE — expérience « braise »
+   treillis déterministe → nuage probabiliste
+   ============================================================ */
+:root{
+  --bg:#0a0908; --bg-2:#0e0c0a; --surface:#15110c; --surface-2:#1a150f;
+  --line:#2c241a; --line-soft:#211b13;
+  --ink:#f4ede1; --ink-dim:#b3a791; --ink-mute:#8f8164;
+  --orange:#ff7a1a; --orange-bright:#ffa14f; --orange-deep:#c2510c; --ember:#e8631a; --gold:#d4a258;
+  --confirme:#ff7a1a; --probable:#d9a14e; --hypothese:#9c8a6a;
+  --maxw:1280px; --r:16px;
+  --ease:cubic-bezier(.22,.61,.21,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --fz:clamp(1rem,.96rem + .25vw,1.13rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:var(--fz);line-height:1.7;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;text-rendering:optimizeLegibility;font-optical-sizing:auto}
+::selection{background:rgba(255,122,26,.3);color:#fff}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;top:12px;left:12px;z-index:400;background:var(--orange);color:#140d05;
+  font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.04em;
+  padding:13px 20px;border-radius:10px;text-decoration:none;
+  transform:translateY(-160%);transition:transform .28s var(--ease)}
+.skip:focus{transform:none;outline:2px solid #140d05;outline-offset:2px}
+main:focus{outline:none}
+a{color:inherit}
+strong{color:#fff;font-weight:600}
+em{font-style:italic}
+p{margin:0 0 1.05em}p:last-child{margin-bottom:0}
+
+/* grain + vignette */
+body::before{content:"";position:fixed;inset:-2%;z-index:3;pointer-events:none;mix-blend-mode:overlay;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;z-index:3;pointer-events:none;
+  background:radial-gradient(135% 95% at 50% 0%,transparent 58%,rgba(0,0,0,.55) 100%)}
+
+/* webgl canvas */
+#gl{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0}
+
+/* ---------- préloader ---------- */
+#loader{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+  background:var(--bg);flex-direction:column;gap:26px}
+#loader .tau{font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:clamp(5rem,14vw,9rem);
+  line-height:1;color:var(--orange);text-shadow:0 0 60px rgba(255,122,26,.45)}
+#loader .bar{width:min(280px,60vw);height:1px;background:var(--line);position:relative;overflow:hidden}
+#loader .bar i{position:absolute;inset:0;background:linear-gradient(90deg,var(--orange-deep),var(--orange));
+  transform:scaleX(0);transform-origin:left}
+#loader .pct{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.3em;color:var(--ink-mute)}
+#loader .label{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--ink-mute)}
+#veil-a,#veil-b{position:fixed;left:0;right:0;height:51vh;z-index:190;background:var(--bg-2);transform:scaleY(0);pointer-events:none}
+#veil-a{top:0;transform-origin:top}
+#veil-b{bottom:0;transform-origin:bottom}
+
+/* ---------- curseur ---------- */
+#cursor,#cursor-ring{position:fixed;top:0;left:0;z-index:300;pointer-events:none;border-radius:50%;
+  transform:translate(-50%,-50%);opacity:0;display:none}
+#cursor{width:6px;height:6px;background:var(--orange)}
+#cursor-ring{width:38px;height:38px;border:1px solid rgba(255,122,26,.5);
+  transition:width .35s var(--ease),height .35s var(--ease),border-color .35s,background .35s}
+#cursor-ring.on{width:64px;height:64px;border-color:rgba(255,122,26,.9);background:rgba(255,122,26,.07)}
+#cursor-ring.drag{width:92px;height:92px;background:rgba(255,122,26,.1);border-color:var(--orange)}
+#cursor-ring .drag-label{position:absolute;inset:0;display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;
+  font-size:.56rem;letter-spacing:.22em;color:var(--orange);opacity:0;transition:opacity .3s;text-transform:uppercase}
+#cursor-ring.drag .drag-label{opacity:1}
+@media(pointer:coarse){#cursor,#cursor-ring{display:none}}
+html.has-cursor,html.has-cursor a,html.has-cursor button{cursor:none}
+
+/* ---------- barre de progression + nav ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:120;transform:scaleX(0);transform-origin:left;
+  background:linear-gradient(90deg,var(--orange-deep),var(--orange),var(--orange-bright))}
+/* 2e barre de progression, accolée au bas de la barre de navigation */
+#progress-b{position:absolute;left:0;right:0;bottom:-1px;height:2px;z-index:2;transform:scaleX(0);transform-origin:left;
+  pointer-events:none;background:linear-gradient(90deg,var(--orange-deep),var(--orange),var(--orange-bright))}
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(18px,4vw,46px);transition:background .45s var(--ease),border-color .45s var(--ease),padding .45s var(--ease);
+  border-bottom:1px solid transparent}
+header.nav.scrolled{background:rgba(10,9,8,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom-color:var(--line-soft);padding-top:11px;padding-bottom:11px}
+.brand{display:flex;align-items:baseline;gap:12px;font-family:"IBM Plex Mono",monospace;font-size:.7rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;white-space:nowrap}
+.brand .tau{font-family:"Fraunces",serif;font-style:italic;font-size:1.5rem;color:var(--orange);letter-spacing:0;line-height:1}
+.brand b{color:var(--ink);font-weight:600}
+.brand .thin{opacity:.55}
+nav.links{display:flex;gap:2px;align-items:center}
+nav.links a{position:relative;font-family:"IBM Plex Mono",monospace;font-size:.69rem;letter-spacing:.1em;color:var(--ink-dim);
+  text-decoration:none;padding:8px 11px;border-radius:7px;text-transform:uppercase;transition:color .25s;white-space:nowrap}
+nav.links a:not(.pdf)::after{content:"";position:absolute;left:11px;right:11px;bottom:3px;height:1px;
+  background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+nav.links a:hover,nav.links a.active{color:var(--ink)}
+nav.links a.active::after,nav.links a:hover:not(.pdf)::after{transform:scaleX(1)}
+nav.links a.pdf{color:var(--orange);border:1px solid rgba(255,122,26,.42);margin-left:8px;overflow:hidden}
+nav.links a.pdf:hover{background:var(--orange);color:#140d05}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:44px;height:40px;
+  border-radius:10px;cursor:pointer;z-index:160;position:relative}
+.burger i,.burger i::before,.burger i::after{display:block;position:absolute;width:18px;height:1.5px;background:var(--ink);
+  left:50%;transition:.35s var(--ease);content:""}
+.burger i{top:50%;transform:translate(-50%,-50%)}
+.burger i::before{transform:translateX(-50%) translateY(-6px)}
+.burger i::after{transform:translateX(-50%) translateY(6px)}
+.burger[aria-expanded="true"] i{background:transparent}
+.burger[aria-expanded="true"] i::before{transform:translateX(-50%) rotate(45deg)}
+.burger[aria-expanded="true"] i::after{transform:translateX(-50%) rotate(-45deg)}
+#menu{position:fixed;inset:0;z-index:150;background:rgba(10,9,8,.97);backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;justify-content:safe center;padding:88px clamp(26px,8vw,80px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .65s var(--ease-out),visibility 0s .65s}
+#menu.open{clip-path:inset(0 0 0% 0);visibility:visible;transition:clip-path .65s var(--ease-out),visibility 0s}
+#menu a{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.7rem,6.5vw,3rem);color:var(--ink-dim);
+  text-decoration:none;padding:.22em 0;line-height:1.1;display:flex;align-items:baseline;gap:18px;
+  border-bottom:1px solid var(--line-soft);transition:color .3s,padding-left .3s var(--ease)}
+#menu a:hover{color:var(--orange);padding-left:14px}
+#menu a .no{font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.25em;color:var(--orange)}
+@media(max-width:1180px){nav.links{display:none}.burger{display:block}}
+
+/* ---------- rail de repérage (navigateur de sections) ---------- */
+.rail{position:fixed;left:max(16px,calc((100vw - var(--maxw))/2 - 58px));top:50%;transform:translateY(-50%);
+  z-index:108;display:flex;flex-direction:column;gap:1px;padding:14px 0;
+  opacity:0;visibility:hidden;transition:opacity .55s var(--ease),visibility .55s}
+.rail.show{opacity:1;visibility:visible}
+.rail::before{content:"";position:absolute;left:29px;top:18px;bottom:18px;width:1px;background:var(--line-soft)}
+.rail .rail-fill{position:absolute;left:29px;top:18px;width:1px;height:0;background:linear-gradient(var(--orange),var(--orange-deep));
+  box-shadow:0 0 8px rgba(255,122,26,.5);transition:height .25s linear}
+.rail a{position:relative;display:flex;align-items:center;height:23px;text-decoration:none;outline-offset:4px}
+.rail .rk{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.06em;width:20px;text-align:right;
+  color:var(--ink-mute);opacity:.55;transition:opacity .3s,color .3s}
+.rail .rt{position:relative;z-index:1;width:7px;height:7px;margin-left:6px;border-radius:50%;flex:none;
+  background:var(--bg);border:1px solid var(--line);transition:transform .35s var(--ease),background .35s,border-color .35s}
+.rail .rl{position:absolute;left:42px;white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:.63rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);opacity:0;transform:translateX(-6px);
+  padding:3px 9px;border-radius:7px;background:rgba(10,9,8,.78);backdrop-filter:blur(8px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease);pointer-events:none}
+.rail a:hover .rk{opacity:1;color:var(--ink-dim)}
+.rail a:hover .rt{border-color:var(--orange)}
+.rail a:hover .rl{opacity:1;transform:none}
+.rail a.active .rk{opacity:1;color:var(--orange)}
+.rail a.active .rt{background:var(--orange);border-color:var(--orange);transform:scale(1.25)}
+.rail a.active .rl{opacity:1;transform:none;color:var(--ink);border:1px solid var(--line-soft)}
+@media(max-width:1320px){.rail{display:none}}
+
+/* ---------- raffinements typographiques (équilibre & mesure) ---------- */
+h1,h2,h3,.subhead,.callout q,.verrou-stage .vq,.op-words,.hero-verdict q{text-wrap:balance}
+p,.sec-lead,.hook,.op-copy,.card p,.panel p,.tension p,.refs .r span,.foot p{text-wrap:pretty}
+.sec-lead{letter-spacing:.002em}
+.card p,.panel p{letter-spacing:.004em}
+/* indicateur de section courante dans la barre de navigation */
+.nav-here{display:none;align-items:baseline;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:.66rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);white-space:nowrap;
+  opacity:0;transform:translateY(4px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.nav-here.show{opacity:1;transform:none}
+.nav-here .nh-no{color:var(--orange);font-weight:600}
+.nav-here .nh-sep{width:18px;height:1px;background:var(--line);align-self:center}
+@media(min-width:1181px) and (max-width:1319px){header.nav.scrolled .nav-here{display:inline-flex}}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px);position:relative;z-index:2}
+section{position:relative;z-index:2;padding:clamp(80px,12vh,150px) 0}
+section[id],main[id]{scroll-margin-top:clamp(70px,9vh,100px)}
+.sec-head{max-width:880px;margin-bottom:clamp(38px,5vw,66px)}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:.71rem;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:24px}
+.kicker .sno{color:var(--orange);font-weight:600;letter-spacing:.1em;display:inline-flex;align-items:center;gap:14px}
+.kicker .sno::after{content:"";width:34px;height:1px;background:var(--orange);opacity:.7}
+h2{font-family:"Fraunces",serif;font-weight:600;line-height:1.06;letter-spacing:-.02em;color:#fff;
+  font-size:clamp(2rem,1.35rem + 2.8vw,3.6rem)}
+h2 em{font-style:italic;color:var(--orange);font-weight:500}
+.sec-lead{margin-top:20px;font-size:clamp(1.02rem,.98rem + .38vw,1.28rem);color:var(--ink-dim);line-height:1.62;max-width:780px}
+.subhead{font-family:"Fraunces",serif;font-weight:600;color:#fff;line-height:1.1;letter-spacing:-.02em}
+
+/* lignes masquées (reveal) */
+.lm{display:block;overflow:hidden;padding-bottom:.15em;margin-bottom:-.15em}
+.lm>span{display:block;will-change:transform}
+
+/* ---------- puces / chips ---------- */
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:.66rem;
+  letter-spacing:.13em;text-transform:uppercase;padding:6px 13px;border-radius:99px;border:1px solid;white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.chip.confirme{color:var(--confirme);border-color:rgba(255,122,26,.45);background:rgba(255,122,26,.08)}
+.chip.probable{color:var(--probable);border-color:rgba(217,161,78,.4);background:rgba(217,161,78,.07)}
+.chip.hypothese{color:var(--hypothese);border-color:rgba(156,138,106,.4);background:rgba(156,138,106,.06)}
+.chip.verrou{color:var(--ember);border-color:rgba(232,99,26,.5);background:rgba(232,99,26,.1)}
+.chip.norm{color:var(--ink-dim);border-color:var(--line);background:var(--surface-2)}
+.anchors{display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding-top:130px;padding-bottom:90px;overflow:hidden}
+.hero-inner{position:relative;z-index:2;max-width:1080px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-dim);margin-bottom:34px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.eyebrow b{color:var(--orange);font-weight:500}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange);
+  animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 6px rgba(255,122,26,.8)}50%{box-shadow:0 0 18px rgba(255,122,26,1)}}
+h1{font-family:"Fraunces",serif;font-weight:600;letter-spacing:-.028em;line-height:.98;
+  font-size:clamp(2.7rem,1.2rem + 7.4vw,7.2rem);color:#fff}
+h1 .it{font-style:italic;font-weight:400;color:var(--orange)}
+h1 .acc{display:block;color:var(--ink-dim);font-style:italic;font-weight:400;font-family:"Fraunces",serif;
+  font-size:clamp(1.15rem,.85rem + 1.7vw,2rem);letter-spacing:.001em;margin-top:.5em;line-height:1.25}
+h1 .acc b{color:var(--orange);font-weight:500}
+.hero .hook{margin-top:36px;font-size:clamp(1.05rem,.97rem + .62vw,1.5rem);color:var(--ink-dim);max-width:700px;line-height:1.55}
+.hero .hook b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:46px}
+.btn{font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.07em;text-decoration:none;
+  padding:17px 30px;border-radius:12px;display:inline-flex;align-items:center;gap:12px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s,color .3s,border-color .3s;
+  text-transform:uppercase;position:relative;overflow:hidden}
+.btn.primary{background:var(--orange);color:#140d05;font-weight:600}
+.btn.primary:hover{background:var(--orange-bright);box-shadow:0 18px 44px -14px rgba(255,122,26,.65)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink-dim)}
+.btn.ghost:hover{border-color:var(--orange);color:var(--ink)}
+.hero-verdict{margin-top:64px;padding:26px 32px;border-left:2px solid var(--orange);max-width:700px;
+  background:linear-gradient(100deg,rgba(255,122,26,.08),transparent 72%);border-radius:0 var(--r) var(--r) 0}
+.hero-verdict q{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.18rem,1rem + .85vw,1.62rem);
+  color:#fff;line-height:1.3;quotes:"«\00a0" "\00a0»"}
+.hero-verdict .src{display:block;margin-top:13px;font-family:"IBM Plex Mono",monospace;font-size:.69rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.scrollcue{position:absolute;bottom:30px;left:clamp(20px,5vw,52px);z-index:2;display:flex;align-items:center;gap:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-mute)}
+.scrollcue .ln{width:52px;height:1px;background:var(--line);position:relative;overflow:hidden}
+.scrollcue .ln::after{content:"";position:absolute;inset:0;width:40%;background:var(--orange);animation:slide 2.4s var(--ease) infinite}
+@keyframes slide{0%{transform:translateX(-120%)}100%{transform:translateX(320%)}}
+.hero .coord{position:absolute;right:clamp(20px,5vw,52px);bottom:30px;z-index:2;text-align:right;
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.18em;color:var(--ink-mute);
+  text-transform:uppercase;line-height:2}
+
+/* ---------- marquee ---------- */
+.marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  overflow:hidden;padding:22px 0;background:var(--bg-2);position:relative;z-index:2}
+.marquee .track{display:flex;gap:0;width:max-content;will-change:transform}
+.marquee .seq{display:flex;align-items:center;gap:54px;padding-right:54px;white-space:nowrap;
+  font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.1rem,1rem + 1vw,1.7rem);color:var(--ink-mute)}
+.marquee .seq b{color:var(--orange);font-weight:500}
+.marquee .seq .tau{font-size:1.4em;color:var(--orange);font-style:italic}
+
+/* ---------- métriques ---------- */
+.metrics{border-bottom:1px solid var(--line-soft);background:var(--bg-2);position:relative;z-index:2}
+.metrics .wrap{display:grid;grid-template-columns:repeat(5,1fr);padding-left:0;padding-right:0}
+.metric{padding:40px clamp(14px,2.2vw,30px);border-right:1px solid var(--line-soft);position:relative;overflow:hidden}
+.metric:last-child{border-right:none}
+.metric::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--orange);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.metric:hover::after{transform:scaleX(1)}
+.metric .n{font-family:"Fraunces",serif;font-size:clamp(1.7rem,1.1rem + 1.9vw,2.8rem);color:var(--orange);
+  font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.metric .l{margin-top:12px;font-size:.86rem;color:var(--ink-dim);line-height:1.45}
+@media(max-width:860px){.metrics .wrap{grid-template-columns:repeat(2,1fr)}.metric{border-bottom:1px solid var(--line-soft)}.metric:nth-child(2n){border-right:none}}
+@media(max-width:460px){.metrics .wrap{grid-template-columns:1fr}.metric{border-right:none}}
+
+/* ---------- cartes ---------- */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:980px){.g3,.g2{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g4{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:34px 30px;
+  position:relative;overflow:hidden;transition:border-color .4s var(--ease)}
+.card .glow{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,122,26,.09),transparent 65%)}
+.card:hover .glow{opacity:1}
+.card::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;
+  background:linear-gradient(90deg,var(--orange),var(--orange-bright));transition:width .5s var(--ease)}
+.card:hover{border-color:rgba(255,122,26,.42)}
+.card:hover::before{width:100%}
+.card .idx{font-family:"IBM Plex Mono",monospace;font-size:.71rem;letter-spacing:.2em;color:var(--orange);text-transform:uppercase}
+.card h3{font-family:"Fraunces",serif;font-size:1.45rem;color:#fff;margin:18px 0 6px;line-height:1.2;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:600}
+.card h3 .arr{color:var(--orange);font-style:italic;font-weight:400}
+.card p{font-size:.97rem;color:var(--ink-dim);margin-bottom:0}
+.card .chip{margin-top:22px;white-space:normal;line-height:1.5;max-width:100%}
+.card .bignum{position:absolute;right:-12px;bottom:-34px;font-family:"Fraunces",serif;font-style:italic;
+  font-size:7.5rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,122,26,.14);
+  pointer-events:none;user-select:none;transition:-webkit-text-stroke-color .4s}
+.card:hover .bignum{-webkit-text-stroke-color:rgba(255,122,26,.3)}
+
+/* ---------- opérateur (pinned) ---------- */
+#operateur{padding:0}
+.op-stage{min-height:100svh;display:flex;align-items:center;overflow:hidden;position:relative}
+.op-inner{width:100%;position:relative;z-index:2}
+.op-words{display:flex;align-items:baseline;justify-content:center;gap:clamp(16px,4vw,44px);
+  font-family:"Fraunces",serif;font-weight:600;letter-spacing:-.02em;line-height:1;
+  font-size:clamp(2.1rem,1rem + 6.4vw,6.4rem);color:#fff;flex-wrap:nowrap;white-space:nowrap}
+.op-words .w-a{display:inline-block}
+.op-words .w-b{display:inline-block;color:var(--orange);font-style:italic;font-weight:500;
+  filter:blur(14px);opacity:.18}
+.op-arrow{position:relative;width:clamp(48px,9vw,150px);height:2px;background:var(--line);align-self:center;overflow:visible}
+.op-arrow i{position:absolute;inset:0;background:linear-gradient(90deg,var(--orange-deep),var(--orange));
+  transform:scaleX(0);transform-origin:left}
+.op-arrow::after{content:"";position:absolute;right:-2px;top:50%;width:10px;height:10px;border-top:2px solid var(--orange);
+  border-right:2px solid var(--orange);transform:translateY(-50%) rotate(45deg);opacity:0;transition:opacity .3s}
+.op-stage.armed .op-arrow::after{opacity:1}
+.op-sub{text-align:center;margin-top:clamp(28px,5vh,52px);font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim)}
+.op-sub b{color:var(--orange);font-weight:500}
+.op-copy{max-width:680px;margin:clamp(30px,5vh,56px) auto 0;text-align:center;color:var(--ink-dim);
+  font-size:clamp(1rem,.95rem + .4vw,1.22rem);line-height:1.66}
+.op-copy strong{color:#fff}
+.op-tick{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center;gap:8px;z-index:2}
+.op-tick i{width:34px;height:2px;background:var(--line);overflow:hidden;position:relative;border-radius:2px}
+.op-tick i b{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:left;display:block}
+
+/* ---------- verrou (citation plein écran) ---------- */
+.verrou-stage{min-height:92svh;display:flex;align-items:center;position:relative;overflow:hidden}
+.verrou-stage .vq{font-family:"Fraunces",serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.7rem,1rem + 4vw,4.3rem);line-height:1.18;color:#fff;max-width:1060px;letter-spacing:-.015em}
+.verrou-stage .vq .wd{display:inline-block;opacity:.1;will-change:opacity}
+.verrou-stage .vq .hl{color:var(--orange)}
+.verrou-note{margin-top:42px;max-width:780px;color:var(--ink-dim)}
+.verrou-note strong{color:var(--orange-bright)}
+.verrou-stage .gq{position:absolute;top:-6%;right:-2%;font-family:"Fraunces",serif;font-style:italic;
+  font-size:30rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,122,26,.07);
+  pointer-events:none;user-select:none}
+
+/* ---------- parties (les 7 chapitres · grille scannable) ---------- */
+.parts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,26px)}
+.parts-grid .panel{width:auto}
+.panel.capstone{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap;gap:clamp(20px,3vw,44px)}
+.panel.capstone .pno{margin:0}
+.panel.capstone .cap-body{flex:1;min-width:280px}
+.panel.capstone h3{margin:0 0 8px}
+.panel.capstone p{flex:initial;max-width:78ch}
+.panel.capstone .pmeta{margin:0;flex:none}
+@media(max-width:980px){.parts-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.parts-grid{grid-template-columns:1fr}.panel.capstone{flex-direction:column;align-items:flex-start;gap:0}}
+.h-pin{overflow:hidden}
+.h-track{display:flex;gap:clamp(18px,2.5vw,30px);padding:0 clamp(20px,5vw,52px);width:max-content;align-items:stretch}
+.panel{width:clamp(300px,42vw,560px);flex:none;background:var(--surface);border:1px solid var(--line-soft);
+  border-radius:var(--r);padding:clamp(28px,3vw,44px);position:relative;overflow:hidden;display:flex;
+  flex-direction:column;text-decoration:none;transition:border-color .4s,background .4s}
+.panel:hover{border-color:rgba(255,122,26,.45);background:var(--surface-2)}
+.panel .pno{font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:clamp(4rem,7vw,7rem);
+  line-height:.9;color:transparent;-webkit-text-stroke:1.5px rgba(255,122,26,.5);transition:color .45s var(--ease)}
+.panel:hover .pno{color:var(--orange);-webkit-text-stroke-color:var(--orange)}
+.panel h3{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.25rem,1.5vw,1.6rem);color:#fff;
+  margin:26px 0 12px;line-height:1.22}
+.panel p{font-size:.96rem;color:var(--ink-dim);margin:0;flex:1}
+.panel .pmeta{margin-top:28px;display:flex;align-items:center;justify-content:space-between;
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
+.panel .pmeta b{color:var(--orange);font-size:.95rem;letter-spacing:.04em}
+.panel .pmeta .go{color:var(--orange);opacity:0;transform:translateX(-8px);transition:.35s var(--ease)}
+.panel:hover .pmeta .go{opacity:1;transform:none}
+.panel::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;
+  background:linear-gradient(90deg,var(--orange),var(--orange-bright));transform:scaleX(0);transform-origin:left;
+  transition:transform .5s var(--ease)}
+.panel:hover::after{transform:scaleX(1)}
+.h-foot{display:flex;align-items:center;gap:16px;margin-top:34px;padding-bottom:clamp(80px,12vh,150px)}
+.h-bar{flex:1;height:1px;background:var(--line);position:relative}
+.h-bar i{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:left}
+.h-pct{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.2em;color:var(--ink-mute);min-width:88px;text-align:right}
+@media(max-width:899px){
+  .h-track{flex-direction:column;width:auto;padding:0}
+  .panel{width:100%}
+  .h-foot{display:none}
+}
+
+/* ---------- tensions ---------- */
+.tension{padding:30px 0;border-top:1px solid var(--line-soft);display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:baseline;
+  position:relative;transition:padding-left .35s var(--ease)}
+.tension:hover{padding-left:14px}
+.tension::before{content:"";position:absolute;left:0;top:0;width:0;height:1px;background:var(--orange);transition:width .5s var(--ease)}
+.tension:hover::before{width:100%}
+.tension:first-of-type{border-top:none}
+.tension .t-n{font-family:"IBM Plex Mono",monospace;font-size:.71rem;letter-spacing:.2em;color:var(--orange);
+  text-transform:uppercase;white-space:nowrap}
+.tension h3{font-family:"Fraunces",serif;font-size:1.35rem;color:#fff;margin-bottom:7px;line-height:1.25;font-weight:600}
+.tension p{font-size:.97rem;color:var(--ink-dim);margin:0}
+@media(max-width:680px){.tension{grid-template-columns:1fr;gap:8px}}
+
+/* ---------- callout ---------- */
+.callout{margin-top:8px;padding:46px clamp(28px,4.5vw,58px);border:1px dashed var(--line);border-radius:var(--r);
+  position:relative;overflow:hidden;
+  background:radial-gradient(120% 140% at 0% 0%,rgba(232,99,26,.1),transparent 60%),var(--bg-2)}
+.callout::before{content:"«";position:absolute;top:-.18em;right:.08em;font-family:"Fraunces",serif;font-style:italic;
+  font-size:15rem;line-height:1;color:rgba(255,122,26,.05);pointer-events:none}
+.callout q{position:relative;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.45rem,1.05rem + 1.9vw,2.5rem);
+  color:#fff;line-height:1.22;quotes:"«\00a0" "\00a0»";display:block;max-width:900px;font-weight:500}
+.callout p{position:relative;margin-top:22px;color:var(--ink-dim);max-width:800px}
+.callout strong{color:var(--orange-bright)}
+
+/* ---------- références ---------- */
+.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 34px}
+@media(max-width:680px){.refs{grid-template-columns:1fr}}
+.refs .r{display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--line-soft);transition:padding-left .3s var(--ease)}
+.refs .r:hover{padding-left:8px}
+.refs .r b{color:var(--orange-bright);font-family:"Fraunces",serif;font-style:italic;white-space:nowrap;font-size:1rem;font-weight:500}
+.refs .r span{color:var(--ink-dim);font-size:.93rem;line-height:1.5}
+
+/* ---------- bande opérateur / formule ---------- */
+.band{margin-top:6px;display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}
+@media(max-width:900px){.band{grid-template-columns:1fr;gap:26px}}
+.band p{color:var(--ink-dim)}
+.formula{font-family:"Fraunces",serif;font-style:italic;color:#fff;
+  background:linear-gradient(120deg,rgba(255,122,26,.1),rgba(255,122,26,.02));
+  border:1px solid rgba(255,122,26,.22);border-radius:var(--r);padding:34px 36px;position:relative;overflow:hidden}
+.formula .lab{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:.69rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--orange);display:block;margin-bottom:18px}
+.formula .big{display:block;font-size:1.55rem;line-height:1.3;margin-bottom:15px}
+.formula small{font-style:normal;font-family:"Hanken Grotesk",sans-serif;font-size:.92rem;color:var(--ink-dim);line-height:1.55;display:block}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line-soft);background:var(--bg-2);position:relative;z-index:2;overflow:hidden}
+.foot{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;padding:72px 0 60px;position:relative;z-index:2}
+@media(max-width:760px){.foot{grid-template-columns:1fr;gap:30px}}
+.foot .ftau{font-family:"Fraunces",serif;font-style:italic;font-size:4rem;color:var(--orange);line-height:1}
+.foot p{color:var(--ink-dim);font-size:.95rem;margin-top:16px;max-width:470px}
+.foot .links{display:flex;flex-direction:column;gap:12px;font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.04em}
+.foot .links a{color:var(--ink-dim);text-decoration:none;display:inline-flex;gap:10px;transition:color .25s,gap .25s var(--ease)}
+.foot .links a:hover{color:var(--orange);gap:15px}
+.foot .meta{margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:.71rem;letter-spacing:.06em;color:var(--ink-mute);line-height:2}
+.foot-giant{position:relative;z-index:1;font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+  font-size:clamp(3rem,12vw,11rem);line-height:.95;color:transparent;-webkit-text-stroke:1px rgba(255,122,26,.12);
+  white-space:nowrap;padding:0 0 40px;user-select:none;pointer-events:none}
+.back-top{position:fixed;right:24px;bottom:24px;z-index:100;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--line);color:var(--orange);text-decoration:none;opacity:0;
+  transform:translateY(12px);transition:.35s var(--ease);pointer-events:none}
+.back-top.show{opacity:1;transform:none;pointer-events:auto}
+.back-top:hover{background:var(--orange);color:#140d05;border-color:var(--orange)}
+
+/* ---------- mouvement réduit ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  #gl,#cursor,#cursor-ring{display:none!important}
+  #loader,#veil-a,#veil-b{display:none!important}
+}
+
+/* ---------- impression ---------- */
+@media print{
+  #gl,#loader,#veil-a,#veil-b,#cursor,#cursor-ring,#progress,header.nav,#menu,.burger,.rail,.nav-here,
+  .marquee,.scrollcue,.coord,.back-top,.foot-giant,.bignum,.gq,.op-tick,.h-foot,.skip{display:none!important}
+  html,body{background:#fff!important;color:#1a1a1a!important}
+  body::before,body::after{display:none!important}
+  *{color:#1a1a1a!important;text-shadow:none!important;box-shadow:none!important}
+  a{color:#9a4a06!important;text-decoration:underline}
+  h1,h2,.subhead,.callout q,.verrou-stage .vq,.op-words .w-a,.op-words .w-b{color:#000!important}
+  h1 .it,h2 em,.card h3 .arr,.metric .n,.kicker .sno,.idx,.chip,.formula .lab,.panel .pno{color:#9a4a06!important}
+  .op-words .w-b{filter:none!important;opacity:1!important}
+  /* annuler les états initiaux des animations pour que tout soit lisible imprimé */
+  [data-rise],[data-stagger]>*,.lm>span,.verrou-stage .vq .wd{
+    opacity:1!important;visibility:visible!important;transform:none!important}
+  section{padding:22px 0!important;break-inside:avoid}
+  .wrap{max-width:none;padding:0}
+  .card,.panel,.formula,.callout,.hero-verdict{border:1px solid #ccc!important;background:#fff!important;break-inside:avoid}
+  .h-track{flex-direction:column!important;width:auto!important;transform:none!important;gap:14px}
+  .panel{width:auto!important}
+  .grid{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#top">Aller au contenu</a>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<!-- préloader -->
+<div id="loader" aria-hidden="true">
+  <div class="tau">&#964;</div>
+  <div class="bar"><i></i></div>
+  <div class="pct">000</div>
+  <div class="label">Interopérabilité agentique</div>
+</div>
+<div id="veil-a" aria-hidden="true"></div>
+<div id="veil-b" aria-hidden="true"></div>
+
+<!-- curseur -->
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"><span class="drag-label">Défiler</span></div>
+
+<div id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div style="display:flex;align-items:center;gap:22px;min-width:0">
+    <a class="brand" href="#top"><span class="tau">&#964;</span> <b>Interopérabilité agentique</b> <span class="thin">· Monographie</span></a>
+    <span class="nav-here" id="navHere" aria-hidden="true"><span class="nh-sep"></span><span class="nh-no">01</span><span class="nh-name">Proposition</span></span>
+  </div>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#proposition">Proposition</a>
+    <a href="#operateur">Réinstanciation</a>
+    <a href="#patrons">Patrons</a>
+    <a href="#protocoles">Protocoles</a>
+    <a href="#industrialisation">Industrialiser</a>
+    <a href="#secteur">Secteur</a>
+    <a href="#parties">Les 7 chapitres</a>
+    <a href="#ads">Annexe B</a>
+    <a href="#verdict">Verdict</a>
+    <a class="pdf" href="Monographie.pdf">PDF ↓</a>
+    <a class="pdf" href="Synthese%20Monographie.pdf">Synthèse ↓</a>
+    <a class="pdf" href="Veille%20Technologique.pdf">Veille ↓</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
+  <i id="progress-b" aria-hidden="true"></i>
+</header>
+
+<div id="menu" aria-hidden="true">
+  <a href="#proposition"><span class="no">01</span>Proposition</a>
+  <a href="#operateur"><span class="no">02</span>Réinstanciation</a>
+  <a href="#dimensions"><span class="no">03</span>Quatre formes</a>
+  <a href="#agent"><span class="no">04</span>IA agentique</a>
+  <a href="#patrons"><span class="no">05</span>Patrons</a>
+  <a href="#protocoles"><span class="no">06</span>Protocoles</a>
+  <a href="#industrialisation"><span class="no">07</span>Industrialiser</a>
+  <a href="#secteur"><span class="no">08</span>Secteur</a>
+  <a href="#souverainete"><span class="no">09</span>Prospective</a>
+  <a href="#parties"><span class="no">10</span>Les 7 chapitres</a>
+  <a href="#ads"><span class="no">B</span>Architecture de solution</a>
+  <a href="#methode"><span class="no">11</span>Méthode</a>
+  <a href="#verdict"><span class="no">12</span>Verdict</a>
+  <a href="Monographie.pdf"><span class="no">PDF</span>Monographie</a>
+  <a href="Synthese%20Monographie.pdf"><span class="no">PDF</span>Synthèse</a>
+  <a href="Veille%20Technologique.pdf"><span class="no">PDF</span>Veille technologique</a>
+</div>
+
+<nav class="rail" id="rail" aria-label="Repères de section">
+  <span class="rail-fill" id="railFill" aria-hidden="true"></span>
+  <a href="#top"><span class="rk">00</span><span class="rt"></span><span class="rl">Ouverture</span></a>
+  <a href="#proposition"><span class="rk">01</span><span class="rt"></span><span class="rl">Proposition</span></a>
+  <a href="#operateur"><span class="rk">02</span><span class="rt"></span><span class="rl">Réinstanciation</span></a>
+  <a href="#dimensions"><span class="rk">03</span><span class="rt"></span><span class="rl">Quatre formes</span></a>
+  <a href="#agent"><span class="rk">04</span><span class="rt"></span><span class="rl">IA agentique</span></a>
+  <a href="#patrons"><span class="rk">05</span><span class="rt"></span><span class="rl">Patrons</span></a>
+  <a href="#protocoles"><span class="rk">06</span><span class="rt"></span><span class="rl">Protocoles</span></a>
+  <a href="#industrialisation"><span class="rk">07</span><span class="rt"></span><span class="rl">Industrialiser</span></a>
+  <a href="#secteur"><span class="rk">08</span><span class="rt"></span><span class="rl">Secteur</span></a>
+  <a href="#souverainete"><span class="rk">09</span><span class="rt"></span><span class="rl">Prospective</span></a>
+  <a href="#parties"><span class="rk">10</span><span class="rt"></span><span class="rl">Les 7 chapitres</span></a>
+  <a href="#ads"><span class="rk">B</span><span class="rt"></span><span class="rl">Annexe B · ADS</span></a>
+  <a href="#methode"><span class="rk">11</span><span class="rt"></span><span class="rl">Méthode</span></a>
+  <a href="#verdict"><span class="rk">12</span><span class="rt"></span><span class="rl">Verdict</span></a>
+</nav>
+
+<main id="top" tabindex="-1">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" aria-label="Introduction">
+  <div class="wrap"><div class="hero-inner">
+    <div class="eyebrow" data-rise>
+      <span><span class="dot"></span>&nbsp;Monographie en science et génie informatique</span>
+      <b>2026</b><span>fr‑CA</span>
+    </div>
+    <h1 aria-label="Interopérabilité agentique d'entreprise — réinstancier l'intégration d'entreprise à l'ère des agents">
+      <span class="lm" aria-hidden="true"><span>Interopérabilité</span></span>
+      <span class="lm" aria-hidden="true"><span><span class="it">agentique</span></span></span>
+      <span class="lm" aria-hidden="true"><span>d'entreprise</span></span>
+      <span class="acc" aria-hidden="true"><span class="lm"><span><b>réinstancier</b> l'intégration d'entreprise à l'ère des <b>agents</b></span></span></span>
+    </h1>
+    <p class="hook" data-rise>Comment des systèmes conçus séparément — <b>hétérogènes, autonomes, distribués</b> — parviennent-ils
+      non seulement à échanger de l'information, mais à <b>l'utiliser mutuellement</b> de façon fiable et durable ?
+      À l'ère des agents, cette question ancienne de l'intégration d'entreprise se rejoue entre logiciels qui négocient, délèguent et transigent.</p>
+    <div class="hero-cta" data-rise>
+      <a class="btn primary" href="Monographie.pdf" data-magnetic>Télécharger la monographie (PDF) ↓</a>
+      <a class="btn primary" href="Synthese%20Monographie.pdf" data-magnetic>Télécharger la synthèse (PDF) ↓</a>
+      <a class="btn primary" href="Veille%20Technologique.pdf" data-magnetic>Télécharger la veille technologique (PDF) ↓</a>
+      <a class="btn ghost" href="#proposition" data-magnetic>Parcourir la monographie</a>
+    </div>
+    <div class="hero-verdict" data-rise>
+      <q>La couche agentique n'invente pas une nouvelle théorie de l'interopérabilité : elle réinstancie l'ancienne à un niveau d'abstraction supérieur.</q>
+      <span class="src">Conclusion</span>
+    </div>
+  </div></div>
+  <div class="scrollcue" aria-hidden="true"><span class="ln"></span>Défiler</div>
+  <div class="coord" aria-hidden="true">André‑Guy Bruneau, M. Sc. IT<br>horizon 2027–2032</div>
+</section>
+
+<!-- ======================= MARQUEE ======================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mq">
+    <div class="seq">
+      <span><b>découplage</b> · contrat · évolution</span><span class="tau">&#964;</span>
+      <span>hétérogénéité · autonomie · distribution</span><span class="tau">&#964;</span>
+      <span>découverte · sémantique · identité · <b>gouvernance</b></span><span class="tau">&#964;</span>
+      <span><b>autonomie graduée</b> sous contrôle de finalité</span><span class="tau">&#964;</span>
+      <span>PROGRAMMÉ · PROJETÉ · SPÉCULATIF</span><span class="tau">&#964;</span>
+    </div>
+    <div class="seq">
+      <span><b>découplage</b> · contrat · évolution</span><span class="tau">&#964;</span>
+      <span>hétérogénéité · autonomie · distribution</span><span class="tau">&#964;</span>
+      <span>découverte · sémantique · identité · <b>gouvernance</b></span><span class="tau">&#964;</span>
+      <span><b>autonomie graduée</b> sous contrôle de finalité</span><span class="tau">&#964;</span>
+      <span>PROGRAMMÉ · PROJETÉ · SPÉCULATIF</span><span class="tau">&#964;</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= MÉTRIQUES ======================= -->
+<div class="metrics" role="group" aria-label="Repères chiffrés de la monographie"><div class="wrap">
+  <div class="metric"><div class="n" data-count="7">0</div><div class="l">chapitres en spirale, du général au spécifique</div></div>
+  <div class="metric"><div class="n" data-count="569">0</div><div class="l">pages composées (rendu FESP), Annexe B comprise</div></div>
+  <div class="metric"><div class="n" data-count="3">0</div><div class="l">notions solidaires — découplage, contrat, évolution</div></div>
+  <div class="metric"><div class="n">2027–2032</div><div class="l">horizon prospectif du chapitre 7</div></div>
+  <div class="metric"><div class="n">juin 2026</div><div class="l">socle documentaire arrêté · vérification adverse des citations</div></div>
+</div></div>
+
+<!-- ======================= PROPOSITION ======================= -->
+<section id="proposition"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">01</span>La proposition fédératrice</div>
+    <h2><span class="lm"><span>Découplage, contrat,</span></span>
+        <span class="lm"><span><em>évolution</em></span></span></h2>
+    <p class="sec-lead" data-rise>L'interopérabilité durable — qu'elle relie des applications d'entreprise ou des agents d'IA — repose sur le même triptyque solidaire,
+      hérité de la décomposition modulaire et de la conception orientée contrat. Ce qui change d'un chapitre à l'autre n'est pas l'invariant, mais ses réalisations.</p>
+  </div>
+  <div class="grid g3" data-stagger>
+    <div class="card"><div class="glow"></div><div class="bignum">1</div>
+      <div class="idx">Découplage</div>
+      <h3>Réduire les <span class="arr">dépendances</span></h3>
+      <p>Réduction des dépendances mutuelles — technologie, format, localisation, temporalité, modèle d'interaction. Sa racine : le masquage de l'information (Parnas, 1972).</p>
+      <span class="chip confirme">condition de l'échelle</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">2</div>
+      <div class="idx">Contrat</div>
+      <h3>Rendre le découplage <span class="arr">opérable</span></h3>
+      <p>L'interface explicite — syntaxique, sémantique ou comportementale — sur laquelle deux parties s'accordent : description d'API, schéma de message, schéma d'outil, carte d'agent, politique d'autorisation.</p>
+      <span class="chip confirme">l'interface explicite</span></div>
+    <div class="card"><div class="glow"></div><div class="bignum">3</div>
+      <div class="idx">Évolution</div>
+      <h3>Changer <span class="arr">sans rompre</span></h3>
+      <p>La dimension temporelle : un contrat doit pouvoir changer sans briser les consommateurs existants — compatibilité ascendante et descendante, versionnement, lecteurs tolérants.</p>
+      <span class="chip confirme">la dimension temporelle</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= OPÉRATEUR (pinned) ======================= -->
+<section id="operateur" aria-label="La réinstanciation sous contrainte">
+  <div class="op-stage" id="op-stage">
+    <div class="op-inner"><div class="wrap">
+      <div class="op-sub" style="margin-top:0;margin-bottom:clamp(28px,5vh,52px)">
+        <span class="sno" style="color:var(--orange)">02</span> &nbsp;Le résultat directeur · <b>la réinstanciation sous contrainte</b>
+      </div>
+      <div class="op-words" aria-label="intégration d'entreprise vers couche agentique">
+        <span class="w-a" id="op-a">intégration</span>
+        <span class="op-arrow" aria-hidden="true"><i id="op-line"></i></span>
+        <span class="w-b" id="op-b">Agentique</span>
+      </div>
+      <p class="op-copy" data-rise>Les mêmes tensions fondamentales — <strong>hétérogénéité, autonomie, distribution</strong> — resurgissent sous des mécanismes nouveaux.
+        La couche agentique ne crée pas une nouvelle théorie de l'interopérabilité : elle <strong>réinstancie l'ancienne</strong> à un niveau d'abstraction supérieur.
+        Reconnaître l'invariant sous la nouveauté, c'est éviter de reconstruire à grands frais ce que des décennies d'intégration
+        avaient déjà appris à découpler, contractualiser et faire évoluer.</p>
+    </div></div>
+    <div class="op-tick" aria-hidden="true"><i><b id="op-t1"></b></i><i><b id="op-t2"></b></i><i><b id="op-t3"></b></i></div>
+  </div>
+</section>
+
+<!-- ======================= DIMENSIONS ======================= -->
+<section id="dimensions"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">03</span>Quatre formes</div>
+    <h2><span class="lm"><span>À la couche agentique,</span></span>
+        <span class="lm"><span>l'invariant prend <em>quatre formes</em></span></span></h2>
+    <p class="sec-lead" data-rise>Éprouvé du niveau le plus technique jusqu'au niveau agentique, le contrat s'y décline en quatre exigences concrètes —
+      celles selon lesquelles le chapitre 3 lit les protocoles émergents.</p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Découverte</div>
+      <h3>Se trouver</h3>
+      <p>Registres, nommage et cartes d'agents : des acteurs autonomes se découvrent sans intégration point‑à‑point préalable.</p>
+      <span class="chip confirme">registres &amp; nommage</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Sémantique partagée</div>
+      <h3>S'accorder sur le sens</h3>
+      <p>De l'accord‑de‑protocole à la compréhension : un message bien formé ne garantit pas l'accord sur l'intention qu'il porte.</p>
+      <span class="chip verrou">le verrou de recherche</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Identité &amp; autorité ⚠</div>
+      <h3>Autoriser, déléguer</h3>
+      <p>Authentification, autorisation interopérable et délégation de tâche à travers la frontière organisationnelle — le front le moins stabilisé à juin 2026.</p>
+      <span class="chip verrou">identité non humaine</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Gouvernance des frontières</div>
+      <h3>Tenir les bords</h3>
+      <p>Sécurité, conformité et traçabilité là où chaque arête du graphe d'interaction devient une frontière de confiance.</p>
+      <span class="chip confirme">sécurité d'écosystème</span></div>
+  </div>
+  <div class="band" data-rise style="margin-top:46px">
+    <div>
+      <p>Un même invariant relie les sept chapitres : du transport d'octets jusqu'à la négociation entre agents, le <strong>contrat se réincarne</strong> —
+        description d'interface, schéma de message, schéma d'outil, carte d'agent, politique d'autorisation, puis élément d'architecture formalisé.</p>
+    </div>
+    <div class="formula">
+      <span class="lab">Le fil conducteur</span>
+      <span class="big">découplage &nbsp;<span style="color:var(--orange)">&#8669;</span>&nbsp; contrat &nbsp;<span style="color:var(--orange)">&#8669;</span>&nbsp; évolution</span>
+      <small>Ce qui change d'un chapitre à l'autre, ce n'est pas l'invariant — ce sont ses réalisations.</small>
+    </div>
+  </div>
+</div></section>
+
+<!-- ======================= AGENT PROBABILISTE ======================= -->
+<section id="agent"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">04</span>Chapitre 2 · IA agentique</div>
+    <h2><span class="lm"><span>L'agent, un système</span></span>
+        <span class="lm"><span>d'intégration <em>à part entière</em></span></span></h2>
+    <p class="sec-lead" data-rise>L'agent fondé sur un grand modèle de langage consomme des outils, mobilise une mémoire, se coordonne avec d'autres agents.
+      Ses modes de défaillance propres exigent une <em>discipline d'ingénierie</em>, non une confiance aveugle dans le modèle.</p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Boucle agentique</div>
+      <h3>Une boucle, pas une intelligence</h3>
+      <p>Perception, raisonnement, planification, action puis observation : une boucle de contrôle outillée, qui itère jusqu'à un critère d'arrêt — non une intelligence.</p>
+      <span class="chip confirme">objet d'ingénierie</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Outils &amp; invocation</div>
+      <h3>L'outil comme contrat</h3>
+      <p>L'accès aux outils (MCP) est une discipline d'interface : granularité épousant une intention, noms univoques, idempotence. Quand le catalogue grossit, les outils pertinents sont sélectionnés par récupération sémantique.</p>
+      <span class="chip norm">contrat lisible par le modèle</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Mémoire, contexte &amp; RAG</div>
+      <h3>Il récupère plus qu'il ne se souvient</h3>
+      <p>La fiabilité en production se joue sur la politique de gestion du contexte : fiabilité, coût et latence dépendent de la même variable — on ne les optimise pas séparément.</p>
+      <span class="chip norm">ancrage informationnel</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Sûreté &amp; défaillances</div>
+      <h3>Quand la donnée devient instruction</h3>
+      <p>Injection par la donnée devenue instruction, dérive, modes d'échec propres aux collectifs d'agents : la menace est propre au substrat, pas au seul modèle. Sécurité, sûreté et alignement forment une discipline à part.</p>
+      <span class="chip verrou">sécurité du substrat</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= PATRONS ======================= -->
+<section id="patrons"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">05</span>Chapitre 1 · le socle d'intégration</div>
+    <h2><span class="lm"><span>Les patrons éprouvés,</span></span>
+        <span class="lm"><span><em>réinterprétés</em></span></span></h2>
+    <p class="sec-lead" data-rise>L'agentivité n'abolit pas les patrons d'intégration : leur zone de validité, jadis implicite,
+      doit être ré‑explicitée. L'invariant demeure ; c'est le mécanisme qui migre — et l'idempotence se gagne désormais
+      au niveau de l'<em>effet</em>, non du comportement.</p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Idempotence</div>
+      <h3>Outbox transactionnel</h3>
+      <p>Atomicité entre la mutation d'état et la publication d'événement : exactement un effet par mutation validée, via une clé d'idempotence stable scellée hors du contrôle de l'agent.</p>
+      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Compensation</div>
+      <h3>Saga</h3>
+      <p>La transaction longue se décompose en étapes compensables : à défaut d'atomicité, un effet net correct reconstruit par compensation sémantique.</p>
+      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Médiation</div>
+      <h3>Format pivot &amp; médiateur</h3>
+      <p>Un intermédiaire et un format pivot ramènent la complexité d'intégration de N×N à un ordre linéaire — la dette d'intégration résorbée par découplage (Hohpe &amp; Woolf, 2003).</p>
+      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Modernisation</div>
+      <h3>Strangler Fig <span style="font-style:italic;color:var(--ink-mute);font-size:.62em;letter-spacing:0">Newman, 2020</span></h3>
+      <p>Une façade route l'ancien et le nouveau jusqu'à vider l'hérité de ses responsabilités. Vertu : la réversibilité étape par étape ; risque : la « façade éternelle ».</p>
+      <span class="chip norm">invariant conservé · mécanisme migré</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= PROTOCOLES ======================= -->
+<section id="protocoles"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">06</span>L'écosystème émergent</div>
+    <h2><span class="lm"><span>Trois protocoles, lus</span></span>
+        <span class="lm"><span>à la lumière <em>du cadre</em></span></span></h2>
+    <p class="sec-lead" data-rise>Complémentaires, non rivaux — relier un agent à ses outils <em>versus</em> relier des agents entre eux.
+      À juin 2026, la connectivité est largement résolue ; l'identité et l'autorité déléguées restent le front le moins stabilisé.</p>
+  </div>
+  <div class="grid g3" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">MCP · Anthropic</div>
+      <h3>Model Context Protocol</h3>
+      <p>Intégration <em>verticale</em> agent ↔ outils et données. Révision courante <strong>2025‑11‑25</strong> ;
+        une Release Candidate <strong>2026‑07‑28</strong> existe, marquée explicitement <em>non finale</em>.</p>
+      <span class="chip confirme">rév. 2025‑11‑25</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">A2A · Linux Foundation</div>
+      <h3>Agent2Agent</h3>
+      <p>Axe <em>horizontal</em> agent ↔ agent. Version <strong>1.0</strong> stabilisée début 2026 : Agent Card signée (JWS/JCS), modèle de Task, transports HTTP / JSON‑RPC / gRPC. Plus de 150 organisations soutiennent le protocole.</p>
+      <span class="chip confirme">v1.0 · LF</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">ANP · W3C CG</div>
+      <h3>Agent Network Protocol</h3>
+      <p>« Le HTTP de l'internet agentique » : décentralisé et pair‑à‑pair, identifiants W3C (<code>did:wba</code>), sémantique JSON‑LD/schema.org et négociation méta‑protocole. Tributaire des DID, maturité visée vers 2027.</p>
+      <span class="chip probable">décentralisé · DID</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= VERROU ======================= -->
+<section aria-label="Le verrou">
+  <div class="verrou-stage"><div class="gq" aria-hidden="true">&#964;</div><div class="wrap">
+    <blockquote class="vq" id="vq">«&nbsp;L'accord sur la structure d'un message ne garantit pas l'accord sur <span class="hl">l'intention</span> qu'il <span class="hl">porte</span>.&nbsp;»</blockquote>
+    <div class="verrou-note" data-rise>
+      <p>C'est le verrou de recherche central de l'horizon : faire remonter l'alignement d'intentions du niveau applicatif — où une invite est interprétée
+      par un grand modèle — vers le <strong>protocole lui‑même</strong>, soit le passage d'un contrat <em>syntaxique</em> à un contrat <em>sémantique</em>.
+      La proposition de l'ouvrage est nette : ce verrou restera largement ouvert au‑delà de 2030.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ======================= INDUSTRIALISATION ======================= -->
+<section id="industrialisation"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">07</span>Chapitre 4 · à l'échelle de l'entreprise</div>
+    <h2><span class="lm"><span>Industrialiser sous</span></span>
+        <span class="lm"><span>gouvernance, <em>non décréter</em></span></span></h2>
+    <p class="sec-lead" data-rise>À l'échelle de l'entreprise, l'enjeu décisif devient le <em>plan de contrôle</em> :
+      intégration de l'héritage applicatif, identités non humaines, gouvernance et conformité conditionnent toute mise en production.</p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Plan de contrôle</div>
+      <h3>Placer, ne pas subir</h3>
+      <p>L'acte fondateur n'est pas le choix d'une plateforme : c'est le placement explicite d'un plan de contrôle entre les agents et les systèmes critiques, et l'intégration de l'héritage applicatif au tissu existant.</p>
+      <span class="chip norm">Chapitre 4 · architecture de référence</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Identités non humaines</div>
+      <h3>La sûreté ne se compose pas</h3>
+      <p>Un agent sûr et un outil sûr, composés, ne donnent pas un système sûr : la frontière de confiance se déplace sur chaque arête. Le parc d'agents fait par ailleurs exploser les identités non humaines à authentifier, autoriser et révoquer.</p>
+      <span class="chip verrou">sécurité d'écosystème</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Observabilité &amp; FinOps</div>
+      <h3>Unitaire et probabiliste</h3>
+      <p>L'économie agentique se rapporte à l'inférence et son rendement reste conditionnel : observabilité, fiabilité et économie unitaire (FinOps) se mesurent en production. L'imputabilité, elle, ne se délègue jamais à un agent.</p>
+      <span class="chip norm">fiabilité en production</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Gouvernance &amp; conformité</div>
+      <h3>La règle en amont</h3>
+      <p>AI Act, ISO 42001, RGPD et exigences sectorielles s'imposent en amont de l'architecture ; le plan de contrôle est la réponse : un patron, non un produit, qui rend la conformité traçable et la décision déléguée auditable.</p>
+      <span class="chip verrou">gouvernance &amp; conformité</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= SECTEUR ======================= -->
+<section id="secteur"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">08</span>L'épreuve sectorielle · services financiers</div>
+    <h2><span class="lm"><span>Là où la barre de justification</span></span>
+        <span class="lm"><span>est, <em>par construction, plus haute</em></span></span></h2>
+    <p class="sec-lead" data-rise>Instancier le cadre sur un secteur régulé ne l'assouplit jamais : la conformité y devient une
+      <em>donnée d'architecture amont</em>. Le mécanisme des invariants est transverse au domaine ; leur calibrage, lui, est sectoriel.</p>
+  </div>
+  <div class="grid g2" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Le patron sectoriel</div>
+      <h3>Autonomie graduée sous contrôle de finalité</h3>
+      <p>Il articule le degré d'autonomie de l'agent, la criticité de l'opération et l'exigence réglementaire. L'agentivité n'y est pas interdite — elle doit franchir une barre de justification que le régime fixe d'avance.</p></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Risque systémique</div>
+      <h3>La concentration, angle mort</h3>
+      <p>Une dépendance partagée à un même fournisseur de modèle transforme une défaillance locale en défaillance corrélée — un risque que les régimes reconnaissent sans le résoudre pour la délégation dynamique.</p></div>
+  </div>
+  <div class="anchors" data-rise style="margin-top:26px">
+    <span class="chip confirme">Bancaire</span>
+    <span class="chip confirme">Assurance de dommages (IARD)</span>
+    <span class="chip confirme">Assurance de personnes</span>
+    <span class="chip confirme">Patrimoine &amp; actifs</span>
+    <span class="chip confirme">Services TI financiers</span>
+  </div>
+  <div class="anchors" data-rise style="margin-top:14px">
+    <span class="chip norm">EU AI Act · Annexe III</span>
+    <span class="chip norm">DORA</span>
+    <span class="chip norm">OSFI E‑23</span>
+    <span class="chip norm">AMF (Québec)</span>
+    <span class="chip norm">NAIC Model Bulletin</span>
+    <span class="chip norm">SR 26-2 / OCC (É.-U.)</span>
+    <span class="chip norm">FSB · risque systémique</span>
+  </div>
+</div></section>
+
+<!-- ======================= SOUVERAINETÉ ======================= -->
+<section id="souverainete"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">09</span>Chapitre 7 · le capstone prospectif</div>
+    <h2><span class="lm"><span>Projeter l'arc,</span></span>
+        <span class="lm"><span>sans céder à la <em>prédiction</em></span></span></h2>
+    <p class="sec-lead" data-rise>Le chapitre 7 projette l'arc des six chapitres sur 2027–2032 en triant chaque énoncé sur l'avenir :
+      <strong>PROGRAMMÉ</strong> (engagement daté), <strong>PROJETÉ</strong> (prévision millésimée d'analyste), <strong>SPÉCULATIF</strong> (pari de recherche).</p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">PROGRAMMÉ</div>
+      <h3>La grappe d'échéances de 2027</h3>
+      <p>Des dates fermes se concentrent : AMLR (10 juil. 2027), Data Act (12 jan. 2027), lignes directrices OSFI E‑23 et IA de l'AMF (1ᵉʳ mai 2027) ; l'annexe III de l'AI Act reportée au 2 déc. 2027 (Digital Omnibus adopté le 29 juin 2026, publication au JOUE à suivre).</p>
+      <span class="chip confirme">engagements datés</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">L'horloge dure</div>
+      <h3>La migration post‑quantique</h3>
+      <p>Le jalon le plus structurant : le calendrier NIST prévoit la dépréciation des algorithmes à clé publique classiques en 2030, leur interdiction en 2035 (NIST IR 8547, projet public initial). Il surplombe toute la confiance agentique.</p>
+      <span class="chip probable">2030 → 2035</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Identité, par couche</div>
+      <h3>Une gouvernance qui bifurque</h3>
+      <p>La gouvernance se répartit entre forums — AAIF, FIDO, W3C, IETF (WIMSE), DIF. DID v1.1 en Candidate Recommendation ; Verifiable Credentials 2.1 visé en 2027. Pré‑standardisation, statut mixte.</p>
+      <span class="chip probable">pré‑standardisation</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">SPÉCULATIF</div>
+      <h3>Souveraineté &amp; risque systémique</h3>
+      <p>Concentration sur un petit nombre de modèles de fondation, souveraineté des données, Splinternet agentique : des paris de recherche, présentés au statut explicitement spéculatif — jamais comme acquis.</p>
+      <span class="chip hypothese">paris de recherche</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= LES 7 CHAPITRES ======================= -->
+<section id="parties"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">10</span>L'arc en sept temps</div>
+    <h2><span class="lm"><span>Les sept chapitres</span></span>
+        <span class="lm"><span><em>de la monographie</em></span></span></h2>
+    <p class="sec-lead" data-rise>Chaque chapitre suppose les précédents : les chapitres amont établissent les invariants que les chapitres aval mobilisent. Chaque vignette ouvre la source du chapitre dans le dépôt.</p>
+  </div>
+  <div class="parts-grid" data-stagger>
+    <a class="panel" href="Chapitres/Chapitre%201%20-%20Interoperabilite.md">
+      <div class="pno">I</div>
+      <h3>Interopérabilité des systèmes d'information</h3>
+      <p>Fondements et intégration d'entreprise. Le régime déterministe : patrimoine applicatif sédimenté, contrats figés, patrons d'intégration — l'état de référence sur lequel agiront les ruptures.</p>
+      <div class="pmeta"><span><b>Ch. 1</b> · Fondements</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="Chapitres/Chapitre%202%20-%20IA%20Agentique.md">
+      <div class="pno">II</div>
+      <h3>IA agentique</h3>
+      <p>Ingénierie des systèmes agentiques fondés sur les grands modèles de langage : l'agent comme boucle de contrôle probabiliste, sa mémoire, ses outils, ses garanties et sa surface d'attaque.</p>
+      <div class="pmeta"><span><b>Ch. 2</b> · Exécutant probabiliste</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="Chapitres/Chapitre%203%20-%20Interoperabilite%20Agentique.md">
+      <div class="pno">III</div>
+      <h3>Interopérabilité agentique</h3>
+      <p>La convergence des deux mondes : MCP, A2A, ANP. Découverte, sémantique, identité, commerce et sécurité des frontières — lus à la lumière du fil conducteur : découplage, contrat, évolution.</p>
+      <div class="pmeta"><span><b>Ch. 3</b> · Protocoles</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="Chapitres/Chapitre%204%20-%20Interoperabilite%20Agentique%20en%20Entreprise.md">
+      <div class="pno">IV</div>
+      <h3>… en entreprise</h3>
+      <p>Déploiement à l'échelle : héritage applicatif, identités non humaines, gouvernance et conformité. Industrialiser l'agentivité gouvernée sur le substrat hérité.</p>
+      <div class="pmeta"><span><b>Ch. 4</b> · Industrialiser</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="Chapitres/Chapitre%205%20-%20Interoperabilite%20Agentique%20dans%20le%20domaine%20financier.md">
+      <div class="pno">V</div>
+      <h3>… dans le domaine financier</h3>
+      <p>Cinq sous-domaines régulés, sous le patron « autonomie graduée sous contrôle de finalité ». L'épreuve sectorielle, où la barre de justification est, par construction, plus haute.</p>
+      <div class="pmeta"><span><b>Ch. 5</b> · Épreuve sectorielle</span><span class="go">Lire →</span></div></a>
+    <a class="panel" href="Chapitres/Chapitre%206%20-%20Blueprint%20ArchiMate.md">
+      <div class="pno">VI</div>
+      <h3>Blueprint d'architecture ArchiMate</h3>
+      <p>Formalisation des chapitres 1 à 5 en un blueprint d'architecture d'entreprise ArchiMate — la synthèse architecturale du cadre.</p>
+      <div class="pmeta"><span><b>Ch. 6</b> · Blueprint</span><span class="go">Lire →</span></div></a>
+    <a class="panel capstone" href="Chapitres/Chapitre%207%20-%20Interoperabilite%20Agentique%20horizon%202027-2032.md">
+      <div class="pno">VII</div>
+      <div class="cap-body">
+        <h3>Horizon 2027–2032</h3>
+        <p>Chapitre prospectif et capstone : projette l'arc des six chapitres et trie chaque énoncé sur l'avenir entre PROGRAMMÉ, PROJETÉ et SPÉCULATIF.</p>
+      </div>
+      <div class="pmeta"><span><b>Ch. 7</b> · Prospectif</span><span class="go">Lire →</span></div></a>
+  </div>
+</div></section>
+
+<!-- ======================= ANNEXE B · ADS ======================= -->
+<section id="ads"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">Annexe&nbsp;B</span>L'épreuve du déploiement</div>
+    <h2><span class="lm"><span>Du cadre à la</span></span>
+        <span class="lm"><span>solution <em>déployable</em></span></span></h2>
+    <p class="sec-lead" data-rise>Au‑delà du corps doctrinal, une <em>architecture détaillée de solution</em> (ADS) projette la monographie — surtout les chapitres 5 et 6 —
+      sur une entreprise fictive, la <strong>Coopérative financière Boréalis</strong>, et une pile <strong>IBM</strong> consolidée.
+      Un livrable d'ingénierie, prêt au déploiement, de nature distincte du corps doctrinal mais rendu dans le même volume.</p>
+    <p data-rise style="margin-top:26px"><a class="btn ghost" href="Chapitres/Annexe%20B%20-%20Architecture%20de%20Solutions.md" data-magnetic>Lire l'Annexe B (source) →</a>
+      <a class="btn ghost" href="Borealis-Go/Pr%C3%A9sentation%20Borealis-Go.pdf" data-magnetic>Voir la présentation (PDF) →</a>
+      <a class="btn ghost" href="https://github.com/agbruneau/InteroperabiliteAgentique/tree/main/Borealis-Go" data-magnetic>Explorer le dépôt de code →</a></p>
+  </div>
+  <div class="grid g4" data-stagger>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Le cas</div>
+      <h3>Boréalis sur pile IBM</h3>
+      <p>Une coopérative financière régulée instancie le patron sectoriel « autonomie graduée sous contrôle de finalité » sur une pile IBM consolidée : du plan de contrôle agentique jusqu'au substrat applicatif hérité.</p>
+      <span class="chip norm">ch. 5‑6 projetés</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">Le livrable</div>
+      <h3>Prêt au déploiement</h3>
+      <p>Dix‑huit sections et six sous‑annexes : diagrammes, contrats d'interface, exigences non fonctionnelles, topologie de déploiement et runbooks d'exploitation — vingt‑huit diagrammes Mermaid intégrés (dont un <em>blueprint</em> d'ouverture en §0.1‑0.2).</p>
+      <span class="chip confirme">contrats · NFR · runbooks</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">La formalisation</div>
+      <h3>Vues ArchiMate&nbsp;4</h3>
+      <p>Les vues d'entreprise reprennent les stéréotypes du registre du chapitre 6 ; chaque arête d'interaction y est traitée comme une frontière de confiance, du plan de contrôle jusqu'aux identités non humaines.</p>
+      <span class="chip norm">registre ch. 6</span></div>
+    <div class="card"><div class="glow"></div>
+      <div class="idx">La discipline ⚠</div>
+      <h3>Illustratif, jamais acquis</h3>
+      <p>Extraits de configuration illustratifs (aucun secret réel) ; statuts <em>preview</em> marqués ⚠, jamais présentés comme GA ; valeurs chiffrées — SLO, RPO/RTO, débits — posées comme hypothèses à calibrer.</p>
+      <span class="chip hypothese">hypothèses à calibrer</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= MÉTHODE ======================= -->
+<section id="methode"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">11</span>Méthode</div>
+    <h2><span class="lm"><span>Le raisonnement précède</span></span>
+        <span class="lm"><span><em>l'autorité</em></span></span></h2>
+    <p class="sec-lead" data-rise>Tout énoncé factuel porte une source nominative, un millésime et, le cas échéant, un statut. Le socle documentaire est arrêté à juin 2026 ;
+      seul le chapitre prospectif déroge à cette borne, en triant explicitement chaque énoncé sur l'avenir.</p>
+  </div>
+  <div class="anchors" data-rise style="margin-bottom:42px">
+    <span class="chip confirme">PROGRAMMÉ</span>
+    <span class="chip probable">PROJETÉ</span>
+    <span class="chip hypothese">SPÉCULATIF</span>
+    <span class="chip norm">à re‑vérifier</span>
+  </div>
+  <div class="sec-head" data-rise style="margin-bottom:24px">
+    <h3 class="subhead" style="font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem)">Un socle de résultats classiques, mobilisés sans complaisance</h3>
+  </div>
+  <div class="refs" data-stagger>
+    <div class="r"><b>Parnas · 1972</b><span>le masquage de l'information fonde le découplage : un module n'expose qu'une interface stable.</span></div>
+    <div class="r"><b>Sheth &amp; Larson · 1990</b><span>l'interopérabilité, ou la coopération de systèmes hétérogènes, autonomes et distribués.</span></div>
+    <div class="r"><b>de Alfaro &amp; Henzinger · 2001</b><span>les automates d'interface : la compatibilité comportementale d'un contrat est décidable.</span></div>
+    <div class="r"><b>Honda et al. · 2008</b><span>les types de session disciplinent les protocoles de communication.</span></div>
+    <div class="r"><b>Confused deputy · 1988</b><span>Hardy nomme la confusion d'autorité qui hante toute délégation de droits.</span></div>
+    <div class="r"><b>Searle &amp; Austin · 1969/1962</b><span>les actes de langage (performatifs) fournissent le socle théorique de la sémantique des messages d'agents (FIPA-ACL).</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= VERDICT ======================= -->
+<section id="verdict"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker" data-rise><span class="sno">12</span>Verdict</div>
+    <h2><span class="lm"><span>Trois tensions restent</span></span>
+        <span class="lm"><span><em>ouvertes</em></span></span></h2>
+    <p class="sec-lead" data-rise>À l'horizon, l'interopérabilité agentique cesse d'être un problème de transport. Le passage de messages est résolu au niveau syntaxique ; restent trois fronts d'un autre registre.</p>
+  </div>
+  <div data-stagger>
+    <div class="tension"><div class="t-n">Tension I</div>
+      <div><h3>Le verrou sémantique</h3>
+        <p>Partager le <em>sens</em> d'une intention déléguée, pas seulement la structure d'un message : faire remonter l'alignement vers le protocole. La proposition de l'ouvrage : largement ouvert au‑delà de 2030.</p></div></div>
+    <div class="tension"><div class="t-n">Tension II</div>
+      <div><h3>Les garanties composables</h3>
+        <p>Garantir un agent ne garantit pas la chaîne d'agents qui l'invoque. Obtenir des garanties composables sur des acteurs probabilistes — vérification à l'exécution, méthodes formelles — reste un chantier ouvert.</p></div></div>
+    <div class="tension"><div class="t-n">Tension III</div>
+      <div><h3>La science de l'évaluation</h3>
+        <p>Mesurer l'interopérabilité de façon reproductible ; et tracer de bout en bout les décisions déléguées, dont l'urgence croît avec le degré d'autonomie consenti — identité non humaine en tête.</p></div></div>
+  </div>
+  <div class="callout" data-rise style="margin-top:40px">
+    <q>Une réinstanciation sous contrainte.</q>
+    <p>Les principes demeurent, les mécanismes se renouvellent. La responsabilité de l'architecte est de reconnaître l'invariant sous la nouveauté —
+      pour ne pas reconstruire à grands frais ce que des décennies d'intégration d'entreprise avaient déjà appris à découpler, à contractualiser et à faire évoluer.</p>
+  </div>
+</div></section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap"><div class="foot">
+    <div>
+      <div class="ftau" aria-hidden="true">&#964;</div>
+      <p>Monographie en science et génie informatique sur l'interopérabilité agentique en entreprise et en finance : un invariant transversal — découplage, contrat, évolution — réinstancié de l'intégration d'entreprise à la couche agentique.
+        Sept chapitres en spirale, du général au spécifique ; rendu FESP (Pandoc → Typst), socle documentaire arrêté à juin 2026.</p>
+      <div class="meta">André‑Guy Bruneau, M. Sc. IT · 2026<br>Licence Creative Commons Attribution 4.0 International (CC BY 4.0)<br>Citations vérifiées de façon adverse sur source primaire.</div>
+    </div>
+    <div class="links">
+      <a href="Monographie.pdf">→ Télécharger la monographie (PDF)</a>
+      <a href="Synthese%20Monographie.pdf">→ Télécharger la synthèse (PDF)</a>
+      <a href="Veille%20Technologique.pdf">→ Télécharger la veille technologique (PDF)</a>
+      <a href="https://github.com/agbruneau/InteroperabiliteAgentique" target="_blank" rel="noopener noreferrer">→ Dépôt GitHub · sources et bibliographies</a>
+      <a href="#top">→ Haut de page</a>
+    </div>
+  </div></div>
+  <div class="foot-giant" aria-hidden="true">découplage · contrat · évolution</div>
+</footer>
+
+<a class="back-top" id="backtop" href="#top" aria-label="Haut de page">&#8593;</a>
+
+<!-- ======================= LIBS ======================= -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+
+<script>
+(function(){
+"use strict";
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine = window.matchMedia('(pointer: fine)').matches;
+var hasGSAP = typeof gsap !== 'undefined';
+var hasST = hasGSAP && typeof ScrollTrigger !== 'undefined';
+var hasLenis = typeof Lenis !== 'undefined';
+var hasThree = typeof THREE !== 'undefined';
+
+/* ---------- repli sans bibliothèques / mouvement réduit ---------- */
+if(!hasGSAP || reduced){
+  var ld=document.getElementById('loader'); if(ld) ld.style.display='none';
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    el.textContent=(el.getAttribute('data-prefix')||'')+el.getAttribute('data-count');
+  });
+}
+
+/* ---------- navigation / menu / progression (sans dépendance) ---------- */
+var nav=document.getElementById('nav'), prog=document.getElementById('progress'),
+    progB=document.getElementById('progress-b'),
+    backtop=document.getElementById('backtop'), burger=document.getElementById('burger'),
+    menu=document.getElementById('menu');
+var navas=[].slice.call(document.querySelectorAll('nav.links a[href^="#"]'));
+var secs=[].slice.call(document.querySelectorAll('section[id], main[id]'));
+var rail=document.getElementById('rail'),
+    railFill=document.getElementById('railFill'),
+    railas=rail?[].slice.call(rail.querySelectorAll('a')):[],
+    navHere=document.getElementById('navHere');
+function onScroll(){
+  var h=document.documentElement, sc=h.scrollTop||document.body.scrollTop,
+      max=(h.scrollHeight-h.clientHeight)||1;
+  var p=sc/max; prog.style.transform='scaleX('+p+')';
+  if(progB) progB.style.transform='scaleX('+p+')';
+  nav.classList.toggle('scrolled',sc>40);
+  backtop.classList.toggle('show',sc>800);
+  var cur='';
+  secs.forEach(function(s){ if(s.getBoundingClientRect().top<160) cur=s.id; });
+  navas.forEach(function(a){ var on=a.getAttribute('href')==='#'+cur;
+    a.classList.toggle('active',on);
+    if(on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+  /* rail de repérage + indicateur de section courante */
+  if(rail){
+    rail.classList.toggle('show', sc>520);
+    var idx=-1;
+    railas.forEach(function(a,i){ var on=a.getAttribute('href')==='#'+cur;
+      a.classList.toggle('active',on);
+      if(on){ idx=i; a.setAttribute('aria-current','true'); } else a.removeAttribute('aria-current'); });
+    if(railFill){
+      if(idx>=0){ var act=railas[idx]; railFill.style.height=Math.max(0,act.offsetTop+act.offsetHeight/2-18)+'px'; }
+      else railFill.style.height='0px';
+    }
+    if(navHere){
+      if(idx>0){
+        navHere.querySelector('.nh-no').textContent=railas[idx].querySelector('.rk').textContent;
+        navHere.querySelector('.nh-name').textContent=railas[idx].querySelector('.rl').textContent;
+        navHere.classList.add('show');
+      } else navHere.classList.remove('show');
+    }
+  }
+}
+document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+function setMenu(open){
+  menu.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open);
+  menu.setAttribute('aria-hidden',!open);
+  if(open){ var first=menu.querySelector('a'); if(first) first.focus(); }
+}
+burger.addEventListener('click',function(){ setMenu(!menu.classList.contains('open')); });
+menu.addEventListener('click',function(e){
+  if(e.target.closest('a')){ setMenu(false); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape' && menu.classList.contains('open')){ setMenu(false); burger.focus(); }
+});
+
+if(!hasGSAP || reduced) return; /* le reste exige GSAP + mouvement */
+
+if(hasST) gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- défilement doux (Lenis) ---------- */
+var lenis=null;
+if(hasLenis && hasST){
+  lenis=new Lenis({duration:1.15,smoothWheel:true});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+  gsap.ticker.lagSmoothing(0);
+}
+function scrollToTarget(sel){
+  var el=document.querySelector(sel); if(!el) return;
+  if(lenis) lenis.scrollTo(el,{offset:-70,duration:1.4});
+  else el.scrollIntoView({behavior:'smooth'});
+  if(el.hasAttribute('tabindex')) el.focus({preventScroll:true});
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');
+    if(id.length>1 && document.querySelector(id)){ e.preventDefault(); scrollToTarget(id); }
+  });
+});
+
+/* curseur personnalisé retiré — pointeur natif conservé (ergonomie de lecture) */
+
+/* ---------- boutons magnétiques ---------- */
+if(fine){
+  document.querySelectorAll('[data-magnetic]').forEach(function(el){
+    var qx=gsap.quickTo(el,'x',{duration:.4,ease:'power3'}),
+        qy=gsap.quickTo(el,'y',{duration:.4,ease:'power3'});
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      qx((e.clientX-r.left-r.width/2)*.25);
+      qy((e.clientY-r.top-r.height/2)*.35);
+    });
+    el.addEventListener('mouseleave',function(){qx(0);qy(0);});
+  });
+}
+
+/* ---------- lueur des cartes suivant la souris ---------- */
+document.querySelectorAll('.card').forEach(function(c){
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+/* ---------- three.js : treillis déterministe → nuage probabiliste ---------- */
+var glState={progress:0.12,target:0.12,opacity:0,mouse:new (hasThree?THREE.Vector2:Object)(0,0)};
+if(hasThree){
+  try{
+    var canvas=document.getElementById('gl');
+    var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:false,powerPreference:'high-performance'});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+    renderer.setSize(innerWidth,innerHeight);
+    var scene=new THREE.Scene();
+    var camera=new THREE.PerspectiveCamera(50,innerWidth/innerHeight,.1,80);
+    camera.position.z=15;
+
+    var COUNT=7000;
+    var grid=new Float32Array(COUNT*3), rand=new Float32Array(COUNT*3), seed=new Float32Array(COUNT);
+    var cols=28, rows=15, lays=Math.ceil(COUNT/(cols*rows));
+    for(var i=0;i<COUNT;i++){
+      var ix=i%cols, iy=Math.floor(i/cols)%rows, iz=Math.floor(i/(cols*rows));
+      grid[i*3]= (ix/(cols-1)-.5)*21;
+      grid[i*3+1]=(iy/(rows-1)-.5)*11.5;
+      grid[i*3+2]=(iz/Math.max(lays-1,1)-.5)*4-1;
+      // dispersion sphérique pseudo-aléatoire déterministe (graine = i)
+      var a=Math.sin(i*12.9898)*43758.5453, b=Math.sin(i*78.233)*12543.123, c=Math.sin(i*39.425)*7919.77;
+      a-=Math.floor(a); b-=Math.floor(b); c-=Math.floor(c);
+      var th=a*Math.PI*2, ph=Math.acos(2*b-1), rr=3+c*8.5;
+      rand[i*3]=Math.sin(ph)*Math.cos(th)*rr*1.35;
+      rand[i*3+1]=Math.sin(ph)*Math.sin(th)*rr*.72;
+      rand[i*3+2]=Math.cos(ph)*rr*.5-1;
+      seed[i]=a;
+    }
+    var geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.BufferAttribute(grid.slice(),3));
+    geo.setAttribute('aGrid',new THREE.BufferAttribute(grid,3));
+    geo.setAttribute('aRand',new THREE.BufferAttribute(rand,3));
+    geo.setAttribute('aSeed',new THREE.BufferAttribute(seed,1));
+
+    var mat=new THREE.ShaderMaterial({
+      transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+      uniforms:{
+        uTime:{value:0}, uProgress:{value:glState.progress},
+        uMouse:{value:new THREE.Vector2(99,99)}, uOpacity:{value:0}
+      },
+      vertexShader:[
+        'attribute vec3 aGrid;','attribute vec3 aRand;','attribute float aSeed;',
+        'uniform float uTime;','uniform float uProgress;','uniform vec2 uMouse;',
+        'varying float vA;','varying float vS;',
+        'void main(){',
+        '  float t=uTime;',
+        '  vec3 drift=vec3(sin(t*.32+aSeed*61.0),cos(t*.27+aSeed*47.0),sin(t*.21+aSeed*29.0))*.22;',
+        '  vec3 chaotic=aRand+drift*3.4;',
+        '  vec3 ordered=aGrid+drift*.22;',
+        '  float p=smoothstep(0.0,1.0,uProgress);',
+        '  float pp=clamp(p+ (aSeed-.5)*.3*p*(1.0-p)*4.0,0.0,1.0);',
+        '  vec3 pos=mix(ordered,chaotic,pp);',
+        '  vec2 d=pos.xy-uMouse;',
+        '  float f=exp(-dot(d,d)*.28)*1.7;',
+        '  pos.xy+=normalize(d+vec2(.0001))*f;',
+        '  vec4 mv=modelViewMatrix*vec4(pos,1.0);',
+        '  gl_PointSize=(0.8+aSeed*1.7)*(34.0/-mv.z);',
+        '  gl_Position=projectionMatrix*mv;',
+        '  vA=.2+.8*aSeed;','  vS=aSeed;',
+        '}'].join('\n'),
+      fragmentShader:[
+        'uniform float uOpacity;','varying float vA;','varying float vS;',
+        'void main(){',
+        '  vec2 c=gl_PointCoord-.5;',
+        '  float d=length(c);',
+        '  float a=smoothstep(.5,.08,d)*vA*uOpacity;',
+        '  vec3 col=mix(vec3(1.0,.48,.10),vec3(.83,.64,.35),vS);',
+        '  gl_FragColor=vec4(col,a*.45);',
+        '}'].join('\n')
+    });
+    scene.add(new THREE.Points(geo,mat));
+
+    var pmx=0,pmy=0;
+    addEventListener('mousemove',function(e){
+      pmx=(e.clientX/innerWidth)*2-1; pmy=-(e.clientY/innerHeight)*2+1;
+      // projection approximative sur le plan z≈0 vu par la caméra
+      var half=Math.tan(25*Math.PI/180)*camera.position.z;
+      mat.uniforms.uMouse.value.set(pmx*half*camera.aspect,pmy*half);
+    });
+    addEventListener('resize',function(){
+      camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth,innerHeight);
+    });
+    var clock=new THREE.Clock(), glFrame=0;
+    (function loop(){
+      requestAnimationFrame(loop);
+      if(document.hidden) return;
+      /* fond presque invisible (sections de contenu) -> rendu ~30fps : imperceptible, allege le scroll */
+      if(glState.opacity<0.25 && (glFrame++ & 1)) return;
+      glState.progress+=(glState.target-glState.progress)*.05;
+      mat.uniforms.uProgress.value=glState.progress;
+      mat.uniforms.uTime.value=clock.getElapsedTime();
+      mat.uniforms.uOpacity.value=glState.opacity;
+      camera.position.x+=((pmx*0.7)-camera.position.x)*.04;
+      camera.position.y+=((pmy*0.45)-camera.position.y)*.04;
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+    })();
+  }catch(e){ /* WebGL indisponible : le fond reste sobre */ }
+}
+
+/* ---------- préloader + intro ---------- */
+var loader=document.getElementById('loader');
+var pct=loader.querySelector('.pct'), barI=loader.querySelector('.bar i');
+var introDone=false;
+function playIntro(){
+  if(introDone) return; introDone=true;
+  var tl=gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.to(loader,{autoAlpha:0,duration:.5},0)
+    .to('#gl',{opacity:1,duration:1.6,onStart:function(){glState.opacity=0;
+        gsap.to(glState,{opacity:1,duration:2.2,ease:'power2.out'});}},0)
+    .fromTo('.hero .lm > span',{yPercent:115},{yPercent:0,duration:1.25,stagger:.09},.12)
+    .fromTo('.hero [data-rise]',{y:34,autoAlpha:0},{y:0,autoAlpha:1,duration:1.1,stagger:.1},.4)
+    .fromTo('.scrollcue, .hero .coord',{autoAlpha:0},{autoAlpha:1,duration:.9},1.1)
+    .fromTo('header.nav',{y:-16,autoAlpha:0},{y:0,autoAlpha:1,duration:.8},.5);
+}
+var cnt={v:0};
+gsap.to(cnt,{v:100,duration:1.05,ease:'power2.inOut',
+  onUpdate:function(){
+    pct.textContent=String(Math.round(cnt.v)).padStart(3,'0');
+    barI.style.transform='scaleX('+(cnt.v/100)+')';
+  },
+  onComplete:playIntro});
+setTimeout(playIntro,3200); /* filet de sécurité */
+
+/* ---------- marquee (defilement continu : sans saut ni trou) ---------- */
+var mq=document.getElementById('mq');
+if(mq){
+  var mqBase=mq.querySelector('.seq'); /* 1er bloc = motif de reference */
+  var mqTween=null;
+  function buildMarquee(){
+    var seqW=mqBase.offsetWidth;
+    if(!seqW) return;
+    if(mqTween){ mqTween.kill(); gsap.set(mq,{x:0}); }
+    /* assez de copies pour couvrir la fenetre + une longueur -> aucun trou au bouclage */
+    var need=Math.ceil(innerWidth/seqW)+1;
+    for(var i=mq.querySelectorAll('.seq').length;i<need;i++) mq.appendChild(mqBase.cloneNode(true));
+    /* translation d'exactement une sequence -> boucle sans couture ; vitesse ~constante */
+    mqTween=gsap.to(mq,{x:-seqW,duration:seqW/75,ease:'none',repeat:-1});
+  }
+  buildMarquee(); /* 1re passe (police de repli) */
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(buildMarquee); /* remesure apres Fraunces */
+  else setTimeout(buildMarquee,600);
+  var mqRz; addEventListener('resize',function(){ clearTimeout(mqRz); mqRz=setTimeout(buildMarquee,200); });
+  if(hasST){
+    ScrollTrigger.create({trigger:'.marquee',start:'top bottom',end:'bottom top',
+      onUpdate:function(self){ if(mqTween) mqTween.timeScale(1+Math.abs(self.getVelocity())/900); }});
+  }
+}
+
+if(!hasST) return;
+
+/* ---------- reveals génériques ---------- */
+document.querySelectorAll('section .lm > span').forEach(function(el){
+  if(el.closest('.hero')) return;
+  gsap.fromTo(el,{yPercent:115},{yPercent:0,duration:1.15,ease:'power4.out',
+    scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+document.querySelectorAll('[data-rise]').forEach(function(el){
+  if(el.closest('.hero')) return;
+  gsap.fromTo(el,{y:36,autoAlpha:0},{y:0,autoAlpha:1,duration:1.05,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+document.querySelectorAll('[data-stagger]').forEach(function(g){
+  var kids=g.children;
+  gsap.fromTo(kids,{y:44,autoAlpha:0},{y:0,autoAlpha:1,duration:1,stagger:.12,ease:'power3.out',
+    scrollTrigger:{trigger:g,start:'top 85%'}});
+});
+
+/* ---------- compteurs ---------- */
+document.querySelectorAll('[data-count]').forEach(function(el){
+  var target=parseFloat(el.getAttribute('data-count')), prefix=el.getAttribute('data-prefix')||'';
+  var o={v:0};
+  ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){
+    gsap.to(o,{v:target,duration:1.6,ease:'power2.out',onUpdate:function(){
+      el.textContent=prefix+Math.round(o.v);
+    }});
+  }});
+});
+
+/* ---------- opérateur : scène épinglée ---------- */
+(function(){
+  var stage=document.getElementById('op-stage');
+  if(!stage) return;
+  var tl=gsap.timeline({
+    scrollTrigger:{trigger:stage,start:'top top',end:'+=110%',scrub:.6,pin:true,anticipatePin:1,
+      onUpdate:function(self){
+        glState.target=.12+self.progress*.88; /* treillis → nuage */
+        var p=self.progress;
+        gsap.set('#op-t1',{scaleX:Math.min(p*3,1)});
+        gsap.set('#op-t2',{scaleX:Math.max(Math.min((p-.33)*3,1),0)});
+        gsap.set('#op-t3',{scaleX:Math.max(Math.min((p-.66)*3,1),0)});
+        stage.classList.toggle('armed',p>.45);
+      },
+      onLeave:function(){ glState.target=.25; },
+      onEnterBack:function(){ glState.target=1; },
+      onLeaveBack:function(){ glState.target=.12; }
+    }
+  });
+  tl.to('#op-line',{scaleX:1,duration:.5,ease:'none'},0)
+    .to('#op-a',{filter:'blur(10px)',opacity:.22,duration:.45,ease:'none'},.3)
+    .to('#op-b',{filter:'blur(0px)',opacity:1,duration:.45,ease:'none'},.35);
+})();
+
+/* ---------- intensité du fond selon les sections ---------- */
+ScrollTrigger.create({trigger:'.hero',start:'top top',end:'bottom 40%',
+  onLeave:function(){ gsap.to(glState,{opacity:.13,duration:1}); },
+  onEnterBack:function(){ gsap.to(glState,{opacity:1,duration:1}); }});
+ScrollTrigger.create({trigger:'#operateur',start:'top 70%',end:'bottom 30%',
+  onEnter:function(){ gsap.to(glState,{opacity:.85,duration:1}); },
+  onLeave:function(){ gsap.to(glState,{opacity:.11,duration:1}); },
+  onEnterBack:function(){ gsap.to(glState,{opacity:.85,duration:1}); },
+  onLeaveBack:function(){ gsap.to(glState,{opacity:.13,duration:1}); }});
+ScrollTrigger.create({trigger:'footer',start:'top 80%',
+  onEnter:function(){ gsap.to(glState,{opacity:.3,duration:1}); glState.target=.5; },
+  onLeaveBack:function(){ gsap.to(glState,{opacity:.11,duration:1}); }});
+
+/* ---------- verrou : citation mot à mot ---------- */
+(function(){
+  var vq=document.getElementById('vq');
+  if(!vq) return;
+  var nodes=[].slice.call(vq.childNodes), frag=document.createDocumentFragment();
+  function wrapWords(text,cls){
+    text.split(/(\s+)/).forEach(function(tk){
+      if(/^\s+$/.test(tk)||tk===''){ frag.appendChild(document.createTextNode(tk)); return; }
+      var s=document.createElement('span'); s.className='wd'+(cls?' '+cls:''); s.textContent=tk;
+      frag.appendChild(s);
+    });
+  }
+  nodes.forEach(function(n){
+    if(n.nodeType===3) wrapWords(n.textContent,'');
+    else if(n.nodeType===1) wrapWords(n.textContent,n.className);
+  });
+  vq.innerHTML=''; vq.appendChild(frag);
+  gsap.to(vq.querySelectorAll('.wd'),{opacity:1,stagger:.06,ease:'none',
+    scrollTrigger:{trigger:'.verrou-stage',start:'top 70%',end:'center 45%',scrub:.5}});
+})();
+
+/* galerie horizontale remplacée par une grille scannable (.parts-grid) */
+
+/* ---------- parallaxe douce du géant de pied de page ---------- */
+gsap.fromTo('.foot-giant',{x:60},{x:-60,ease:'none',
+  scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom top',scrub:1}});
+
+ScrollTrigger.refresh();
+/* recalcule les positions des declencheurs une fois Fraunces appliquee :
+   la substitution de police decale la mise en page (~46 px cumules) -> revelations/pins
+   bien synchronises des le 1er chargement, sans attendre un resize */
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
