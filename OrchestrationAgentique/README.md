@@ -24,6 +24,7 @@ Dépôt de rédaction d'une **monographie exhaustive** sur l'interopérabilité 
 | `verification/` | Rapports de revalidation et grille de conformité CA-1..CA-8 |
 | `build/` | Pipeline de rendu PDF (Pandoc → Typst) |
 | `Monographie.md` / `Monographie.pdf` | Assemblage versionné des 29 pièces et son rendu |
+| `Synthese Monographie.md` / `.pdf` | Article de synthèse autonome (12 sections, 19 tableaux, ~26 500 mots) tiré de la monographie — même pipeline de rendu |
 
 ## Gouvernance
 
