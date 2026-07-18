@@ -321,9 +321,9 @@ Sections : état de la question (lacune assumée) ; conditions de possibilité ;
 
 ---
 
-# LIVRE VIII — Le maillage d'agents
+# LIVRE VIII — AgentMesh : maillage d'agents
 
-*(fusionne Vol. III Partie VII + Vol. I §1.3.4/§1.9.3 ; ~10 000 mots)*
+*(fusionne Vol. III Partie VII + Vol. I §1.3.4/§1.9.3 ; ~15 000 mots)*
 
 ### Chapitre 40 — Du service mesh à l'agent mesh : généalogie et anatomie
 
