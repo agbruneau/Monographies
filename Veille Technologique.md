@@ -921,7 +921,7 @@ Le cône d'incertitude ainsi construit a une propriété remarquable : ses borne
 #pagebreak(weak: true)
 ```
 
-# Le corpus compagnon : quatre volumes, un même objet
+# Le corpus compagnon : quatre volumes, un compendium, un même objet
 
 Les sections 4.12 et 8.4 ont mobilisé deux corpus compagnons pour éprouver l'état de l'art par des voies indépendantes de la lecture documentaire — le code d'une part, le droit sectoriel de l'autre. Ces deux corpus ne sont pas isolés : ils appartiennent à un ensemble de quatre volumes, dont la présente édition rend compte intégralement. Cette section expose ce que cet ensemble recouvre, l'état de rédaction réel de chacune de ses pièces, les instruments d'analyse qu'il prête à cette revue, et les points sur lesquels la revue le contredit ou le date autrement. L'auto-citation est assumée et divulguée ; ses limites, aggravées par ce qui suit, sont exposées en section 10.
 
@@ -934,7 +934,7 @@ Le corpus se compose de quatre volumes conçus en progression — les protocoles
 | **I — Interopérabilité agentique** | cadre mondial et théorique ; ADS et démonstrateur | rédigé (7 chapitres, bibliographie vérifiée, démonstrateur clos) | constats d'implémentation datés (§4.12) [217] |
 | **II — L'autonomie encadrée** | cas canadien réglementé | rédigé (24 chapitres, socle factuel coté, gel 16-17 juill. 2026) | faits repris du socle, non re-vérifiés ici (§8.4) [218] |
 | **III — L'entreprise agentique** | identité, délégation, maillage, exploitation | **cadrage seul — zéro chapitre, zéro entrée de socle propre** [219] | **programme de recherche**, jamais source de fait |
-| **IV — La somme agentique** | omnibus absorbant les trois précédents | **cadrage seul — table des matières commentée** [220] | **décisions de fusion**, jamais source de fait |
+| **IV — La somme agentique** | compendium intégral absorbant les trois précédents | **cadrage seul — table des matières commentée** [220] | **décisions de fusion**, jamais source de fait |
 
 : Les quatre volumes du corpus compagnon, leur état de rédaction réel au 18 juillet 2026 et le régime de citation qui en découle dans la présente revue. Lecture : la colonne de droite n'est pas une préférence éditoriale mais une conséquence de la colonne qui la précède — un volume sans chapitre rédigé ni socle propre ne peut porter aucun fait.
 
@@ -970,11 +970,32 @@ Une réserve doit être portée, parce qu'elle illustre précisément le risque 
 
 ## Le Vol. IV : ce qu'une refonte révèle du triptyque
 
-Le quatrième volume est un omnibus projeté — cinquante-quatre chapitres en douze livres, absorbant les trois précédents en une somme réordonnée et dédoublonnée à numérotation continue [220]. Lui non plus n'est pas écrit ; lui non plus ne porte aucun fait ici. Son intérêt pour une revue de l'état de l'art est ailleurs, et il est réel : **une refonte oblige à trancher ce qu'une juxtaposition permet de laisser ouvert**, et les arbitrages qu'elle rend révèlent la structure du corpus mieux que les volumes eux-mêmes.
+Le quatrième volume est le compendium du corpus — un omnibus projeté de cinquante-quatre chapitres en douze livres, absorbant les trois précédents en une somme réordonnée et dédoublonnée à numérotation continue [220]. Lui non plus n'est pas écrit ; lui non plus ne porte aucun fait ici. Son intérêt pour une revue de l'état de l'art est ailleurs, et il est réel : **une refonte oblige à trancher ce qu'une juxtaposition permet de laisser ouvert**, et les arbitrages qu'elle rend révèlent la structure du corpus mieux que les volumes eux-mêmes.
 
 ⚠ **Une précision de datation s'impose avant d'aller plus loin.** Le cadrage examiné ici a été publié en deux états successifs le **19 juillet 2026**, soit le lendemain de la date d'édition de la présente revue : une version 0.3, procédant de trois audits de couverture indépendants, un par volume source, qui ont collationné chacune de ses lignes de fusion contre les documents réels ; puis, le même jour, une version 0.4 — passe de cohérence interne et de discipline épistémique conduite sur la v0.3, pilotée par des contrôles exécutables validés par mutation [220]. Les cinq arbitrages rapportés ci-dessous sont posés par la v0.3 et reconduits tels quels par la v0.4 ; ce que la v0.4 ajoute en propre est rapporté à leur suite. Les énoncés de cette sous-section et de la suivante sont donc datés du 19 juillet 2026 et non du 18, et cet écart d'un jour n'est pas une commodité : un objet de veille qui se révise deux fois dans la journée qui suit le gel de la revue est précisément le cas que la section 10 pose comme limite structurelle. Rien de ce qui suit ne modifie un fait établi ailleurs dans cette revue.
 
-Cinq de ces arbitrages méritent d'être rapportés. Le premier est une **thèse de continuité** : les trois thèses partielles — autonomie graduée sous contrôle de finalité, autonomie encadrée, la confiance se fabrique — y sont présentées non comme trois sujets mais comme trois coupes d'un même objet, l'ingénierie d'un agent non humain qui engage la responsabilité d'une institution réglementée [220]. Cette lecture recoupe le patron de l'agent enveloppé de la section 9.6 par un chemin distinct : ce que la présente revue déduit de l'état des produits et du droit, la refonte le déduit de la structure de son propre matériau.
+La structure d'arrivée doit être donnée d'abord, car c'est elle — plus que les décisions prises une à une — qui montre comment la refonte réordonne le corpus autour de son objet. Le compendium distribue ses cinquante-quatre chapitres en douze livres, encadrés d'un avant-propos méthodologique unifié et de neuf annexes — méthode unifiée, socle factuel consolidé, divergences tranchées et lacunes ouvertes, chronologie fusionnée 2023-2032, glossaire bilingue, matrice des mécanismes, catalogue de patrons, architecture détaillée de solution, bibliographie consolidée [220]. Le tableau qui suit énumère les douze livres et met chacun en regard des sections de la présente revue qui couvrent le même objet. Cette correspondance est une construction de cette revue, non du cadrage ; elle n'emporte aucune reprise de fait — un livre non rédigé ne couvre rien, il projette — et sert de table de passage entre les deux appareils.
+
+| Livre du compendium | Ch. | Sources absorbées | Objet homologue dans la présente revue |
+|:---|:---|:---|:---|
+| I — Fondements : interopérabilité et ingénierie agentique | 1-6 | Vol. I ch. 1-2 | sections 3 et 4.9 |
+| II — La couche protocolaire agentique | 7-11 | Vol. I ch. 3 + Vol. II Partie I | sections 4.1 à 4.5 et 5 |
+| III — Identité, délégation et fabrique de confiance | 12-19 | Vol. III Parties I-IV + apports Vol. I-II | sections 4.10, 7.2, 7.3 et 7.6 à 7.9 |
+| IV — La confiance hostile : attaques et défense | 20-22 | Vol. III Partie IV + Vol. I | section 7.1 |
+| V — L'horloge post-quantique | 23-24 | Vol. III Partie V + Vol. I | sections 7.4 et 7.10 |
+| VI — L'autonomie encadrée : orchestration en entreprise | 25-28 | Vol. II Partie II + Vol. I ch. 4 | sections 4.11 et 9.6 |
+| VII — Le cadre réglementaire canadien | 29-34 | Vol. II Partie III + Vol. III Partie VI | sections 8.1, 8.4 et 8.5 |
+| VIII — Le terrain canadien : interopérabilité financière et adoption | 35-40 | Vol. II Parties IV-V + Vol. I ch. 5 | sections 4.8, 6.4 et 8.4 |
+| IX — AgentMesh : le maillage d'agents comme patron d'infrastructure | 41-42 | Vol. III Partie VII + Vol. I | sections 4.6 et 4.7 |
+| X — AgentOps : exploiter la confiance dans la durée | 43-45 | Vol. III Partie VIII + Vol. I | section 4.13 |
+| XI — Synthèse architecturale et blueprint | 46-51 | Vol. I ch. 6 et ADS + Vol. II Partie VI + Vol. III Partie IX | sections 4.12, 9.6 et 9.7 |
+| XII — Horizon et frontière de la connaissance vérifiable | 52-54 | Vol. I ch. 7 + Vol. II ch. 21 et 24 + Vol. III clôture | sections 11 et 12 |
+
+: Les douze livres du compendium (Vol. IV, v0.4 du 19 juillet 2026), les volumes sources qu'ils absorbent et les sections de la présente revue couvrant le même objet [220]. La colonne de droite est une construction de cette revue, établie pour la navigation entre les deux appareils ; elle n'emporte aucune reprise de fait d'un cadrage non rédigé.
+
+Deux constats sortent de cette table de passage. Le premier : les deux appareils — refonte d'un corpus d'auteur d'un côté, revue de sources primaires de l'autre — découpent le même objet en unités largement superposables, chaque livre trouvant son homologue et chaque couche documentée ici (sections 4.6 à 4.13) alimentant au moins un livre ; convergence à lire avec la réserve de circularité de la section 13.7, les deux appareils partageant un auteur. Le second : les objets sans homologue sont, pour l'essentiel, ceux que chacun des deux documents déclare de son côté comme lacune ou comme choix de périmètre — au premier rang desquels les trois fronts écartés que rapporte le cinquième arbitrage ci-dessous, dont la provenance des composants (QO 21).
+
+Cinq des arbitrages rendus par cette refonte méritent d'être rapportés. Le premier est une **thèse de continuité** : les trois thèses partielles — autonomie graduée sous contrôle de finalité, autonomie encadrée, la confiance se fabrique — y sont présentées non comme trois sujets mais comme trois coupes d'un même objet, l'ingénierie d'un agent non humain qui engage la responsabilité d'une institution réglementée [220]. Cette lecture recoupe le patron de l'agent enveloppé de la section 9.6 par un chemin distinct : ce que la présente revue déduit de l'état des produits et du droit, la refonte le déduit de la structure de son propre matériau.
 
 Le deuxième est un **chemin critique déclaré** : la refonte du socle factuel — renumérotation unique et dédoublonnage des identifiants des trois volumes — y est identifiée comme la tâche technique préalable à toute rédaction, faute de quoi les renvois ne se résolvent pas [220]. C'est le diagnostic que la présente revue formule à l'échelle du domaine sous une autre forme : le facteur limitant n'est pas le contenu mais l'appareil qui le rend citable.
 
