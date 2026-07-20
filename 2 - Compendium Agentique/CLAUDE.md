@@ -7,7 +7,7 @@ pas répétées.
 
 ## Les livrables — un plan et sa vue synoptique, pas un ouvrage
 
-Deux fichiers. [`TOC.md`](TOC.md) (**v0.8, 20 juillet 2026 — 57 chapitres en 13 livres,
+Deux fichiers. [`TOC.md`](TOC.md) (**v0.9, 20 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) est la *spécification* du compendium ; **aucun chapitre
 n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources font foi (champ
 Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre décision 8).
@@ -28,19 +28,23 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   (deux séries « Q n » au Vol. II) et son volume (R-1…R-8 du Vol. II ≠ R-01…R-14 du Vol. III).
 - **Décision 8** — le plan s'aligne sur le chapitre rédigé, jamais l'inverse ; une déviation fondée
   se déclare.
-- **Décision 9 (v0.8)** — la matière neuve se déclare (Livre XII : « Fusion : aucune », thèses
-  marquées construction d'auteur) ; **le Livre XIII (clôture) reste terminal** — toute insertion se
-  fait avant lui, renvois corrigés.
+- **Décisions 9 et 10 (v0.8-v0.9)** — la matière neuve se déclare (Livre IX : « Fusion : aucune »,
+  thèses marquées construction d'auteur) ; **le Livre X (clôture) reste terminal** — toute
+  insertion se fait avant lui, renvois corrigés ; la décision 10 fixe la carte des dix livres, à
+  chapitres strictement inchangés.
 - **Autorité des sources** : sur le socle et les lacunes, le **PRD** d'un volume prime son TOC
   (Vol. II : onze lacunes, pas dix ; Vol. III : le PRD postdate et corrige le TOC).
 
 ## Pièges spécifiques à ce fichier
 
-- ⚠ **Renumérotation v0.8** : les anciens ch. 52-54 (horizon / frontière / péremption) sont devenus
-  les **ch. 55-57**. Les journaux v0.3-v0.7 et les rangées d'historique du bandeau sont **gelés et
-  citent l'ancienne numérotation** — ne jamais les « corriger » ; la correspondance est au journal
-  v0.8.
-- ⚠ **Cardinaux multi-sites** : tout décompte annoncé (57 chapitres, 13 livres, enveloppes,
+- ⚠ **Deux renumérotations gelées dans les journaux.** (1) Chapitres, v0.8 : les anciens ch. 52-54
+  (horizon / frontière / péremption) sont devenus les **ch. 55-57** — correspondance au journal
+  v0.8. (2) Livres, v0.9 : treize livres condensés en **dix** (anciens III-V = III ; anciens
+  IX-X = VII ; VI→IV, VII→V, VIII→VI, XI→VIII, XII→IX, XIII→X) — correspondance au journal v0.9 ;
+  un « Livre IX » de journal gelé désigne l'AgentMesh, non le livre de matière neuve. Les journaux
+  et les rangées d'historique du bandeau citent la numérotation de leur passe — ne jamais les
+  « corriger ».
+- ⚠ **Cardinaux multi-sites** : tout décompte annoncé (57 chapitres, 10 livres, enveloppes,
   fourchette, « onze lacunes »…) vit en plusieurs endroits — rangée Version, Volumétrie, champ
   Contrôles, risques 1 et 11 — et se **re-mesure** avant d'être modifié, jamais recopié. La forme
   `~N 000 mots` est **réservée aux enveloppes de tête** (elle entre dans la somme contrôlée).
@@ -60,11 +64,13 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
    dans la passe suivante.
 2. **Contrôles** : `check-toc.py` est **introuvable au dépôt** (constat v0.7, reconduit v0.8) — le
    champ Contrôles est une spécification sans exécutable. Le reconstruire (domaine : chapitres
-   1-57, treize livres) et le valider **par mutation** après constat qu'il passe sur le document
+   1-57, dix livres) et le valider **par mutation** après constat qu'il passe sur le document
    intact est un préalable à toute publication. En attendant, chaque passe exécute au minimum le
-   balayage ad hoc du journal v0.8 — chapitres 1-57 contigus et uniques ; livres I-XIII ; somme des
-   enveloppes `~N 000 mots)*` = 305 (301 corps + 4 avant-propos ; 394 000 avec les 89 000
-   d'annexes) ; aucun renvoi `ch. N` hors de 1-57 ; aucune occurrence normative de l'ancienne
-   numérotation hors zones gelées — et **déclare dans son journal** que le script n'a pas tourné.
+   balayage ad hoc des journaux v0.8-v0.9 — chapitres 1-57 contigus et uniques ; dix livres I-X ;
+   somme des enveloppes `~N 000 mots)*` = 305 (301 corps + 4 avant-propos ; 394 000 avec les
+   89 000 d'annexes ; l'enveloppe est toujours en **fin** d'en-tête de livre, sinon le motif ne la
+   voit plus) ; aucun renvoi `ch. N` hors de 1-57 ; aucune occurrence normative des anciennes
+   numérotations (chapitres et livres) hors zones gelées — et **déclare dans son journal** que le
+   script n'a pas tourné.
 3. **Git** : messages courts en français, par livrable (« TOC v0.8 — … »), comme l'historique du
    dossier ; chemins explicites à l'ajout.
