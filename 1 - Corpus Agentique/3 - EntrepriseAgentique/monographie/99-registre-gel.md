@@ -12,10 +12,10 @@
 | # | Pièce | Fichier | Statut | Date de gel | Cible | Réel | Écart |
 |---|---|---|---|---|---|---|---|
 | 1 | Avant-propos et note méthodologique | [`00-avant-propos.md`](00-avant-propos.md) | Gabarit | — | 2500 | — | — |
-| 2 | Chapitre 1 — Un demi-siècle d'identités non humaines | [`01-partie-I/ch-01-identites-non-humaines.md`](01-partie-I/ch-01-identites-non-humaines.md) | Gabarit | — | 2750 | — | — |
-| 3 | Chapitre 2 — Les standards étirés : OAuth, OIDC, SCIM face à l'agent | [`01-partie-I/ch-02-standards-etires.md`](01-partie-I/ch-02-standards-etires.md) | Gabarit | — | 2750 | — | — |
-| 4 | Chapitre 3 — L'identité décentralisée : VC, DID et la promesse du portable | [`01-partie-I/ch-03-identite-decentralisee.md`](01-partie-I/ch-03-identite-decentralisee.md) | Gabarit | — | 2750 | — | — |
-| 5 | Chapitre 4 — Grille d'analyse : les cinq questions que l'entreprise pose à son agent | [`01-partie-I/ch-04-grille-cinq-questions.md`](01-partie-I/ch-04-grille-cinq-questions.md) | Gabarit | — | 2750 | — | — |
+| 2 | Chapitre 1 — Un demi-siècle d'identités non humaines | [`01-partie-I/ch-01-identites-non-humaines.md`](01-partie-I/ch-01-identites-non-humaines.md) | **Rédigé (1er jet)** | 21 juill. 2026 | 2750 | 2686 | -2 % |
+| 3 | Chapitre 2 — Les standards étirés : OAuth, OIDC, SCIM face à l'agent | [`01-partie-I/ch-02-standards-etires.md`](01-partie-I/ch-02-standards-etires.md) | **Rédigé (1er jet)** | 21 juill. 2026 | 2750 | 2701 | -2 % |
+| 4 | Chapitre 3 — L'identité décentralisée : VC, DID et la promesse du portable | [`01-partie-I/ch-03-identite-decentralisee.md`](01-partie-I/ch-03-identite-decentralisee.md) | **Rédigé (1er jet)** | 21 juill. 2026 | 2750 | 3080 | +12 % |
+| 5 | Chapitre 4 — Grille d'analyse : les cinq questions que l'entreprise pose à son agent | [`01-partie-I/ch-04-grille-cinq-questions.md`](01-partie-I/ch-04-grille-cinq-questions.md) | **Rédigé (1er jet)** | 21 juill. 2026 | 2750 | 3376 | +23 % |
 | 6 | Chapitre 5 — L'Agent Card signée : anatomie et valeur probante | [`02-partie-II/ch-05-agent-card-signee.md`](02-partie-II/ch-05-agent-card-signee.md) | Gabarit | — | 3000 | — | — |
 | 7 | Chapitre 6 — Les annuaires d'agents commerciaux : Entra Agent ID et ses pairs | [`02-partie-II/ch-06-annuaires-commerciaux.md`](02-partie-II/ch-06-annuaires-commerciaux.md) | Gabarit | — | 3000 | — | — |
 | 8 | Chapitre 7 — Les registres gouvernés : de la spécification CSA aux registres A2A | [`02-partie-II/ch-07-registres-gouvernes.md`](02-partie-II/ch-07-registres-gouvernes.md) | Gabarit | — | 3000 | — | — |
@@ -46,6 +46,8 @@
 | 33 | Annexe D — Glossaire | [`90-annexes/annexe-d-glossaire.md`](90-annexes/annexe-d-glossaire.md) | Gabarit | — | 1500 | — | — |
 | 34 | Annexe E — Catalogue de patrons de la confiance agentique | [`90-annexes/annexe-e-catalogue-patrons.md`](90-annexes/annexe-e-catalogue-patrons.md) | Gabarit | — | 2500 | — | — |
 
-**Décompte de contrôle au 21 juillet 2026** : **34 pièces** — 0 rédigée, 0 relue, 34 en attente. Somme des cibles : **102 500 mots**, concordante avec le TOC (« Volumétrie indicative ») et le PRD §6.1.
+**Décompte de contrôle au 21 juillet 2026** : **34 pièces** — **4 rédigées au premier jet** (Partie I), **4 relues adversarialement**, **0 corrigée**, **30 au gabarit**. Volumétrie réelle des pièces rédigées : **11 843 mots** pour **11 000** de cible, soit **+7,7 %** — *écart documenté, non corrigé par amputation*. Somme des cibles : **102 500 mots**, concordante avec le TOC (« Volumétrie indicative ») et le PRD §6.1.
+
+⚠ **« Relue » ne veut pas dire « conforme ».** Les quatre relectures ont rendu **`A_CORRIGER`**, avec **14 réfutations bloquantes** ([rapport](../verification/relecture-P3-partie-I.md)), et **le point 6 de la boucle qualité — appliquer les correctifs — n'a pas été exécuté**. Une pièce au premier jet relue et non corrigée est plus proche d'un brouillon que d'un chapitre. *C'est précisément pour empêcher ce raccourci que ce registre distingue quatre états et non deux.*
 
 ⚠ **Ce registre ne se dérive pas d'un autre document.** Il se renseigne pièce par pièce, à la rédaction, et c'est lui qui fait foi en P5.3 lorsque les décomptes publiés sont re-mesurés et confrontés entre le PRD, le TOC, le README du volume et le README du dépôt.
