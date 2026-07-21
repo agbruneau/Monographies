@@ -33,7 +33,7 @@ Documents de gouvernance, par ordre d'autorité :
 
 **Règle cardinale (PRD §7.0)** — *aucun chapitre n'est rédigé avant la clôture du lot d'instruction dont il dépend.* Un chapitre écrit sur un socle vide n'est pas un chapitre en avance : c'est une inférence longue, et le volume qui prend l'identité pour objet ne peut pas se permettre d'en produire.
 
-État du socle au 21 juillet 2026 : **78 entrées propres re-mesurées** (F-01 à F-78), 33 entrées héritées (H-01 à H-33), **15 lots clos sur 15** — quatorze par instruction aboutie, **L-15 par échec documenté**. **Aucune pièce n'est rédigée.**
+Etat du socle au 21 juillet 2026 : **78 entrees propres re-mesurees** (F-01 a F-78), 33 entrees heritees (H-01 a H-33), **14 lots clos sur 15** et **L-14 partiellement clos**. **Aucune piece n'est redigee.**
 
 ⚠ **Ce qui demeure après la levée de la règle cardinale, ce sont les dépendances éditoriales** du PRDPlan §5.1, et elles ne se déduisent pas du socle : le **ch. 4** ouvre l'ouvrage et conditionne toute application de la grille ; le **ch. 8 se rédige après le ch. 9**, en travers des parties ; les **six chapitres de composition** attendent leurs chapitres amont et sont **plus** exposés qu'un chapitre de socle, pas moins. *Un socle constitué autorise la rédaction ; il ne la planifie pas.*
 
@@ -148,7 +148,7 @@ Chaque pièce porte sa propre date de gel, consignée au registre [`monographie/
 | Volumétrie cible | **102 500 mots** — re-sommée le 21 juillet 2026 depuis les cibles par bloc, **concordante** entre TOC, PRD §6.1 et registre de gel ; **indicative et non normative**. ⚠ Le README du dépôt porte encore « ≈ 100 000 » : réalignement en **P5.3**, avec les autres porteurs |
 | Socle propre | **78 entrées re-mesurées** — F-01 à F-26 (P1), F-27 à F-78 (P2). **180 affirmations instruites, 80 soumises au vote, 17 écartées** ; **53 corrections de bornage** ; **106 échecs de source consignés** |
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II), H-17 à H-33 (Vol. I) |
-| Lots d'instruction | **15 clos sur 15** — quatorze par instruction aboutie, **L-15** par échec documenté. ⚠ **La règle cardinale §7.0 ne bloque plus aucun chapitre** ; les dépendances éditoriales du PRDPlan §5.1 demeurent |
+| Lots d'instruction | **14 clos sur 15**, plus **L-14 partiellement clos** — treize par instruction aboutie, **L-15** par echec documente. ⚠ **L-14 n'a pas instruit les metriques du ch. 26** : ce chapitre reste interdit d'ecriture par §7.0. Pour tous les autres, seules demeurent les dependances editoriales du PRDPlan §5.1 |
 | Jalons | **J-0 à J-3 faits** ; J-4 à J-6 à faire |
 | Phases | **P0 ☑, P1 ☑, P2 ☑** ; P3 à P5 ☐ — suivi au grain de la phase : [PRDPlan §1.6](doc/PRDPlan.md) |
 | Remontées de gouvernance | **4 tranchées** (R-G-01 à R-G-04) — [registre](verification/remontees-gouvernance.md). ⚠ **Trois d'entre elles corrigent le cadrage lui-même** |
