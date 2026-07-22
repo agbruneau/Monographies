@@ -702,7 +702,7 @@ Le cas le plus fréquent de ce volume sera le troisième, et c'est normal : un o
 
 **Corpus d'appui** : les trois ouvrages, **sous condition de dépôt** (§7.7). Littérature secondaire de cadrage : cadres conceptuels et vocabulaire, **jamais sources primaires de spécification**.
 
-**Volumes du dépôt** : Vol. I (`Monographie.md`, `Synthese Monographie.md`, `Chapitres/Annexe B - Architecture de Solutions.md`) et Vol. II (`doc/PRD.md`, `monographie/**`) — cités **avec leur fichier** (§7.4.1) et **avec leur date de gel**.
+**Volumes du dépôt** : Vol. I (`Monographie.md`, `Synthese Monographie.md`, `Chapitres/Annexe B - Architecture de Solutions.md`) et Vol. II (`prd/PRD.md`, `monographie/**`) — cités **avec leur fichier** (§7.4.1) et **avec leur date de gel**. ⚠ **Troisième chemin du Vol. II corrigé le 22 juillet 2026**, après les deux du §7.2 et du §8.1 : celui-ci avait été manqué parce qu'il n'est **pas un lien Markdown** mais un chemin en prose entre accents graves — *le contrôle de résolution de liens ne couvre pas les chemins cités en prose, par construction, et c'est là que le renommage `doc/` → `prd/` survit le plus longtemps*.
 
 **Corroboration secondaire admise** : cabinets juridiques canadiens ; presse spécialisée ; analyses d'éditeurs — **jamais comme source unique d'un fait central.**
 
