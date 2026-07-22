@@ -4,25 +4,35 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` ne régit que le **volume I**, sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`. Il ne dit rien des autres livrables du dépôt *Monographies* :
+Ce `CLAUDE.md` ne régit que le **volume I**, sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`. Il ne dit rien des autres livrables du dépôt *Agentique* :
 
 | Ce que vous cherchez | Où |
 |---|---|
 | Place du volume I dans le corpus, ordre de lecture, divergences entre volumes | [README du dépôt](../../README.md) |
 | Conventions communes et **conventions de la veille technologique** (à la racine) | [`CLAUDE.md` du dépôt](../../CLAUDE.md) |
 | Volume II — *L'autonomie encadrée* (cas canadien) | [`2 - OrchestrationAgentique/CLAUDE.md`](../2%20-%20OrchestrationAgentique/CLAUDE.md) |
+| Volume III — *L'entreprise agentique* (cadrage) | [`3 - EntrepriseAgentique/CLAUDE.md`](../3%20-%20EntrepriseAgentique/CLAUDE.md) |
+| Volume IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium Agentique/`](../../2%20-%20Compendium%20Agentique/) |
 | Démonstrateur Go | [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md) — **prime dans ce répertoire** |
+
+⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
+nom-là ne survit que dans du contenu gelé (les références [217]-[218] de la veille) ; partout
+ailleurs il se corrige.
 
 ## Nature du volume
 
-Projet d'**écriture** en **français canadien** autour de l'**interopérabilité agentique** : **trois livrables rédigés**, plus un **démonstrateur de code** qui les accompagne ([`Borealis-Go/`](Borealis-Go/), régi par son propre [`CLAUDE.md`](Borealis-Go/CLAUDE.md)) :
+Projet d'**écriture** en **français canadien** autour de l'**interopérabilité agentique** : **deux livrables rédigés** rendus dans un même PDF, plus un **démonstrateur de code** qui les accompagne ([`Borealis-Go/`](Borealis-Go/), régi par son propre [`CLAUDE.md`](Borealis-Go/CLAUDE.md)) :
 
 1. **Monographie** de science et génie informatique, à double public — **recherche** (modèles, formalismes, état de l'art) et **praticien-architecte** (normes, protocoles, mises en œuvre). Sept chapitres en spirale du général au spécifique ; **socle des sources arrêté à juin 2026** ; invariant transversal rappelé à chaque couche : *découplage, contrat, évolution*.
 2. **Architecture détaillée de solution (ADS)**, intégrée comme **Annexe B** de la monographie — source [`Chapitres/Annexe B - Architecture de Solutions.md`](Chapitres/Annexe%20B%20-%20Architecture%20de%20Solutions.md). Elle projette la monographie (surtout ch. 5-6) sur une entreprise fictive (*Coopérative financière Boréalis*) et une pile **IBM** consolidée : livrable d'ingénierie *prêt au déploiement* (diagrammes, contrats, NFR, topologie, runbooks), de nature distincte du corps doctrinal mais rendu dans le même PDF.
-3. **Article de synthèse** autonome — revue condensée de la monographie au format académique (`Synthese Monographie.md`).
-4. **Démonstrateur Boréalis** — code Go (**MCP + A2A**, pré-qualification de crédit) matérialisant le PRD, dans [`Borealis-Go/`](Borealis-Go/). Livrable de nature distincte : conventions, commandes (`make check`, gate ≥ 90 %) et règles non négociables dans [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md), qui prime dans ce répertoire.
+3. **Démonstrateur Boréalis** — code Go (**MCP + A2A**, pré-qualification de crédit) matérialisant le PRD, dans [`Borealis-Go/`](Borealis-Go/). Livrable de nature distincte : conventions, commandes (`make check`, gate ≥ 90 %) et règles non négociables dans [`Borealis-Go/CLAUDE.md`](Borealis-Go/CLAUDE.md), qui prime dans ce répertoire.
 
-⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les trois volumes et porte sa propre édition (18 juillet 2026, 107 p., 218 références) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
+⚠ **L'article de synthèse et la page `index.html` ne sont plus dans ce dossier** (constaté le 22 juillet 2026). `Synthese Monographie.md`, son PDF (69 p.) et `index.html` ont été retirés du disque ; **la suppression n'est pas encore committée** — `git status` les montre en ` D`, et `git show HEAD:…` les rend encore. Deux conséquences pour qui édite ici :
+
+- ne pas rétablir de renvoi vers ces fichiers ni de chaîne de rendu qui les vise ;
+- les renvois **entrants** des volumes aval qui résolvaient contre `Synthese Monographie.md` (§10, §11.5 et tableau 15 — voir [`Chapitres/TOC.md`](Chapitres/TOC.md) §Filiation) n'ont plus de cible dans le dépôt. Les corriger relève des volumes émetteurs, pas d'ici.
+
+⚠ **La veille technologique n'est plus un livrable de ce dossier.** Elle a été déplacée à la racine du dépôt (`Veille Technologique.md`), couvre désormais les quatre volumes et porte sa propre édition (édition intégrale du 18 juillet 2026, **142 p., 244 références**) : ses conventions et sa chaîne de rendu sont au [`CLAUDE.md` du dépôt](../../CLAUDE.md). Ne pas la traiter ici.
 
 **État : rédaction terminée, démonstrateur clos** (audit 27/27, gate vert à 96,2 %). Le travail courant est la finalisation et la maintenance — corrections, vérification adverse des citations, régénération des PDF. Outillage : `git`, le pipeline de rendu (voir *Commandes*) et la chaîne Go du démonstrateur (voir `Borealis-Go/CLAUDE.md`).
 
@@ -35,15 +45,14 @@ Contenu rédigé dans [`Chapitres/`](Chapitres/), deux fichiers par chapitre, pl
 | `Chapitre N - {Sujet}.md` | chapitre rédigé (corps) |
 | `Chapitre N - Bibliographie - {Sujet}.md` | références vérifiées du chapitre |
 | `Annexe B - Architecture de Solutions.md` | corps de l'ADS, repris tel quel dans `Monographie.md` |
+| `TOC.md` | table des matières commentée, **v1.0 du 18 juillet 2026** — rétro-documentation relevée sur le texte livré, non spécification d'un ouvrage à écrire (à la différence des `TOC.md` des Vol. III et IV) |
 
 Assemblages et livrables à la racine :
 
-- [`Monographie.md`](Monographie.md) → `Monographie.pdf` (**569 p.**) — **source unique** du PDF principal : liminaires (page titre Typst, résumé, table des matières, abréviations) + 7 chapitres + Bibliographie générale + **Annexe A** (documents d'accompagnement) + **Annexe B** (l'ADS : 18 sections + vues *blueprint* §0.1-0.2, 6 sous-annexes, 28 diagrammes Mermaid). Rendu FESP (Pandoc → Typst), diagrammes pré-rendus.
-- [`Synthese Monographie.md`](Synthese%20Monographie.md) → `Synthese Monographie.pdf` (**69 p.**) — article de synthèse autonome (12 sections + bibliographie propre), **même pipeline FESP**, sans diagramme.
-- [`Borealis-Go/`](Borealis-Go/) — démonstrateur Go (voir livrable 4 ci-dessus) : `cmd/` (9 binaires : 4 `agent-*`, 4 `mcp-*`, `orchestrator`), `internal/`, `pkg/`, `docs/adr/` (**12 ADR**, 0001-0012), PRD et plan d'exécution inclus.
-- `index.html` — page de présentation (GitHub Pages) du volume I.
+- [`Monographie.md`](Monographie.md) → `Monographie.pdf` (**569 p.**) — **source unique** du PDF : liminaires (page titre Typst, résumé, table des matières, abréviations) + 7 chapitres + Bibliographie générale + **Annexe A** (documents d'accompagnement) + **Annexe B** (l'ADS : 18 sections + vues *blueprint* §0.1-0.2, 6 sous-annexes, 28 diagrammes Mermaid). Rendu FESP (Pandoc → Typst), diagrammes pré-rendus.
+- [`Borealis-Go/`](Borealis-Go/) — démonstrateur Go (voir livrable 3 ci-dessus) : `cmd/` (9 binaires : 4 `agent-*`, 4 `mcp-*`, `orchestrator`), `internal/`, `pkg/`, `docs/adr/` (**12 ADR**, 0001-0012), PRD et plan d'exécution inclus.
 
-Les deux PDF du volume (monographie, synthèse) sont publiés sur GitHub Pages. ⚠ `index.html` porte une **modification non committée** qui a résorbé les reliquats de la restructuration : retrait des 4 liens vers `Veille Technologique.pdf` (sans cible depuis le déplacement de la veille) et réécriture des URL `canonical`, `og:url` et des deux liens GitHub, de l'ancien dépôt `InteroperabiliteAgentique` vers `Monographies`. **À relire avant de committer.**
+⚠ **Plus de page de présentation ni de publication GitHub Pages pour ce volume** : `index.html` a été retiré (voir *Nature du volume*). Les adresses `https://agbruneau.github.io/Monographies/…` qui circulaient étaient de toute façon fausses — le dépôt s'appelle `Agentique`. Ne pas réintroduire de renvoi « Lire en ligne » sans avoir d'abord constaté que Pages est activé sur le bon dépôt.
 
 Progression de la monographie (chaque chapitre suppose les précédents) :
 
@@ -61,10 +70,9 @@ Une seule chaîne de rendu dans ce dossier : le **pipeline FESP** (`build/build-
 
 ```bash
 bash build/build-pdf.sh                            # Monographie.pdf (défaut ; pré-rend les 28 diagrammes Mermaid)
-bash build/build-pdf.sh "Synthese Monographie.md"  # Synthese Monographie.pdf (sans diagramme)
 ```
 
-Le script prend un `.md` source en argument (défaut `Monographie.md`) et en déduit le `.pdf`. Les blocs ` ```mermaid ` sont pré-rendus en SVG (mermaid-cli) puis injectés avant Pandoc→Typst ; si `mmdc` est absent, ils restent en bloc de code (mode dégradé, sans échec). La pagination liminaire romaine→arabe ne s'applique qu'à `Monographie.md`. Gabarit : `build/fesp.template` (police Liberation Sans, repli Arial).
+Le script prend un `.md` source en argument (défaut `Monographie.md`) et en déduit le `.pdf` ; depuis le retrait de l'article de synthèse, `Monographie.md` est la **seule** source de ce dossier. Les blocs ` ```mermaid ` sont pré-rendus en SVG (mermaid-cli) puis injectés avant Pandoc→Typst ; si `mmdc` est absent, ils restent en bloc de code (mode dégradé, sans échec). La pagination liminaire romaine→arabe ne s'applique qu'à `Monographie.md`. Gabarit : `build/fesp.template` (police Liberation Sans, repli Arial).
 
 Le volume II possède une **copie** de ce pipeline, précédée d'une étape d'assemblage qui lui est propre (`build/assemble.py`) : les deux évoluent séparément, ne pas présumer qu'un correctif ici s'y propage. La veille de la racine, elle, n'utilise **pas** FESP (voir le [`CLAUDE.md` du dépôt](../../CLAUDE.md)).
 
@@ -98,7 +106,7 @@ Le volume II possède une **copie** de ce pipeline, précédée d'une étape d'a
 
 - **Vérification adverse des citations.** Toute référence ajoutée ou modifiée est vérifiée sur le web (existence, auteurs, année, numéro de norme/RFC/recommandation) avant d'être affirmée exacte. Chaque bibliographie de chapitre porte un bilan (`N références vérifiées → M entrées…`) ; le mettre à jour si on touche au compte.
 - **Dates et statut prospectif.** Signaler toute nouveauté postérieure à juin 2026 — c'est le gel du volume. Le **ch. 7** projette l'avenir et trie chaque énoncé en **PROGRAMMÉ / PROJETÉ / SPÉCULATIF** (faits datés / prévisions millésimées / paris) — ne jamais présenter du spéculatif comme acquis. Dans l'ADS, ne jamais présenter un statut *preview* (⚠) comme GA.
-- **Synchronisation et publication.** Après toute édition d'un chapitre : reporter le changement dans `Monographie.md` (et dans `Synthese Monographie.md` si le fait y figure), régénérer les PDF **et les pousser avec la source** — jamais la source seule. Si la pagination de la monographie change, reporter le nouveau compte aux **deux** endroits d'`index.html` (`"numberOfPages"` du JSON-LD et le compteur animé `data-count`), dans ce `CLAUDE.md`, dans le [`README.md`](README.md) du volume **et dans le [README du dépôt](../../README.md)**, qui affiche lui aussi les paginations des quatre livrables.
+- **Synchronisation et publication.** Après toute édition d'un chapitre : reporter le changement dans `Monographie.md`, régénérer le PDF **et le pousser avec la source** — jamais la source seule. Si la pagination change, reporter le nouveau compte dans ce `CLAUDE.md`, dans le [`README.md`](README.md) du volume **et dans le [README du dépôt](../../README.md)**, qui affiche lui aussi les paginations de tous les livrables.
 - **Registre et ton.** Qualité rédactionnelle soutenue ; **ton professionnel et neutre** (pas de marketing, pas de 1ʳᵉ personne). Gloses, titres et notes en français.
-- **Longueur.** Chaque **chapitre de la monographie** fait au moins **10 000 mots** ; préserver ce seuil lors des révisions. La synthèse, condensée par nature, n'y est pas soumise.
-- **Messages de commit** : courts, en français, nommés par livrable touché — `Chapitre 5`, `Chapitre 3 et 4`, `Annexe B`, `Synthèse`. ⚠ Convention **propre au volume I** : le volume II emploie des Conventional Commits en anglais (`docs(mono): …`). Vérifier dans quel dossier on travaille avant de rédiger le message.
+- **Longueur.** Chaque **chapitre de la monographie** fait au moins **10 000 mots** ; préserver ce seuil lors des révisions.
+- **Messages de commit** : courts, en français, nommés par livrable touché — `Chapitre 5`, `Chapitre 3 et 4`, `Annexe B`. ⚠ Convention **propre au volume I** : le volume II emploie des Conventional Commits en anglais (`docs(mono): …`). Vérifier dans quel dossier on travaille avant de rédiger le message.
