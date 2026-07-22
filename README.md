@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (142 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
+| **État** | Publiée (142 p., 244 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours, aucun PDF | **Cadrage seul** — table des matières v0.2 |
 
 ## Veille technologique — le document transversal
 
@@ -105,28 +105,31 @@ huit garde-fous de formulation, onze lacunes exposées plutôt que comblées.
 
 ## Vol. III — L'entreprise agentique
 
-**Au stade du cadrage seul, mais désormais gouverné.** Aucun chapitre n'est rédigé et **aucun socle
-factuel propre n'est constitué** — 0 entrée propre, 33 entrées héritées (H-01 à H-33), 15 lots
-d'instruction ouverts, 0 clos. Cadrage annoncé : 28 chapitres en 9 parties, ≈ 100 000 mots, autour
-de trois capacités — *émettre* une identité opposable (le passeport d'agent), l'*appliquer* au
+**Rédigé de bout en bout, non encore publié.** Les **34 pièces** — avant-propos, 28 chapitres en
+9 parties, 5 annexes — sont **rédigées, relues adversarialement et corrigées** (statut constaté sur
+pièce le 22 juillet 2026), pour **≈ 160 400 mots réels** au regard d'une cible indicative de
+**≈ 102 500**. Le socle factuel propre compte **98 entrées** (F-01 à F-98), sur **33 entrées
+héritées** (H-01 à H-33) ; les **15 lots d'instruction sont clos**. Le volume s'organise autour de
+trois capacités — *émettre* une identité opposable (le passeport d'agent), l'*appliquer* au
 maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous l'horloge post-quantique.
 
-Le dossier porte quatre fichiers, et rien d'autre : trois documents de gouvernance dans `doc/`,
-plus un [`CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) à l'agent
-qui édite. Par ordre d'autorité :
+⚠ **Rédigé ne vaut pas publiable.** La phase de finalisation (**P5**) est en cours : revalidation
+temporelle finale, rejeu des motifs de balayage sur les 34 pièces, question du pipeline de rendu
+(aucun n'existe encore dans le dossier) ; **quinze remontées de gouvernance demeurent ouvertes**
+(R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Aucun PDF n'est assemblé.**
 
-1. [`doc/PRD.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/PRD.md) **v0.1** —
+Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
+les rapports de vérification dans `verification/` —, plus un
+[`CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) à l'agent qui
+édite. Documents de gouvernance, par ordre d'autorité :
+
+1. [`prd/PRD.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/prd/PRD.md) **v1.3** —
    contenu, héritage du socle, quatorze garde-fous, critères d'acceptation ; **prime en cas de
    conflit**, y compris sur le TOC ;
-2. [`doc/TOC.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/TOC.md) **v0.4** du
-   18 juillet 2026, statut *proposition* — autorité sur le découpage ;
-3. [`doc/PRDPlan.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/doc/PRDPlan.md)
-   **v0.1** — plan d'exécution (phases P0 à P5).
-
-⚠ **Règle cardinale : aucun chapitre n'est rédigeable aujourd'hui** (PRD §7.0) — aucun ne s'écrit
-avant la clôture du lot d'instruction dont il dépend. Deux décisions de cadrage restent à l'auteur
-et bloquent la suite ; l'une d'elles, le dépôt d'un corpus d'appui de trois ouvrages annoncés
-« déposés » mais **absents du dépôt**, bloque à elle seule sept sections et une annexe entière.
+2. [`prd/TOC.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/prd/TOC.md) **v0.8** —
+   autorité sur le découpage (28 chapitres, 9 parties, 34 pièces) ;
+3. [`prd/PRDPlan.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/prd/PRDPlan.md)
+   **v0.5** — plan d'exécution (phases P0 à P5).
 
 Le volume naît des lacunes des deux précédents : identité non humaine et délégation multi-saut
 (verrou identifié au Vol. I), mécanique des attaques et valeur cryptographique des Agent Cards
@@ -227,7 +230,9 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │   │   └── index.html                         page de présentation (GitHub Pages)
 │   └── 3 - EntrepriseAgentique/             Vol. III
 │       ├── CLAUDE.md                          conventions du volume
-│       └── doc/                               PRD v0.1, TOC v0.4, PRDPlan v0.1 — gouvernance seule
+│       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
+│       ├── monographie/                       34 pièces rédigées + registre des gels
+│       └── verification/                      29 rapports (lots, relectures, revalidations)
 └── 2 - Compendium Agentique/              ← Vol. IV
     └── TOC.md                               table des matières commentée (v0.2) — seul livrable
 ```

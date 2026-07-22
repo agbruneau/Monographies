@@ -11,6 +11,8 @@
 | Provenance de R-G-05 à R-G-22 | Phase **P3** — dépouillement des vingt-trois puces de « Remontées de gouvernance ouvertes par la rédaction » ([`relecture-P3-partie-I.md`](relecture-P3-partie-I.md)), regroupées par question et non par mention, **plus deux remontées relevées au corps du même rapport** (R-G-21, R-G-22) que sa liste finale ne portait pas. |
 | Provenance de R-G-23 à R-G-42 | Phase **P3**, clôture — dépouillement des blocs « Remontées ouvertes » des **vingt et une pièces rédigées** (Parties I à VI, `monographie/`) et du compte rendu [`relecture-CA-12-P3.md`](relecture-CA-12-P3.md), **regroupés par question et non par mention**. ⚠ **Les vingt-deux premières ont été ouvertes avant la rédaction des ch. 5 à 21 ; celles-ci le sont par elle.** Une même question remontée par six pièces ne compte qu'une fois — le regroupement est le travail, pas la transcription. |
 | Provenance de R-G-43 à R-G-51 | Phase **P4**, clôture — dépouillement des **trois contrôles spécifiques** déposés le 22 juillet 2026 ([`relecture-CA-09-P4.md`](relecture-CA-09-P4.md), [`relecture-CA-13-P4.md`](relecture-CA-13-P4.md), [`relecture-CA-12-lots.md`](relecture-CA-12-lots.md)), des **dettes déclarées** par le PRD v1.2 (§7.11, §7.6, §10) et des blocs « Remontées ouvertes » des treize pièces de P4. **Regroupées par question et non par mention**, comme les précédentes. ⚠ **Aucune des neuf n'est tranchée par la présente consignation** : quatre relèvent de l'auteur sans exception, et les cinq autres n'ont pas été arbitrées par la passe qui les ouvre. |
+| Décompte au 22 juillet 2026, **phase P5** | **57 remontées**, R-G-01 à R-G-57 — **39 tranchées**, **3 sans objet** (R-G-18, R-G-19, R-G-36), **15 ouvertes** (R-G-43 à R-G-57). ☑ **Cardinal, ventilation et plage relevés marqueur par marqueur sur les en-têtes `## R-G-NN` du fichier édité**, en une passe unique : en-têtes **contigus de 1 à 57**, aucun doublon, aucune discontinuité ; **39 + 3 + 15 = 57**, somme vérifiée. ⚠ **La ligne P4 ci-dessus est conservée et périmée** : elle demeure exacte à sa date, et l'effacer retirerait la seule trace de ce que la phase P5 a ajouté. |
+| Provenance de R-G-53 à R-G-57 | Phase **P5** — passe de contrôle CA-12 du 22 juillet 2026 : dépouillement de la reconstitution [`relecture-CA-12-P5.md`](relecture-CA-12-P5.md), du contrôle de sortie de J-6 [`relecture-CA.md`](relecture-CA.md) (§3.10, §3.5, §6, §8) et de la revalidation [`revalidation-2026-07-22.md`](revalidation-2026-07-22.md) §4. ⚠ **Aucune des cinq n'est tranchée par la passe qui les ouvre** ; **quatre relèvent de l'auteur sans exception** et la cinquième (**R-G-56**) est subordonnée à l'arbitrage de **R-G-53**. ⚠ **Une question ouverte demeure hors registre et il faut le savoir** : le **terme procédural de CA-12** — compte rendu déposé **et** nommé dans la pièce qu'il couvre — est documenté à [`relecture-CA.md`](relecture-CA.md) §6 point 1 et §8 option B, **son inscription est due, et elle n'est pas opérée**. |
 | Provenance de R-G-52 | Phase **P4**, **passe corrective de clôture** du 22 juillet 2026 — contrôle d'arborescence conduit sur le commit `fd8f1be`, qui y a trouvé **six suppressions de fichiers hors du volume III** que R-G-51 n'avait pas relevées en lisant le même commit. ⚠ **Elle relève de l'auteur sans exception** et n'est pas tranchée par la passe qui l'ouvre. |
 | Règle cardinale du registre | ⚠ **Les remontées sont arbitrées ENTRE les lots, jamais seulement en fin de phase.** *Motif, et il est chèrement acquis : au Vol. II, le ch. 5 a signalé qu'un adjectif du socle était réfuté par le socle lui-même et a demandé l'arbitrage avant le ch. 13, chapitre pivot qui reposait dessus. La gouvernance n'étant collectée qu'en fin de passe, l'arbitrage n'a pas eu lieu et le ch. 13 a dû trancher seul. Il l'a bien fait — par chance, pas par conception.* |
 | Statuts | ☐ ouverte · ◐ en arbitrage · ☑ tranchée · ⊘ sans objet |
@@ -1940,7 +1942,7 @@ PRD Annexe C §C.2 (règle 5) et Annexe B.3 ; corps des ch. 19 et 21. ⚠ **Le T
 | Ouverte par | **L'obligation que l'arbitrage R-G-39 maintient** — « L'obligation de remonter l'écart est maintenue pour les treize pièces restantes » —, et les écarts remontés par les treize pièces de P4, dont les ch. 25, 27 et 28 en toutes lettres |
 | Bloque | Les **cibles de volumétrie inscrites au TOC** et la **projection** que R-G-39 a fait inscrire |
 | Siège de la faute | **Le cadrage** — TOC v0.7 (cibles) et PRD §6.1 (**cible seulement**). ⚠ **Correction du 22 juillet 2026 : la projection de 140 800 mots ne siège pas au PRD §6.1** — la chaîne « 140 800 » y compte **zéro occurrence**, constat sur pièce. Elle vit au [registre de gel](../monographie/99-registre-gel.md) et au `CLAUDE.md` du volume. Le report qu'annonce R-G-39 vers le PRD **n'a pas été opéré**, et le dire est le premier acte que cette remontée doit à l'auteur |
-| Rattachement | ⚠ **Ce n'est pas une remontée neuve : c'est la reprise de R-G-39, qui avait absorbé R-G-17.** Elle est ouverte séparément parce qu'elle porte un **fait que R-G-39 ne pouvait pas connaître** — la projection qu'il a fait inscrire est dépassée de **19 647 mots** |
+| Rattachement | ⚠ **Ce n'est pas une remontée neuve : c'est la reprise de R-G-39, qui avait absorbé R-G-17.** Elle est ouverte séparément parce qu'elle porte un **fait que R-G-39 ne pouvait pas connaître** — la projection qu'il a fait inscrire est dépassée de **19 627 mots** (fin de chaîne P5.3 ; **19 647** à la clôture de P4, conservé et daté) |
 | Tranchée par | **L'AUTEUR** — **cible de volumétrie inscrite au TOC** : PRDPlan §5.3 la lui fait remonter **sans exception**, et R-G-39 l'a rappelé |
 | Statut | ☐ **ouverte** |
 
@@ -1954,18 +1956,20 @@ Commande de référence **PRDPlan §1.5** (`LC_ALL=C.UTF-8`), à exécuter sur l
 
 | Grandeur | Valeur mesurée le 22 juillet 2026 |
 |---|---|
-| Relevé par bloc — avant-propos, neuf parties, annexes | avant-propos **3 955** (2 500, +58,2 %) ; I **13 895** (11 000, +26,3 %) ; II **18 338** (12 000, +52,8 %) ; III **12 986** (9 500, +36,7 %) ; IV **16 984** (12 000, +41,5 %) ; V **13 104** (9 000, +45,6 %) ; VI **11 700** (9 500, +23,2 %) ; VII **11 523** (7 000, +64,6 %) ; VIII **16 867** (10 000, +68,7 %) ; IX **21 643** (11 000, +96,8 %) ; annexes **19 452** (9 000, +116,1 %) |
-| Sous-total des 21 pièces du tronc (63 000 de cible) | **87 007** — écart **+38,1 %** |
-| Sous-total des 13 pièces d'appareil (39 500 de cible) | **73 440** — écart **+85,9 %** |
-| **Total, 34 pièces**, pour **102 500** de cible cumulée | **160 447** — écart **+56,5 %** |
-| Dépassement de la projection de 140 800 mots | **19 647 mots** |
+| Relevé par bloc — avant-propos, neuf parties, annexes | avant-propos **3 947** (2 500, +57,9 %) ; I **13 891** (11 000, +26,3 %) ; II **18 338** (12 000, +52,8 %) ; III **12 986** (9 500, +36,7 %) ; IV **16 982** (12 000, +41,5 %) ; V **13 104** (9 000, +45,6 %) ; VI **11 700** (9 500, +23,2 %) ; VII **11 523** (7 000, +64,6 %) ; VIII **16 864** (10 000, +68,6 %) ; IX **21 640** (11 000, +96,7 %) ; annexes **19 452** (9 000, +116,1 %) |
+| Sous-total des 21 pièces du tronc (63 000 de cible) | **87 001** — écart **+38,1 %** |
+| Sous-total des 13 pièces d'appareil (39 500 de cible) | **73 426** — écart **+85,9 %** |
+| **Total, 34 pièces**, pour **102 500** de cible cumulée | **160 427** — écart **+56,5 %** |
+| Dépassement de la projection de 140 800 mots | **19 627 mots** |
 
-: Grandeurs de volumétrie dues à cette remontée, mesurées en une passe unique de fin de chaîne le 22 juillet 2026, chaque bloc sommé depuis les mesures par pièce.
+: Grandeurs de volumétrie dues à cette remontée, mesurées en une passe unique de fin de chaîne (activité **P5.3**) le 22 juillet 2026, chaque bloc sommé depuis les mesures par pièce.
+
+⚠ **Valeurs re-mesurées en fin de chaîne P5.3, et l'arbitrage de l'auteur porte sur elles.** Le relevé de clôture de P4 — total **160 447**, tronc **87 007**, appareil **73 440**, dépassement **19 647** — est remplacé ici par la mesure de fin de chaîne : les retraits CA-12 de la passe P5.1 ont coupé **23 mots** après lui (ch. 1, ch. 25, avant-propos, ch. 28 §28.3). Il est **conservé et daté**, comme l'était le relevé de 159 951 qui le précédait. *Un arbitrage de volumétrie rendu sur un total périmé porterait sur un taux qui n'est pas celui du volume* — les trente-quatre en-têtes concordent, champ par champ, avec la valeur courante.
 
 **Trois faits que R-G-39 ne portait pas.**
 
 1. **L'écart s'est creusé** : +37,4 % sur les vingt et une pièces du tronc **à la mesure du 21 juillet 2026**, davantage sur les trente-quatre. Il ne s'est pas dilué en s'étendant. Les taux courants, mesurés le 22 juillet 2026, sont **+38,1 %** sur le tronc et **+56,5 %** sur les trente-quatre.
-2. **La projection révisée par R-G-39 est dépassée.** Cet arbitrage avait fait inscrire une projection de **140 800 mots** — « au taux constaté ». ⚠ **Son siège n'est pas celui que R-G-39 annonce** : constat sur pièce du 22 juillet 2026, la chaîne « 140 800 » compte **zéro occurrence au PRD §6.1** ; elle vit au **registre de gel** et au **`CLAUDE.md`** du volume. Le dépassement est de **19 647 mots**. ⚠ *Une projection dépassée n'est pas une cible manquée : c'est un taux qui n'était pas le bon* — et une projection dont le siège annoncé ne la porte pas n'est pas inscrite, elle est déclarée inscrite.
+2. **La projection révisée par R-G-39 est dépassée.** Cet arbitrage avait fait inscrire une projection de **140 800 mots** — « au taux constaté ». ⚠ **Son siège n'est pas celui que R-G-39 annonce** : constat sur pièce du 22 juillet 2026, la chaîne « 140 800 » compte **zéro occurrence au PRD §6.1** ; elle vit au **registre de gel** et au **`CLAUDE.md`** du volume. Le dépassement est de **19 627 mots** (mesure de fin de chaîne P5.3 ; **19 647** à la clôture de P4). ⚠ *Une projection dépassée n'est pas une cible manquée : c'est un taux qui n'était pas le bon* — et une projection dont le siège annoncé ne la porte pas n'est pas inscrite, elle est déclarée inscrite.
 3. **Le motif n'a pas changé, et il est reconstaté** — les bornes rétablies, non l'ajout de matière. Les deux pièces les plus lourdes du volume, **ch. 27** et **ch. 28**, ont **grossi de 543 mots par le seul contrôle CA-13**, qui n'a ajouté aucune matière : un marquage d'inférence au §27.2, un marquage et une légende au §27.3, la clause renforcée de R-07 en deux endroits du ch. 28. Et la passe CA-09, qui a **retiré** 499 mots de hors-périmètre, en a **écrit 271** pour le consigner. *Ces trois deltas sont ceux de contrôles clos ; ils ne bougent plus, à la différence des totaux.*
 
 ⚠ **Deux gestes opposés produisent le même chiffre, et c'est le piège de cette remontée** : amputer une borne et couper un hors-périmètre font l'un et l'autre baisser un décompte. *Le décompte ne dit pas lequel a été fait.*
@@ -2184,13 +2188,200 @@ Commande de référence **PRDPlan §1.5** (`LC_ALL=C.UTF-8`), à exécuter sur l
 
 ---
 
+## R-G-53 — La frontière de CA-12 entre annonce de régime et attestation d'observance n'est écrite nulle part, et deux passes l'ont lue différemment à un jour d'intervalle ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 22 juillet 2026, phase **P5** |
+| Ouverte par | La reconstitution [`relecture-CA-12-P5.md`](relecture-CA-12-P5.md) §6, et **avant elle par deux pièces** — l'avant-propos et le ch. 28 §28.3, qui déclarent la question à leur journal de retrait |
+| Bloque | Le **prononcé de CA-12** sur le volume, et la stabilité de **huit retraits** rendus le 22 juillet 2026 |
+| Siège de la faute | **Le cadrage** — PRD §8.5 et §11 n'écrivent pas la frontière ; le report de **R-G-33** point 3 n'a pas été opéré |
+| Tranchée par | **L'AUTEUR sans exception** — la lecture d'un **critère d'acceptation** et la portée d'un **garde-fou** ([PRDPlan](../prd/PRDPlan.md) §5.3) |
+| Statut | ☐ **ouverte — non tranchée par la passe qui l'ouvre** |
+
+### Ce que l'instruction établit — constats sur pièce, 22 juillet 2026
+
+- **Le 21 juillet 2026**, [`relecture-CA-12-P3.md`](relecture-CA-12-P3.md) §5 examine l'annonce de régime du **ch. 12** — « […] cite l'identifiant de vulnérabilité ou l'incident, **et s'arrête là** » —, la retient pour retrait, puis **la conserve** : elle relève du registre de ce que le chapitre *fait*, non de ce que son contenu *a été vérifié ne pas contenir*. Le compte rendu la déclare « discutable » et ouvre sa **remontée n° 2** (§7).
+- **Cette remontée a été arbitrée**, et il faut le savoir avant d'en rouvrir la question : **R-G-33, point 3** (21 juillet 2026) prescrit l'harmonisation et le retrait du membre « et s'arrête là », au motif que *« la forme la plus sûre est celle qui ne dit rien de ce que la pièce a été vérifiée ne pas contenir »*. **Sa section « Report » porte : « ⚠ Non fait à la date de la présente consignation. »**
+- ☑ **Le report n'a toujours pas été opéré** : le **ch. 12 porte encore « et s'arrête là »**, occurrence unique à l'ouverture du chapitre, constatée sur le fichier le 22 juillet 2026.
+- **Le 22 juillet 2026**, les passes CA-12 sur `monographie/` retirent **huit** propositions, dont **cinq** portent précisément sur ce que la pièce **ne contient pas** — ch. 7, ch. 8, ch. 25, avant-propos, ch. 28 §28.3 — et une sixième pour moitié (ch. 14).
+
+⚠ **L'asymétrie est le cœur de la remontée** : la seule occurrence dont le retrait ait été **expressément arbitré subsiste**, tandis que cinq propositions du même registre, qu'aucun arbitrage ne nommait, ont été retirées. *Un arbitrage rendu et non reporté laisse la règle s'appliquer partout sauf là où elle a été écrite.*
+
+⚠ **R-G-33 est resté local, et c'est ce qui rend la question ouverte.** Il tranche **une occurrence** dans **une pièce** ; il n'écrit aucune frontière générale au PRD §8.5, au PRD §11 ni à §A.5. La formule des deux journaux — « la frontière n'a jamais été arbitrée » — est **exacte pour la règle générale** et **inexacte si on la lit comme visant le ch. 12**. *Distinguer les deux est la différence entre une question ouverte et un report non fait ; les deux sont vraies ici, et elles n'appellent pas le même geste.*
+
+### Question posée à l'auteur
+
+| Option | Conséquence, et son coût |
+|---|---|
+| **(a) Lecture stricte du 22 juillet** — toute proposition portant sur ce que la pièce **ne contient pas** est proscrite | Cohérente avec les huit retraits déjà rendus, qui deviennent définitifs. ⚠ **Impose un balayage de la classe sur les 34 pièces** : la classe s'est déjà réintroduite deux fois après avoir été corrigée ailleurs (avant-propos et ch. 28, rédigés après le retrait du ch. 1 §1.2). ⚠ Impose aussi le **report de R-G-33 au ch. 12** |
+| **(b) Distinction du 21 juillet** — l'**annonce de régime** est admise, la **certification de non-contenu** est proscrite | La frontière s'écrit **au PRD §8.5 ou §11**, une fois, plutôt que d'être rejouée par chaque passe. ⚠ **Rend révocables les retraits rendus sous la lecture stricte** (voir **R-G-56**) ; ⚠ demande de qualifier le cas **mixte** du ch. 14 |
+| **(c) Constater que les deux passes ont exercé deux critères** et **rejouer CA-12 entièrement** sous le critère retenu | Seule option qui produise un corpus homogène. ⚠ **Coût le plus élevé** : 34 pièces et 15 rapports de lot à relire sous une lentille unique |
+
+⚠ **Dans les trois branches, la remontée n° 2 de [`relecture-CA-12-P3.md`](relecture-CA-12-P3.md) §7 doit être EXPLICITEMENT close**, et son report au ch. 12 opéré ou expressément abandonné. *Une remontée arbitrée dont le report n'est pas opéré n'est pas close : elle est arbitrée* — règle du présent registre, et le ch. 12 en est l'illustration à quinze mois de distance d'une phrase.
+
+⚠ **Le statu quo n'est pas un arbitrage** — doctrine (2). Laisser la frontière non écrite garantit qu'une passe ultérieure la lira une troisième fois.
+
+### Ce que cette remontée ne porte pas
+
+⚠ **Le terme procédural de CA-12** — *« le compte rendu est déposé sous `verification/` et nommé dans la pièce qu'il couvre »* — est une **question distincte**, non tranchée et **non inscrite ici**. Elle est documentée à [`relecture-CA.md`](relecture-CA.md) §6 point 1 et §8 option B, et à [`relecture-CA-12-P5.md`](relecture-CA-12-P5.md) §1 et §5 : **16 pièces sur 34 ne nomment aucun compte rendu CA-12**, et le compte rendu des passes du 22 juillet 2026 est une **reconstitution** établie depuis les journaux des pièces contrôlées. **Son inscription au registre demeure due et n'est pas opérée par la présente passe.**
+
+---
+
+## R-G-54 — CA-10, branche (c) : la qualification des garde-fous n'est pas tenue au grain de l'occurrence, et le grain n'est pas tranché ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 22 juillet 2026, phase **P5** |
+| Ouverte par | [`relecture-CA.md`](relecture-CA.md) §3.10, contrôle de sortie du jalon **J-6** |
+| Bloque | Le **prononcé de CA-10** sur le volume, et donc le **critère de sortie de J-6** (« grille CA intégralement conforme et constatée sur pièce ») |
+| Siège de la faute | **Le critère lui-même** — CA-10 écrit « **tout** renvoi », sans dire si le grain est l'occurrence ou la pièce |
+| Tranchée par | **L'AUTEUR sans exception** — **grain d'un critère d'acceptation** ([PRDPlan](../prd/PRDPlan.md) §5.3) ; précédents **R-G-40** et **R-G-46** |
+| Statut | ☐ **ouverte — aucune des occurrences n'est corrigée** |
+
+### Ce que l'instruction établit
+
+**Valeurs rapportées, attribuées à leur source et non re-mesurées ici** — [`relecture-CA.md`](relecture-CA.md) §3.10, relevé du 22 juillet 2026 sur les 34 corps, fenêtre de ±120 caractères :
+
+- **382 mobilisations** de garde-fous à deux chiffres (R-01 à R-14) ; **245 nomment leur volume**, **137 ne le nomment pas** ;
+- les **15 mobilisations** à un chiffre (R-1 à R-8, Vol. II) **nomment toutes leur volume**, sans exception ;
+- **11 pièces** qualifient à 100 % ; **23 pièces** portent les 137 non qualifiées, dont **ch. 27 (19 sur 29), ch. 28 (18 sur 35), ch. 22 (13 sur 15), avant-propos (12 sur 14), annexe B (11 sur 12), annexe C (10 sur 16)** — **83 des 137 sur six pièces** ;
+- **cinq pièces posent la convention une fois pour toutes** en tête de fichier : avant-propos, ch. 4, ch. 22, annexe B, annexe D.
+
+⚠ **Un écart d'instrument est signalé et n'est pas imputé.** Une re-mesure indépendante du 22 juillet 2026, conduite sur le domaine de la commande de [PRDPlan](../prd/PRDPlan.md) §1.5 avec le motif `R-(0[1-9]|1[0-4])`, relève **388** mobilisations et non 382 — l'écart se concentre au **ch. 28** (37 contre 35), le **ch. 27** concordant à l'unité (29). Le motif exact et la fenêtre employés par le relevé amont ne sont pas publiés ; **la différence n'est donc pas imputable en l'état, et aucune des deux valeurs ne se recopie sans son instrument.** *Deux cardinaux mesurés par deux motifs ne sont pas deux mesures du même objet.*
+
+### Question posée à l'auteur
+
+| Option | Conséquence, et son coût |
+|---|---|
+| **(1) Grain de l'occurrence** — la lettre du critère | **137 corrections sur 23 pièces**, aucune ambiguïté résiduelle. ⚠ Coût en verbosité **concentré sur les pièces d'appareil et de composition**, qui portent déjà l'écart de volumétrie le plus fort (**R-G-47**) |
+| **(2) Grain de la pièce** — une convention déclarée une fois par fichier | **18 pièces à doter d'une clause**, cinq la portant déjà ; les 137 occurrences demeurent. ⚠ **Impose d'amender l'énoncé de CA-10**, qui écrit « tout renvoi » |
+| **(3) Statu quo, l'écart étant documenté** | Le critère demeure non tenu à sa lettre, et le rapport de sortie de J-6 le porte. ⚠ **Doctrine (2) : le statu quo n'est pas un arbitrage** |
+
+⚠ **Aucune des 137 occurrences n'est corrigée par la passe qui ouvre cette remontée**, et le grain n'y est pas tranché.
+
+---
+
+## R-G-55 — Quatre revendications de verbatim reposent sur un fichier retiré du dépôt, et un blob git n'est pas la source que CA-05 exige ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 22 juillet 2026, phase **P5** |
+| Ouverte par | [`relecture-CA.md`](relecture-CA.md) §3.5 et §6 point 5, contrôle de sortie du jalon **J-6** |
+| Rattachement | **Volet CA-05 de **R-G-52****, qui porte le fait générateur — le retrait de `Synthese Monographie.md` au commit `fd8f1be`. ⚠ **Les deux se traitent ensemble** : trancher R-G-52 sans trancher celle-ci laisserait les revendications de verbatim sans régime |
+| Bloque | Le **prononcé de CA-05**, et la **revalidation temporelle P5.1** en tant qu'elle porte sur les entrées héritées |
+| Siège de la faute | **Aucune faute de rédaction dans ce volume** — les citations sont exactes ; c'est leur **opposabilité** qui a cessé |
+| Tranchée par | **L'AUTEUR sans exception** — charge éditoriale d'un autre volume, et **qualification de niveau** d'entrées héritées ([PRDPlan](../prd/PRDPlan.md) §5.3) |
+| Statut | ☐ **ouverte** |
+
+### Ce que l'instruction établit — constats sur pièce, 22 juillet 2026
+
+- **CA-05 exige la vérification d'une revendication de verbatim « contre le texte actuel de la source ».**
+- **Quatre revendications** du corpus reposent sur `Synthese Monographie.md`, **absente de l'arbre de travail** depuis le commit `fd8f1be` : **ch. 24, ch. 25 et ch. 27** pour **H-27**, **ch. 10** pour **H-28**.
+- **Elles sont exactes** — confrontées au contenu du blob **`fd8f1be~1`**, ouvert par `git show`.
+- ⚠ **Un blob git n'est pas « le texte actuel de la source ».** C'est un état antérieur d'un fichier qui n'existe plus au livrable. *Une citation vérifiée contre un objet de l'historique est vérifiée ; elle n'est pas vérifiable par le lecteur du dépôt.*
+- Sur les **24 revendications de verbatim** du corpus, [`relecture-CA.md`](relecture-CA.md) §9 point 4 déclare : **2** confrontées au texte vivant, **4** au contenu d'un blob, **18** confrontées à rien.
+
+### Question posée à l'auteur
+
+| Option | Conséquence |
+|---|---|
+| **(a) Tenir le blob `fd8f1be~1` pour une source valable au titre de CA-05** | Coût nul immédiat. ⚠ **Amende CA-05 de fait sans l'amender de droit**, et le fait pour toutes ses revendications futures |
+| **(b) Requalifier les quatre revendications** — les reporter sur `Monographie.md`, présent | ⚠ **Sans garantie de repli** : le §3.10.1 de `Monographie.md` porte **H-24**, non H-27 ni H-28. Acte de socle, qui rouvre du texte tenu pour fait |
+| **(c) Assortir les quatre d'une réserve datée d'indisponibilité de source**, sans y toucher | La réserve dit exactement ce qui est vrai. ⚠ **Rouvre la question du niveau** des entrées concernées — même conséquence que l'option (c) de **R-G-52**, et pour la même raison |
+
+⚠ **Aucune option n'est exécutable sans trancher R-G-52 d'abord** : restaurer le fichier (option (a) de R-G-52) referme celle-ci sans autre geste.
+
+---
+
+## R-G-56 — Huit retraits CA-12 du 22 juillet 2026 sont rendus sous la lecture stricte, et deux se déclarent révocables ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 22 juillet 2026, phase **P5** |
+| Ouverte par | [`relecture-CA-12-P5.md`](relecture-CA-12-P5.md) §3 et §6 ; **les pièces elles-mêmes l'avaient déclaré** — avant-propos et ch. 28 §28.3, à leur journal de retrait |
+| Dépendance | **Entièrement subordonnée à **R-G-53**** : elle n'a d'objet que si l'auteur retient la branche **(b)** de la frontière. *Elle est consignée séparément parce qu'elle porte sur du texte modifié, non sur une règle* |
+| Bloque | Rien qui soit rédigé ; la **stabilité** de huit passages corrigés |
+| Tranchée par | **L'AUTEUR** — conséquence directe de la lecture de **CA-12** ([PRDPlan](../prd/PRDPlan.md) §5.3) |
+| Statut | ☐ **ouverte** |
+
+### Ce que l'instruction établit — constats sur pièce, 22 juillet 2026
+
+- **Huit retraits** ont été rendus au titre de CA-12 sur `monographie/` : ch. 7, ch. 8, ch. 10, ch. 14, ch. 15 §15.2, ch. 25, **avant-propos**, **ch. 28 §28.3**. Relevé par balayage du répertoire entier ; ⚠ **valeur antérieure conservée et datée — [`relecture-CA.md`](relecture-CA.md) §5.2 en dénombre six**, l'avant-propos et le ch. 28 étant absents de la liste qu'il vérifiait.
+- **Deux d'entre eux — l'avant-propos et le ch. 28 §28.3 — déclarent explicitement leur régime** : rendus *« sous la lecture stricte du 22 juillet, retenue comme l'option la plus réversible »*, et **« révocables si l'auteur retient l'autre lecture »**.
+- **Leur motif est écrit et mérite d'être conservé** : *un retrait se révoque par l'historique de version ; une attestation laissée en place ne se révoque pas.*
+- **Les six autres ne déclarent pas leur révocabilité**, et **deux — ch. 7 et ch. 8 — ne portent aucun journal de retrait** : ils ne sont constatables que par **absence**, et l'établissement de leur existence a exigé l'ouverture de `git diff`.
+
+⚠ **La conséquence est asymétrique, et c'est ce qui fait la remontée.** Si la branche **(b)** est retenue, les retraits de registre « non-contenu » sont à révoquer — **cinq**, plus le volet d'auto-qualification du ch. 14. Deux se révoquent depuis leur propre journal ; **deux — ch. 7 et ch. 8 — ne se révoquent que par l'historique git**, leur texte antérieur n'étant conservé nulle part dans le livrable. *Un retrait sans journal est réversible par l'outil et irréversible par le document.*
+
+### Question posée à l'auteur
+
+| Option | Conséquence |
+|---|---|
+| **(a) Confirmer la lecture stricte** (branche (a) ou (c) de R-G-53) | Les huit retraits deviennent définitifs. ⚠ **Impose de doter les ch. 7 et ch. 8 d'un journal**, faute de quoi deux corrections resteront sans trace au livrable |
+| **(b) Retenir la distinction du 21 juillet** (branche (b) de R-G-53) | Les retraits de registre « non-contenu » sont révoqués. ⚠ **Deux d'entre eux exigent l'historique git** pour être rétablis à la lettre |
+| **(c) Conserver les retraits quelle que soit la frontière**, au motif que la formulation de remplacement est en tout état de cause préférable | Coût nul, et défendable au fond. ⚠ **Ne dispense pas de trancher R-G-53** : la frontière régira les pièces à venir et les balayages de la classe |
+
+---
+
+## R-G-57 — Deux points de la revalidation P5.1 appellent une décision : la révision MCP du 28 juillet 2026 et l'inaccessibilité de la ligne directrice de l'AMF ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 22 juillet 2026, phase **P5** |
+| Ouverte par | [`revalidation-2026-07-22.md`](revalidation-2026-07-22.md) §4, conséquences 1 et 2, qui les pose **sans les trancher** |
+| Bloque | La **publication** des ch. 2, 19, 20 et 22 en l'état ; la clôture de la **lacune 4** ; l'arbitrage de la divergence de date du **PRD §7.5** |
+| Siège | **PRD §8.3** (lignes 1 et 6), **PRD §10** lacune 4, **PRD §7.5** |
+| Tranchée par | **L'AUTEUR sans exception** — formulation d'un **garde-fou** (R-09), **réouverture de pièces closes**, et **publiabilité d'une lacune** ([PRDPlan](../prd/PRDPlan.md) §5.3) |
+| Statut | ☐ **ouverte — les deux points sont posés avec leurs options, aucun n'est arbitré** |
+
+### Point 1 — la révision MCP est attendue six jours après la passe
+
+**Ce que la revalidation établit** (22 juillet 2026, verdict **INCHANGÉ**) : la version courante demeure `2025-11-25` ; la **substance** annoncée — protocole sans état, retrait de `Mcp-Session-Id` — est confirmée **au brouillon** ; **la date du 28 juillet 2026 demeure absente de la source**. R-09 s'applique sans atténuation : les **ch. 2 et 22** écrivent « annoncé au brouillon », **jamais** « publié le 28 juillet 2026 ».
+
+⚠ **L'échéance tombe six jours après la passe.** Si la révision paraît datée avant la publication de l'ouvrage, la formule « annoncé au brouillon » est **périmée** ; si elle ne paraît pas, elle tient.
+
+| Option | Conséquence |
+|---|---|
+| **(a) Reconduire la formule et la borner à la date de gel des pièces** | Coût nul, et exact à sa date. ⚠ Publie un état que six jours peuvent démentir |
+| **(b) Rouvrir les ch. 2 et 22 après le 28 juillet 2026** pour y porter l'état réel | Le texte dit l'état du monde à la publication. ⚠ **Rouvre du texte tenu pour fait** et **engage R-09** — la qualification d'un statut pré-normatif |
+
+### Point 2 — la ligne directrice IA de l'AMF demeure inaccessible
+
+**Ce que la revalidation établit** : **HTTP 403 sur les deux adresses tentées**, l'anglaise et la française — *le même refus que celui rencontré par les outils du Vol. II*. Il en découle deux conséquences constatées : la **date d'entrée en vigueur au 1ᵉʳ mai 2027 n'a pas été reconfirmée à sa source**, et la **lacune 4 demeure entière**.
+
+⚠ **La divergence de date du PRD §7.5** — Vol. II : 30 mars 2026 ; veille : 7 avril 2026 — **demeure non arbitrée, et elle ne peut pas l'être par la source**, celle-ci étant inaccessible. *Une divergence qu'on ne peut pas trancher à la source ne se tranche pas par chronologie* (règle du volume, PRD §7.5).
+
+| Option | Conséquence |
+|---|---|
+| **(a) Publier la lacune 4 en l'état**, avec la réserve d'accès datée | Conforme à la règle du dépôt : *les lacunes s'exposent, elles ne se comblent pas*. ⚠ L'ouvrage publie une date réglementaire non reconfirmée à sa source |
+| **(b) Différer la publication des ch. 19 et 20** jusqu'à obtention de la source | ⚠ **Aucune date de levée n'est prévisible** : le refus est le même depuis le Vol. II |
+| **(c) Recourir à une corroboration secondaire nommée** | ⚠ **Proscrit sans amendement de la règle du dépôt** — *aucune lacune déclarée ne se comble par une source de moindre qualité* |
+
+⚠ **Aucune source de moindre qualité n'a été substituée par la revalidation**, et aucune ne l'est ici.
+
+---
+
 ## Remontées ouvertes
 
-☑ **Décompte relevé marqueur par marqueur sur le fichier, en une passe unique de fin de chaîne le 22 juillet 2026 — 52 remontées, 39 tranchées, 3 sans objet, 10 ouvertes (R-G-43 à R-G-52)**, jamais déduit par addition. ⚠ **Les cardinaux littéraux qui vivaient ici avaient été retirés le 22 juillet 2026** : ils avaient été publiés par quatre passes concurrentes, chacune vraie à son instant, et l'ouverture de **R-G-52** les a périmés une fois de plus. *Un registre qui s'allonge pendant qu'on le compte ne se compte qu'une fois, à la fin.*
+☑ **Décompte re-mesuré marqueur par marqueur sur le fichier édité, phase P5, 22 juillet 2026 — 57 remontées, 39 tranchées, 3 sans objet, 15 ouvertes (R-G-43 à R-G-57)**, en-têtes contigus de 1 à 57. ⚠ **Valeur antérieure conservée et datée périmée** : *« 52 remontées, 39 tranchées, 3 sans objet, 10 ouvertes (R-G-43 à R-G-52) »*, relevée à la **clôture de P4** le même jour et exacte à cet instant. *Un registre qui s'allonge pendant qu'on le compte ne se compte qu'une fois, à la fin — et « la fin » n'est jamais que la fin d'une passe.* Jamais déduit par addition. ⚠ **Les cardinaux littéraux qui vivaient ici avaient été retirés le 22 juillet 2026** : ils avaient été publiés par quatre passes concurrentes, chacune vraie à son instant, et l'ouverture de **R-G-52** les a périmés une fois de plus. *Un registre qui s'allonge pendant qu'on le compte ne se compte qu'une fois, à la fin.*
 
 ⚠ **Le troisième terme du critère de sortie J-4 — « remontées de gouvernance toutes tranchées » — a été atteint le 21 juillet 2026 et ne l'est plus.** Ce n'est pas une régression : c'est ce que produit une phase de rédaction. *Un critère de sortie constate l'état d'une phase à sa clôture ; les treize pièces de P4, leurs trois contrôles et la passe corrective de clôture ont ouvert autant de questions, et un registre vide en fin de phase aurait signifié qu'on ne les a pas cherchées.*
 
-### Les cinq qui relèvent de l'auteur sans exception
+### Les neuf qui relèvent de l'auteur sans exception
+
+☑ **Cardinal recompté sur les quinze remontées ouvertes le 22 juillet 2026, phase P5** — cinq héritées de la clôture de P4, **quatre ajoutées par la passe CA-12 de P5**. ⚠ **La table ci-dessous en portait cinq ; les quatre ajoutées suivent le même régime, et le titre est corrigé avec elles.**
+
+| Remontée | Objet | Catégorie de §5.3 |
+|---|---|---|
+| **R-G-53** | Frontière de CA-12 : annonce de régime admise, attestation d'observance proscrite — la ligne n'est écrite nulle part | **lecture d'un critère d'acceptation et portée d'un garde-fou** |
+| **R-G-54** | CA-10 branche (c) : grain de l'occurrence ou grain de la pièce | **grain d'un critère d'acceptation** — précédents R-G-40, R-G-46 |
+| **R-G-55** | Quatre revendications de verbatim reposant sur un fichier retiré ; un blob git n'est pas « le texte actuel de la source » | **charge éditoriale d'un autre volume** et **qualification de niveau** — se traite avec R-G-52 |
+| **R-G-57** | Révision MCP attendue six jours après la passe ; ligne directrice de l'AMF inaccessible (HTTP 403) | **formulation d'un garde-fou (R-09)**, **réouverture de pièces closes**, **publiabilité d'une lacune** |
+
+⚠ **R-G-56 relève de l'auteur, mais elle n'est pas autonome** : elle est **entièrement subordonnée à R-G-53** et n'a d'objet que si la branche (b) de la frontière est retenue. *Elle est consignée séparément parce qu'elle porte sur du texte déjà modifié — huit retraits —, non sur une règle : une décision de règle et la liste des textes qu'elle rouvre ne se rangent pas au même endroit.*
+
+**Rappel des cinq héritées de la clôture de P4 :**
 
 | Remontée | Objet | Catégorie de §5.3 |
 |---|---|---|

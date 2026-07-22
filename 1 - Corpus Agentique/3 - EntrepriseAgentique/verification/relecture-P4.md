@@ -51,6 +51,8 @@ Commande de référence ([PRDPlan](../prd/PRDPlan.md) §1.5, `LC_ALL=C.UTF-8`), 
 
 : Volumétrie réelle du volume III par bloc au 22 juillet 2026, mesure unique de fin de chaîne.
 
+⚠ **Mesure postérieure — activité P5.3, 22 juillet 2026.** Le présent tableau vaut à la clôture de P4 et est conservé à ce titre (en-tête : *ses chiffres valent à sa date*). Après lui, les retraits CA-12 de la passe P5.1 ont coupé **23 mots** — ch. 1, ch. 25, avant-propos, ch. 28 §28.3 —, et la re-mesure unique de P5.3 sur les 34 pièces donne **160 427 mots** (tronc **87 001**, appareil **73 426**), portée au [registre de gel](../monographie/99-registre-gel.md), seul porteur de la mesure courante ; les 34 en-têtes concordent avec elle, champ par champ. Les pourcentages par bloc sont inchangés, hormis VIII (**+68,6 %**) et IX (**+96,7 %**).
+
 ⚠ **Le chiffre de 159 951 mots (+56,0 %) qui a été transmis à cette passe était déjà périmé quand elle l'a reçu**, et le constat vaut plus que l'écart : il datait d'**avant** la passe corrective du 22 juillet, qui a ajouté des datations de report dans neuf pièces du tronc. La valeur que cette passe lui a substituée a été périmée à son tour, par les passes du même jour. *Un relevé de volumétrie se périme à la vitesse de la passe suivante, non à celle de la phase* — et c'est le motif du passage aux marqueurs.
 
 ### 1.3 D'où vient le creusement de l'écart
