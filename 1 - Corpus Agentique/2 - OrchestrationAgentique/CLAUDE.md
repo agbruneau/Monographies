@@ -4,7 +4,7 @@ Guide pour Claude Code (claude.ai/code) **dans ce dossier**.
 
 ## Périmètre de ce fichier
 
-Ce `CLAUDE.md` ne régit que le **volume II**, sous `1 - Corpus Agentique/2 - OrchestrationAgentique/`. Il ne dit rien des autres livrables du dépôt *Monographies* :
+Ce `CLAUDE.md` ne régit que le **volume II**, sous `1 - Corpus Agentique/2 - OrchestrationAgentique/`. Il ne dit rien des autres livrables du dépôt *Agentique* (`github.com/agbruneau/Agentique` — **pas** « Monographies », nom qui ne survit que dans le contenu gelé de la veille) :
 
 | Ce que vous cherchez | Où |
 |---|---|
@@ -17,34 +17,36 @@ Ce `CLAUDE.md` ne régit que le **volume II**, sous `1 - Corpus Agentique/2 - Or
 
 ## Nature du volume
 
-Projet documentaire. Livrable : une monographie exhaustive — « L'autonomie encadrée », titre **arrêté** (`doc/TOC.md` §Titre, et fixé en dur dans `build/assemble.py`) — sur l'interopérabilité et l'orchestration agentique en écosystème d'entreprise de services financiers au Canada. Les deux PDF académiques dans le socle (F-36, F-37, dans `doc/`) sont des sources analysées et intégrées au PRD ; ne pas les supprimer.
+Projet documentaire. Livrable : une monographie exhaustive — « L'autonomie encadrée », titre **arrêté** (`prd/TOC.md` §Titre, et fixé en dur dans `build/assemble.py`) — sur l'interopérabilité et l'orchestration agentique en écosystème d'entreprise de services financiers au Canada. Les deux PDF académiques dans le socle (F-36, F-37, dans `prd/`) sont des sources analysées et intégrées au PRD ; ne pas les supprimer.
 
-**Emplacement des documents de gouvernance** *(depuis le 17 juillet 2026)* : PRD.md, PRDPlan.md, TOC.md, audit.md et les deux PDF académiques vivent dans `doc/`. ⚠ Le déplacement a cassé des références, **encore ouvertes à ce jour** :
+**Emplacement des documents de gouvernance** : PRD.md, PRDPlan.md, TOC.md, audit.md et les deux PDF académiques vivent dans **`prd/`**. ⚠ Le dossier a été **déplacé deux fois** — de la racine du volume vers `doc/` le 17 juillet 2026, puis de `doc/` vers `prd/` (constaté le 22 juillet 2026, **renommage non encore committé** : `git status` montre les `doc/*` en ` D` et `prd/` en `??`). Aucun des renvois n'a suivi ; l'état, re-mesuré le 22 juillet 2026 :
 
-| Fichier | Renvoi cassé | Cible réelle |
-|---|---|---|
-| `monographie/**` — **le plus gros gisement** | **48 renvois** vers `TOC.md` répartis sur **28 des 29 pièces** (bandeaux de thèse) : 47 en `](../../TOC.md)`, 1 en `](../TOC.md)` | `../../doc/TOC.md` (resp. `../doc/TOC.md`) |
-| `build/assemble.py` | `ROOT / "TOC.md"` (racine du volume) — **pipeline PDF hors service** | `doc/TOC.md` |
-| `doc/PRDPlan.md` | `](CLAUDE.md)` | `../CLAUDE.md` |
-| `doc/audit.md` | `](monographie/…)` | `../monographie/…` |
-| `verification/relecture-CA.md` | `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` | `../doc/…` |
+| Fichier | Renvoi cassé | Cible réelle | Décompte |
+|---|---|---|---|
+| `monographie/**` — **le plus gros gisement** | renvois vers `TOC.md` répartis sur **28 des 29 pièces** (bandeaux de thèse) : 47 en `](../../TOC.md)`, 1 en `](../TOC.md)` | `../../prd/TOC.md` (resp. `../prd/TOC.md`) | **48** |
+| `build/assemble.py` | `ROOT / "TOC.md"` (racine du volume, ligne 78) — **pipeline PDF hors service** | `prd/TOC.md` | 1 |
+| `monographie/README.md` | `](../doc/PRD.md)`, `](../doc/PRDPlan.md)` (×2), `](../doc/TOC.md)`, `](../doc/audit.md)` — rectifiés vers `doc/` en juillet, **re-cassés par le renommage** | `../prd/…` | 4 lignes |
+| `prd/PRDPlan.md` | `](CLAUDE.md)` | `../CLAUDE.md` | 1 |
+| `prd/audit.md` | `](monographie/…)` | `../monographie/…` | 15 |
+| `verification/relecture-CA.md` | `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` | `../prd/…` | 3 |
 
-Commande de contrôle, à relancer **sur tout le dossier** avant de déclarer le gisement résorbé :
+Commandes de contrôle, à relancer **sur tout le dossier** avant de déclarer le gisement résorbé :
 
 ```bash
-grep -rn '](\.\./\(\.\./\)\?TOC\.md' monographie/ | wc -l   # 48 au 18 juillet 2026
+grep -rn '](\.\./\(\.\./\)\?TOC\.md' monographie/ | wc -l              # 48 au 22 juillet 2026
+grep -rn 'doc/\(PRD\|PRDPlan\|TOC\|audit\)\.md' --include=*.md --include=*.py . | wc -l   # renvois vers l'ancien doc/
 ```
 
-Seuls les renvois de `monographie/README.md` ont été rectifiés (`../doc/PRD.md`, `../doc/PRDPlan.md`, `../doc/TOC.md`) ; les 48 autres restent ouverts.
+⚠ La seconde commande se compte elle-même : le tableau ci-dessus **cite** les formes cassées (`](../doc/PRD.md)`…), qu'elle attrape comme des renvois réels. La lire fichier par fichier — `| sed 's/:.*//' | sort | uniq -c` — et retrancher ce `CLAUDE.md`, jamais comme un total brut.
 
 **Pipeline de rendu PDF** *(ajouté le 17 juillet 2026)* : `build/` contient un pipeline Pandoc → Typst **copié** de celui du volume I (`1 - Corpus Agentique/1 - InteroperabiliteAgentique/build/`), augmenté d'une étape d'assemblage propre à ce volume. Les deux copies évoluent séparément : un correctif là-bas ne se propage pas ici. `build/assemble.py` concatène les 29 pièces de `monographie/` en `Monographie.md` (retrait de l'appareil de rédaction interne — tableaux d'en-tête, bandeaux de correctif, blocs de gouvernance HTML ; préfixage des notes ; pages de garde de partie), puis `bash build/build-pdf.sh Monographie.md` produit `Monographie.pdf` (US-letter, Liberation Sans/Arial, gabarit `build/fesp.template`). **Régénérer après toute modification des chapitres** — sous réserve du renvoi `TOC.md` cassé signalé ci-dessus, qu'il faut corriger avant de pouvoir relancer l'assemblage. Le PDF et le `Monographie.md` assemblé sont versionnés ; les artefacts intermédiaires du build sont ignorés (`.gitignore`).
 
-**Page de présentation** : `index.html` (GitHub Pages) sert la vitrine du volume et lie `Monographie.pdf` et `Synthese Monographie.pdf`. Son JSON-LD porte `"numberOfPages": 387` : le mettre à jour si la pagination change.
+⚠ **Ni page de présentation, ni article de synthèse, ni publication GitHub Pages.** `index.html` et `Synthese Monographie.md` / `.pdf` (66 p.) ont été retirés du dossier (constaté le 22 juillet 2026 ; **suppression non encore committée**). Ne pas rétablir de renvoi vers eux. Les adresses `https://agbruneau.github.io/Monographies/…` qui circulaient étaient fausses de surcroît — le dépôt s'appelle `Agentique`. Le seul rendu du volume est `Monographie.pdf` (**387 p.**, vérifié le 22 juillet 2026).
 
 Documents de gouvernance, par ordre d'autorité :
-1. [PRD.md](doc/PRD.md) — contenu, socle factuel, garde-fous, critères d'acceptation (prime en cas de conflit) ;
-2. [PRDPlan.md](doc/PRDPlan.md) — plan d'exécution (phases P0–P4, boucle qualité par chapitre §4.2) ;
-3. [TOC.md](doc/TOC.md) — titre, abstract et table des matières commentée (livrable J-2) : découpage en 24 chapitres tracés au socle ; toute modification du découpage passe par ce fichier (version++).
+1. [PRD.md](prd/PRD.md) — contenu, socle factuel, garde-fous, critères d'acceptation (prime en cas de conflit) ;
+2. [PRDPlan.md](prd/PRDPlan.md) — plan d'exécution (phases P0–P4, boucle qualité par chapitre §4.2) ;
+3. [TOC.md](prd/TOC.md) — titre, abstract et table des matières commentée (livrable J-2) : découpage en 24 chapitres tracés au socle ; toute modification du découpage passe par ce fichier (version++).
 
 Arborescence de rédaction : `monographie/` (**les 29 pièces rédigées et relues** — un fichier par chapitre, en-tête à cinq champs renseigné sur les 29 : statut, date de gel, socle F-xx, garde-fous R-x, volumétrie cible ; annexes A–D dans `90-annexes/` ; registre des gels dans `99-registre-gel.md`) et `verification/` (rapports de revalidation, grille CA). Ne pas rédiger un chapitre sans passer par la boucle qualité de PRDPlan §4.2, et renseigner le registre de gel à chaque fusion.
 
@@ -75,7 +77,7 @@ Le domaine évolue par trimestres ; les faits sensibles au temps s'échelonnent 
 
 ## État du projet (17 juillet 2026)
 
-**Monographie publiée, sous le millésime `mono-v1.0`.** ⚠ **L'étiquette git correspondante n'a jamais été posée** — `git tag -l` et `git ls-remote --tags origin` ne rendent rien, ni en local ni sur le distant (constaté le 18 juillet 2026). `mono-v1.0` est donc un **millésime éditorial**, pas une référence git : ne pas le traiter comme un point de restauration. Les documents qui annoncent l'étiquette comme posée (`doc/PRD.md`, `doc/PRDPlan.md`, `doc/audit.md`, les bandeaux de gel) sont, sur ce point, en avance sur le dépôt — poser le tag ou corriger ces mentions. Tous les jalons sont atteints (J-0 à J-5, PRD §12) et toutes les phases exécutées (P0 à P4, PRDPlan §1.4 — 47 activités closes, aucune en attente). Documents à jour : **PRD v1.10, PRDPlan v1.4, TOC v1.5** (versions relevées le 17 juill. 2026 par les suites de l'audit global — [`audit.md`](doc/audit.md)).
+**Monographie publiée, sous le millésime `mono-v1.0`.** ⚠ **L'étiquette git correspondante n'a jamais été posée** — `git tag -l` et `git ls-remote --tags origin` ne rendent rien, ni en local ni sur le distant (constaté le 18 juillet 2026). `mono-v1.0` est donc un **millésime éditorial**, pas une référence git : ne pas le traiter comme un point de restauration. Les documents qui annoncent l'étiquette comme posée (`prd/PRD.md`, `prd/PRDPlan.md`, `prd/audit.md`, les bandeaux de gel) sont, sur ce point, en avance sur le dépôt — poser le tag ou corriger ces mentions. Tous les jalons sont atteints (J-0 à J-5, PRD §12) et toutes les phases exécutées (P0 à P4, PRDPlan §1.4 — 47 activités closes, aucune en attente). Documents à jour : **PRD v1.10, PRDPlan v1.4, TOC v1.5** (versions relevées le 17 juill. 2026 par les suites de l'audit global — [`audit.md`](prd/audit.md)).
 
 Livrable : **29 pièces, 92 059 mots** (90 362 à la publication ; re-mesuré après la passe corrective de l'audit) — 24 chapitres, avant-propos, annexes A à D. Index de lecture : [`monographie/README.md`](monographie/README.md). Socle : **46 entrées** (F-01 à F-48 ; F-12 à F-14 non attribués ; F-23b). Conformité : **CA-1 à CA-8** — le « 8/8 » de la relecture de publication a été **partiellement démenti** par l'audit du 17 juill. 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) ; voir l'addendum de [`verification/relecture-CA.md`](verification/relecture-CA.md). Revalidation temporelle du 17 juillet 2026 : aucun amendement matériel des faits chauds. **Audit global du 17 juillet 2026 : deux élévations du socle (F-33, F-43), 15 constats majeurs et 44 mineurs traités, relus adversarialement.**
 
