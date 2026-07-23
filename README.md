@@ -141,8 +141,12 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul, lui aussi.** Le dossier
 [`2 - Compendium Agentique/`](2%20-%20Compendium%20Agentique/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.11 du 23 juillet 2026**), sa vue
-synoptique dérivée ([`Conspectus.md`](2%20-%20Compendium%20Agentique/Conspectus.md)) et un
+commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.13 du 23 juillet 2026**), son
+**PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium%20Agentique/PRD.md), v0.1 du
+23 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
+synoptique dérivée ([`Conspectus.md`](2%20-%20Compendium%20Agentique/Conspectus.md)), son exécutable
+de contrôle ([`check-toc.py`](2%20-%20Compendium%20Agentique/check-toc.py), avec son harnais de
+validation par mutation) et un
 [`CLAUDE.md`](2%20-%20Compendium%20Agentique/CLAUDE.md) de conventions —
 **aucun chapitre rédigé : c'est un plan de refonte, pas une nouvelle thèse.**
 
