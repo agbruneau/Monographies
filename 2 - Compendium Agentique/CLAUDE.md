@@ -7,10 +7,15 @@ pas répétées.
 
 ## Les livrables — un plan, sa gouvernance et sa vue synoptique, pas un ouvrage
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD.md) (**v0.2, 23 juillet 2026**) régit la
+⚠ **Réorganisation du 23 juillet 2026** : le PRD, le TOC et les deux scripts de contrôle vivent
+désormais dans le sous-dossier [`PRD/`](PRD/) ; le README (conspectus) et ce `CLAUDE.md` restent à
+la racine du dossier. Les chemins ci-dessous et la commande de contrôle (§ protocole) en tiennent
+compte.
+
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD/PRD.md) (**v0.2, 23 juillet 2026**) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](TOC.md) (**v0.14, 23 juillet 2026 — 57 chapitres en 10 livres,
+socle et les lacunes**. [`TOC.md`](PRD/TOC.md) (**v0.14, 23 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
@@ -81,12 +86,12 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
    rangée Historique, verbatim), champ Date mis à jour, **journal daté ajouté en fin de fichier**.
    Les journaux sont en ajout seul — un journal publié ne se réécrit pas, ses écarts se consignent
    dans la passe suivante.
-2. **Contrôles** : `python check-toc.py` (versionné dans ce dossier depuis la v0.12 du 23 juillet
+2. **Contrôles** : `python PRD/check-toc.py` (versionné dans `PRD/` depuis la v0.12 du 23 juillet
    2026 — contrôles C1-C14, domaine : chapitres 1-57, dix livres) **avant toute publication** ;
    sortie 0 exigée, et le journal de la passe déclare son exécution. ⚠ **Ce script est du
    contenu : il se vérifie comme le reste** (même règle que `check-veille.py` au `CLAUDE.md`
-   racine). Toute modification se valide par mutation avec `check-toc-mutations.py` (versionné
-   ici) : constat de passage sur le document intact, puis chaque classe de faute détectée. Des
+   racine). Toute modification se valide par mutation avec `PRD/check-toc-mutations.py` (versionné
+   dans `PRD/`) : constat de passage sur le document intact, puis chaque classe de faute détectée. Des
    faux positifs y sont déjà neutralisés — zones gelées (rangées Historique, journaux) exemptées
    des contrôles de motifs, spans « … » et `` ` … ` `` retirés, marqueurs de correspondance des
    anciens numéraux de livres (Nature, décisions 9-10, risques 1 et 13) — les réintroduire en
