@@ -5,7 +5,7 @@
 | Champ | Valeur |
 |---|---|
 | Nature | **Conspectus** : vue synoptique du compendium intégral (Vol. IV) — l'argument de l'ouvrage, livre par livre, en lecture continue. Ce document ne porte aucune décision de fusion, aucun socle, aucun garde-fou nouveau : tout ce qu'il énonce est tenu par le [`TOC.md`](TOC.md), qui seul fait autorité |
-| Source | [`TOC.md`](TOC.md) **v0.12** (23 juillet 2026) — 57 chapitres en 10 livres, avant-propos, 9 annexes, ≈ 369 000–394 000 mots projetés. Les v0.10 et v0.11 n'ajoutent aucune structure : la v0.10 porte huit relèves datées sur la **couche d'exécution** et déclare l'angle mort correspondant (risque 14 du TOC) ; la v0.11 porte six relèves datées sur **l'après-agentique**, relevées sur arXiv exclusivement — les deux sont reprises en fin de ce document. La v0.12 est une passe d'appareil (reconstruction de `check-toc.py`, validé par mutation ; faits de dépôt re-vérifiés) sans effet sur l'argument de l'ouvrage |
+| Source | [`TOC.md`](TOC.md) **v0.13** (23 juillet 2026) — 57 chapitres en 10 livres, avant-propos, 9 annexes, ≈ 369 000–394 000 mots projetés. Les v0.10 et v0.11 n'ajoutent aucune structure : la v0.10 porte huit relèves datées sur la **couche d'exécution** et déclare l'angle mort correspondant (risque 14 du TOC) ; la v0.11 porte six relèves datées sur **l'après-agentique**, relevées sur arXiv exclusivement — les deux sont reprises en fin de ce document. La v0.12 est une passe d'appareil (reconstruction de `check-toc.py`, validé par mutation) ; la **v0.13** met la filiation à jour sur constats de dépôt — **le Vol. III est rédigé** (34 pièces, socle F-01…F-98, gel du 21 juillet 2026, « rédigé ne vaut pas publiable ») et **la décision P0.2 est tranchée** (filiation livresque retirée, réversible) — sans toucher à la structure |
 | Date | 23 juillet 2026 |
 | Statut | Le compendium **n'est pas rédigé** : tant qu'il ne l'est pas, les trois volumes sources font foi, et ce conspectus décrit un *plan*, non un ouvrage. En cas d'écart entre ce document et le `TOC.md`, **c'est le `TOC.md` qui prime** ; un conspectus n'est pas une source, pas plus qu'une thèse de plan n'est une entrée de socle (décision 8 du TOC) |
 | Régénération | À chaque nouvelle version du `TOC.md`, ce document se réaligne ou déclare son retard en tête |
@@ -90,7 +90,7 @@ Neuf annexes ferment l'ouvrage : **A** — méthode unifiée (fusion des trois s
 La somme porte **trois régimes de preuve**, et les déclare plutôt que de les lisser :
 
 1. **Vérifié** — les livres dérivés des Vol. I et II, rédigés, adossés à un socle F-xx daté et cité ;
-2. **Planifié** — les Livres III et VII (≈ 26 % du corps), dérivés du Vol. III, proposition non rédigée dont les socles candidats sont des repérages [C] à instruire (risque 11 du TOC) ;
+2. **Rédigé, non publiable** *(re-libellé v0.13 — « Planifié » jusque-là)* — les Livres III et VII (≈ 26 % du corps), dérivés du Vol. III, rédigé et doté d'un socle propre de 98 entrées depuis le 22 juillet 2026, mais que son propre cadrage déclare non publiable — remontées ouvertes, arbitrages révocables, dette de vote sur deux entrées ; la collation contre son texte rédigé est un préalable déclaré (risque 11 du TOC) ;
 3. **À constituer** — le Livre IX, matière neuve sans aucun socle, même hérité (risque 13 du TOC).
 
 ## L'angle mort déclaré — la couche d'exécution *(v0.10)*

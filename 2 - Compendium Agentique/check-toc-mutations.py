@@ -50,7 +50,7 @@ MUTATIONS = [
     ("M12", "TOC.md", "*Fusion : Vol. III ch. 12 + Vol. I* Monographie",
      "*Fusion : Vol. III *TOC* §12.1 + Vol. I* Monographie", "C12"),
     ("M13", "TOC.md", "d'un ouvrage à 57 chapitres", "d'un ouvrage à 54 chapitres", "C13"),
-    ("M14", "Conspectus.md", "**v0.12** (23 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
+    ("M14", "Conspectus.md", "**v0.13** (23 juillet 2026)", "**v0.10** (21 juillet 2026)", "C14"),
 ]
 
 

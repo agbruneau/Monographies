@@ -7,7 +7,7 @@ pas répétées.
 
 ## Les livrables — un plan et sa vue synoptique, pas un ouvrage
 
-Deux fichiers. [`TOC.md`](TOC.md) (**v0.12, 23 juillet 2026 — 57 chapitres en 10 livres,
+Deux fichiers. [`TOC.md`](TOC.md) (**v0.13, 23 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) est la *spécification* du compendium ; **aucun chapitre
 n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources font foi (champ
 Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre décision 8).
@@ -51,8 +51,15 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
 - ⚠ **Erreur documentée des TOC sources** : la *Synthèse* du Vol. I est numérotée **§1-§12** ; les
   TOC des Vol. I et III portent encore « §3-§12 », qui est faux. Une collation contre eux
   réintroduirait l'erreur en croyant la corriger (décision 7 et risque 10 du TOC).
-- ⚠ **Corpus d'appui du Vol. III introuvable au dépôt** (lacune L-15, décision P0.2 non tranchée) :
-  aucun chapitre consommateur ne se rédige en s'appuyant sur ces trois ouvrages.
+- ⚠ **Corpus d'appui du Vol. III : filiation retirée** (P0.2 tranchée le 21 juillet 2026, L-15
+  close par échec documenté — **réversible** par dépôt ultérieur) : les mentions « corpus
+  d'appui » des chapitres consommateurs sont des marqueurs conditionnels de réouverture, jamais
+  des sources ; aucun chapitre ne se rédige en s'appuyant sur ces ouvrages sans dépôt effectif.
+- ⚠ **Le Vol. III est rédigé depuis le 22 juillet 2026** (34 pièces, socle F-01…F-98 + H-01…H-33,
+  PRD v1.3 / TOC v0.8), mais « **rédigé ne vaut pas publiable** » : remontées ouvertes, arbitrages
+  révocables, dette de vote (F-92, F-96 du Vol. III). La collation de fond contre son texte rédigé
+  (l'homologue de la v0.6) est un **préalable déclaré** aux Livres III et VII ; et un « F-xx » nu
+  est désormais **indécidable entre deux socles** — convention transitoire en décision 7 du TOC.
 - ⚠ **Relèves v0.7, v0.10 et v0.11** : marquées « à instruire à la source primaire » — aucune
   n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la
   source primaire. Les relèves v0.11 (l'après-agentique) citent des préimpressions arXiv dont
