@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
+| **État** | Publiée (146 p., 257 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 900 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours (relecture de révision du 24 juillet 2026) ; **PDF réassemblé le 24 juillet 2026** (427 p., gabarit FESP, page de note d'état retirée), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
 
 ## Veille technologique — le document transversal
 
@@ -108,7 +108,7 @@ huit garde-fous de formulation, onze lacunes exposées plutôt que comblées.
 
 **Rédigé de bout en bout, non encore publié.** Les **34 pièces** — avant-propos, 28 chapitres en
 9 parties, 5 annexes — sont **rédigées, relues adversarialement et corrigées** (statut constaté sur
-pièce le 22 juillet 2026), pour **≈ 160 400 mots réels** au regard d'une cible indicative de
+pièce le 22 juillet 2026), pour **≈ 160 900 mots réels** (re-mesure du 24 juillet 2026, après la relecture de révision) au regard d'une cible indicative de
 **≈ 102 500**. Le socle factuel propre compte **98 entrées** (F-01 à F-98), sur **33 entrées
 héritées** (H-01 à H-33) ; les **15 lots d'instruction sont clos**. Le volume s'organise autour de
 trois capacités — *émettre* une identité opposable (le passeport d'agent), l'*appliquer* au
@@ -118,7 +118,7 @@ maillage d'agents, l'*exploiter* dans la durée (AgentOps) — sous l'horloge po
 temporelle finale, rejeu des motifs de balayage sur les 34 pièces ; le pipeline de rendu a été
 créé le 23 juillet 2026 (copie du FESP du Vol. II) et **quinze remontées de gouvernance demeurent
 ouvertes** (R-G-43 à R-G-57), dont plusieurs relèvent de l'auteur. **Le PDF est assemblé
-(428 p., gabarit FESP) ; rédigé ne vaut pas publiable.**
+(427 p., gabarit FESP) ; rédigé ne vaut pas publiable.**
 
 Le dossier porte trois répertoires — la gouvernance dans `prd/`, la rédaction dans `monographie/`,
 les rapports de vérification dans `verification/` —, plus un
@@ -236,9 +236,9 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │       ├── CLAUDE.md                          conventions du volume
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
 │       ├── monographie/                       34 pièces rédigées + registre des gels
-│       ├── verification/                      29 rapports (lots, relectures, revalidations)
+│       ├── verification/                      30 rapports (lots, relectures, revalidations)
 │       ├── build/                             pipeline FESP (copie du Vol. II) + assemble.py
-│       └── Monographie.md / .pdf              assemblage (428 p., gabarit FESP) — non publiable
+│       └── Monographie.md / .pdf              assemblage (427 p., gabarit FESP) — non publiable
 └── 2 - Compendium Agentique/              ← Vol. IV
     ├── CLAUDE.md                            conventions du volume
     ├── README.md                            vue synoptique dérivée du TOC (le « conspectus » du volume)
@@ -289,7 +289,7 @@ un correctif au Vol. I ne se propage pas au Vol. II.
 
 ```bash
 python build/assemble.py                    # monographie/ → Monographie.md
-bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf (428 p.)
+bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf (427 p.)
 ```
 
 Les trois copies du pipeline évoluent séparément. Le PDF porte une **note d'état** en tête :

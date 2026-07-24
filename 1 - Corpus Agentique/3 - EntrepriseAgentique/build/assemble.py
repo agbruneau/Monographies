@@ -94,18 +94,6 @@ DESCRIPTOR = "Monographie en science et génie informatique"
 AUTHOR = "André-Guy Bruneau, M.Sc. IT"
 DATE = "Juillet 2026"
 
-# Note d'état sobre — remplace le bandeau « VERSION DE TRAVAIL » du draft (choix de l'auteur,
-# 23 juillet 2026) : véridique, sans fausse attestation de publiabilité (CA-14).
-ETAT = (
-    "> **État de finalisation.** Cet exemplaire assemble les trente-quatre pièces rédigées "
-    "et relues adversarialement du volume au 22 juillet 2026. La finalisation (phase P5) est "
-    "en cours : quinze remontées de gouvernance demeurent ouvertes (R-G-43 à R-G-57), dont "
-    "certaines relèvent d'un arbitrage d'auteur. L'appareil éditorial interne — tableaux "
-    "d'en-tête, journaux de relecture, bilans de balayage — n'est pas reproduit ici ; il vit "
-    "dans les fichiers source sous `monographie/` et `verification/`."
-)
-
-
 def read_resume():
     """Le résumé est la « ## Thèse d'ensemble » du TOC (jusqu'à la sous-section suivante)."""
     toc = TOC.read_text(encoding="utf-8")
@@ -165,8 +153,6 @@ def preamble():
 ]
 #pagebreak()
 ```
-
-{ETAT}
 
 # Résumé {{.unnumbered}}
 

@@ -4,7 +4,7 @@
 |---|---|
 | Objet | **Une ligne par pièce, 34 pièces.** Source de vérité des dates de gel (PRD §8.3, CA-04) et des volumétries réelles au regard des cibles (PRDPlan §1.5). |
 | Créé | 21 juillet 2026 — activité **P0.4** du [PRDPlan](../prd/PRDPlan.md) |
-| Mis à jour | **22 juillet 2026** — report des **treize lignes de P4** (avant-propos, ch. 22 à 28, annexes A à E), et **re-mesure des trente-quatre** par la commande de référence après les passes correctives du même jour, **reprise une seconde fois en fin de chaîne** — passe unique de re-mesure du 22 juillet 2026, qui a déplacé deux lignes (ch. 27, annexe A) et le bilan. ⚠ Ce report solde la dette que le PRD v1.3 déclare hors énoncé du jalon **J-5** : ses treize lignes portaient encore « Gabarit », sans date de gel ni volumétrie, alors que les treize pièces portaient leur date de gel en en-tête. |
+| Mis à jour | **24 juillet 2026** — re-mesure des trente-quatre par la commande de référence après les correctifs de la relecture de révision du même jour (voir le bilan ci-dessous). Antérieurement : **22 juillet 2026** — report des **treize lignes de P4** (avant-propos, ch. 22 à 28, annexes A à E), et **re-mesure des trente-quatre** par la commande de référence après les passes correctives du même jour, **reprise une seconde fois en fin de chaîne** — passe unique de re-mesure du 22 juillet 2026, qui a déplacé deux lignes (ch. 27, annexe A) et le bilan. ⚠ Ce report solde la dette que le PRD v1.3 déclare hors énoncé du jalon **J-5** : ses treize lignes portaient encore « Gabarit », sans date de gel ni volumétrie, alors que les treize pièces portaient leur date de gel en en-tête. |
 | Règle | Une ligne se renseigne **au même commit que la pièce qu'elle décrit**. *Un statut qui ment est pire qu'un statut absent* (leçon du Vol. II, dont le tableau de suivi a annoncé « 0 rédigée » pendant deux phases entières). |
 | Volumétrie | La cible est **indicative et non normative** : un écart se **documente**, il ne se corrige pas par amputation. Commande de mesure : **PRDPlan §1.5**, seule autorité de décompte du volume (`LC_ALL=C.UTF-8` — ce n'est pas décoratif). ⚠ **La colonne « Réel » porte la mesure, jamais le chiffre publié à l'en-tête d'une pièce** : les deux ont divergé, et c'est la mesure qui fait foi ici. |
 
@@ -13,39 +13,39 @@
 | # | Pièce | Fichier | Statut | Date de gel | Cible | Réel | Écart |
 |---|---|---|---|---|---|---|---|
 | 1 | Avant-propos et note méthodologique | [`00-avant-propos.md`](00-avant-propos.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2500 | 3947 | +57,9 % |
-| 2 | Chapitre 1 — Un demi-siècle d'identités non humaines | [`01-partie-I/ch-01-identites-non-humaines.md`](01-partie-I/ch-01-identites-non-humaines.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 2952 | +7,3 % |
-| 3 | Chapitre 2 — Les standards étirés : OAuth, OIDC, SCIM face à l'agent | [`01-partie-I/ch-02-standards-etires.md`](01-partie-I/ch-02-standards-etires.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3335 | +21,3 % |
-| 4 | Chapitre 3 — L'identité décentralisée : VC, DID et la promesse du portable | [`01-partie-I/ch-03-identite-decentralisee.md`](01-partie-I/ch-03-identite-decentralisee.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3645 | +32,5 % |
-| 5 | Chapitre 4 — Grille d'analyse : les cinq questions que l'entreprise pose à son agent | [`01-partie-I/ch-04-grille-cinq-questions.md`](01-partie-I/ch-04-grille-cinq-questions.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3959 | +44,0 % |
+| 2 | Chapitre 1 — Un demi-siècle d'identités non humaines | [`01-partie-I/ch-01-identites-non-humaines.md`](01-partie-I/ch-01-identites-non-humaines.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 2967 | +7,9 % |
+| 3 | Chapitre 2 — Les standards étirés : OAuth, OIDC, SCIM face à l'agent | [`01-partie-I/ch-02-standards-etires.md`](01-partie-I/ch-02-standards-etires.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3336 | +21,3 % |
+| 4 | Chapitre 3 — L'identité décentralisée : VC, DID et la promesse du portable | [`01-partie-I/ch-03-identite-decentralisee.md`](01-partie-I/ch-03-identite-decentralisee.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3646 | +32,6 % |
+| 5 | Chapitre 4 — Grille d'analyse : les cinq questions que l'entreprise pose à son agent | [`01-partie-I/ch-04-grille-cinq-questions.md`](01-partie-I/ch-04-grille-cinq-questions.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2750 | 3962 | +44,1 % |
 | 6 | Chapitre 5 — L'Agent Card signée : anatomie et valeur probante | [`02-partie-II/ch-05-agent-card-signee.md`](02-partie-II/ch-05-agent-card-signee.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4312 | +43,7 % |
-| 7 | Chapitre 6 — Les annuaires d'agents commerciaux : Entra Agent ID et ses pairs | [`02-partie-II/ch-06-annuaires-commerciaux.md`](02-partie-II/ch-06-annuaires-commerciaux.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4073 | +35,8 % |
-| 8 | Chapitre 7 — Les registres gouvernés : de la spécification CSA aux registres A2A | [`02-partie-II/ch-07-registres-gouvernes.md`](02-partie-II/ch-07-registres-gouvernes.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4420 | +47,3 % |
-| 9 | Chapitre 8 — Le passeport d'agent : synthèse d'un objet encore virtuel | [`02-partie-II/ch-08-passeport-agent.md`](02-partie-II/ch-08-passeport-agent.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 5533 | +84,4 % |
-| 10 | Chapitre 9 — La chaîne de mandat : de l'humain à l'agent, de l'agent à l'agent | [`03-partie-III/ch-09-chaine-de-mandat.md`](03-partie-III/ch-09-chaine-de-mandat.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 4212 | +31,6 % |
-| 11 | Chapitre 10 — Le problème des deux sauts : traçabilité de la délégation multi-saut | [`03-partie-III/ch-10-deux-sauts.md`](03-partie-III/ch-10-deux-sauts.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 4496 | +40,5 % |
-| 12 | Chapitre 11 — Know Your Agent : la vérification d'agent tiers inter-domaines | [`03-partie-III/ch-11-know-your-agent.md`](03-partie-III/ch-11-know-your-agent.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3100 | 4278 | +38,0 % |
+| 7 | Chapitre 6 — Les annuaires d'agents commerciaux : Entra Agent ID et ses pairs | [`02-partie-II/ch-06-annuaires-commerciaux.md`](02-partie-II/ch-06-annuaires-commerciaux.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4091 | +36,4 % |
+| 8 | Chapitre 7 — Les registres gouvernés : de la spécification CSA aux registres A2A | [`02-partie-II/ch-07-registres-gouvernes.md`](02-partie-II/ch-07-registres-gouvernes.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4430 | +47,7 % |
+| 9 | Chapitre 8 — Le passeport d'agent : synthèse d'un objet encore virtuel | [`02-partie-II/ch-08-passeport-agent.md`](02-partie-II/ch-08-passeport-agent.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 5559 | +85,3 % |
+| 10 | Chapitre 9 — La chaîne de mandat : de l'humain à l'agent, de l'agent à l'agent | [`03-partie-III/ch-09-chaine-de-mandat.md`](03-partie-III/ch-09-chaine-de-mandat.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 4231 | +32,2 % |
+| 11 | Chapitre 10 — Le problème des deux sauts : traçabilité de la délégation multi-saut | [`03-partie-III/ch-10-deux-sauts.md`](03-partie-III/ch-10-deux-sauts.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 4502 | +40,7 % |
+| 12 | Chapitre 11 — Know Your Agent : la vérification d'agent tiers inter-domaines | [`03-partie-III/ch-11-know-your-agent.md`](03-partie-III/ch-11-know-your-agent.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3100 | 4308 | +39,0 % |
 | 13 | Chapitre 12 — Taxonomie des attaques sur l'identité et la délégation agentiques | [`04-partie-IV/ch-12-taxonomie-attaques.md`](04-partie-IV/ch-12-taxonomie-attaques.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4316 | +43,9 % |
 | 14 | Chapitre 13 — L'usurpation et le *rug-pull* : quand l'identité vérifiée trahit | [`04-partie-IV/ch-13-usurpation-rug-pull.md`](04-partie-IV/ch-13-usurpation-rug-pull.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4858 | +61,9 % |
 | 15 | Chapitre 14 — La révocation : le mécanisme le moins spécifié de la pile | [`04-partie-IV/ch-14-revocation.md`](04-partie-IV/ch-14-revocation.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 3641 | +21,4 % |
 | 16 | Chapitre 15 — L'*agentic SOC* et la boucle défensive | [`04-partie-IV/ch-15-soc-agentique.md`](04-partie-IV/ch-15-soc-agentique.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4167 | +38,9 % |
-| 17 | Chapitre 16 — La menace quantique appliquée à la pile identitaire agentique | [`05-partie-V/ch-16-menace-quantique.md`](05-partie-V/ch-16-menace-quantique.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4276 | +42,5 % |
-| 18 | Chapitre 17 — La crypto-agilité comme propriété d'architecture | [`05-partie-V/ch-17-crypto-agilite.md`](05-partie-V/ch-17-crypto-agilite.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 5028 | +67,6 % |
-| 19 | Chapitre 18 — La dette de migration : chiffrer ce qui peut l'être, dater le reste | [`05-partie-V/ch-18-dette-migration.md`](05-partie-V/ch-18-dette-migration.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 3800 | +26,7 % |
-| 20 | Chapitre 19 — L'agent devant E-23 et l'AMF : l'identité comme condition d'inventaire | [`06-partie-VI/ch-19-e23-amf.md`](06-partie-VI/ch-19-e23-amf.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 3992 | +24,8 % |
+| 17 | Chapitre 16 — La menace quantique appliquée à la pile identitaire agentique | [`05-partie-V/ch-16-menace-quantique.md`](05-partie-V/ch-16-menace-quantique.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 4326 | +44,2 % |
+| 18 | Chapitre 17 — La crypto-agilité comme propriété d'architecture | [`05-partie-V/ch-17-crypto-agilite.md`](05-partie-V/ch-17-crypto-agilite.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 5038 | +67,9 % |
+| 19 | Chapitre 18 — La dette de migration : chiffrer ce qui peut l'être, dater le reste | [`05-partie-V/ch-18-dette-migration.md`](05-partie-V/ch-18-dette-migration.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3000 | 3812 | +27,1 % |
+| 20 | Chapitre 19 — L'agent devant E-23 et l'AMF : l'identité comme condition d'inventaire | [`06-partie-VI/ch-19-e23-amf.md`](06-partie-VI/ch-19-e23-amf.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 3995 | +24,8 % |
 | 21 | Chapitre 20 — Loi 25, RGPD et l'agent : qui traite, qui décide, qui répond | [`06-partie-VI/ch-20-loi25-rgpd.md`](06-partie-VI/ch-20-loi25-rgpd.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3200 | 4125 | +28,9 % |
-| 22 | Chapitre 21 — La normalisation institutionnelle et le cadre bancaire canadien | [`06-partie-VI/ch-21-normalisation-institutionnelle.md`](06-partie-VI/ch-21-normalisation-institutionnelle.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3100 | 3583 | +15,6 % |
+| 22 | Chapitre 21 — La normalisation institutionnelle et le cadre bancaire canadien | [`06-partie-VI/ch-21-normalisation-institutionnelle.md`](06-partie-VI/ch-21-normalisation-institutionnelle.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3100 | 3575 | +15,3 % |
 | 23 | Chapitre 22 — Du *service mesh* à l'*agent mesh* : généalogie et anatomie | [`07-partie-VII/ch-22-genealogie-maillage.md`](07-partie-VII/ch-22-genealogie-maillage.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3500 | 5476 | +56,5 % |
-| 24 | Chapitre 23 — Le maillage comme point d'application : PEP, politiques et *zero trust* agentique | [`07-partie-VII/ch-23-maillage-application.md`](07-partie-VII/ch-23-maillage-application.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3500 | 6047 | +72,8 % |
+| 24 | Chapitre 23 — Le maillage comme point d'application : PEP, politiques et *zero trust* agentique | [`07-partie-VII/ch-23-maillage-application.md`](07-partie-VII/ch-23-maillage-application.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3500 | 6050 | +72,9 % |
 | 25 | Chapitre 24 — L'observabilité agentique : voir ce que fait un agent identifié | [`08-partie-VIII/ch-24-observabilite-agentique.md`](08-partie-VIII/ch-24-observabilite-agentique.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3400 | 5367 | +57,9 % |
-| 26 | Chapitre 25 — Le cycle de vie opérationnel : évaluation continue, dérive et incident | [`08-partie-VIII/ch-25-cycle-de-vie.md`](08-partie-VIII/ch-25-cycle-de-vie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3300 | 6424 | +94,7 % |
-| 27 | Chapitre 26 — Les indicateurs de l'AgentOps : mesurer un parc d'agents sans fabriquer de chiffres | [`08-partie-VIII/ch-26-indicateurs-agentops.md`](08-partie-VIII/ch-26-indicateurs-agentops.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3300 | 5073 | +53,7 % |
-| 28 | Chapitre 27 — Architecture de référence : la fabrique de confiance et son organisation | [`09-partie-IX/ch-27-architecture-reference.md`](09-partie-IX/ch-27-architecture-reference.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 5500 | 10652 | +93,7 % |
-| 29 | Chapitre 28 — Instanciation et clôture : le cycle de vie complet d'un agent d'entreprise | [`09-partie-IX/ch-28-instanciation-cloture.md`](09-partie-IX/ch-28-instanciation-cloture.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 5500 | 10988 | +99,8 % |
-| 30 | Annexe A — Méthodologie | [`90-annexes/annexe-a-methodologie.md`](90-annexes/annexe-a-methodologie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 3403 | +126,9 % |
+| 26 | Chapitre 25 — Le cycle de vie opérationnel : évaluation continue, dérive et incident | [`08-partie-VIII/ch-25-cycle-de-vie.md`](08-partie-VIII/ch-25-cycle-de-vie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3300 | 6465 | +95,9 % |
+| 27 | Chapitre 26 — Les indicateurs de l'AgentOps : mesurer un parc d'agents sans fabriquer de chiffres | [`08-partie-VIII/ch-26-indicateurs-agentops.md`](08-partie-VIII/ch-26-indicateurs-agentops.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 3300 | 5085 | +54,1 % |
+| 28 | Chapitre 27 — Architecture de référence : la fabrique de confiance et son organisation | [`09-partie-IX/ch-27-architecture-reference.md`](09-partie-IX/ch-27-architecture-reference.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 5500 | 10662 | +93,9 % |
+| 29 | Chapitre 28 — Instanciation et clôture : le cycle de vie complet d'un agent d'entreprise | [`09-partie-IX/ch-28-instanciation-cloture.md`](09-partie-IX/ch-28-instanciation-cloture.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 5500 | 11060 | +101,1 % |
+| 30 | Annexe A — Méthodologie | [`90-annexes/annexe-a-methodologie.md`](90-annexes/annexe-a-methodologie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 3417 | +127,8 % |
 | 31 | Annexe B — Matrice des mécanismes | [`90-annexes/annexe-b-matrice.md`](90-annexes/annexe-b-matrice.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2000 | 3262 | +63,1 % |
-| 32 | Annexe C — Chronologie 2024-2030 | [`90-annexes/annexe-c-chronologie.md`](90-annexes/annexe-c-chronologie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 5514 | +267,6 % |
-| 33 | Annexe D — Glossaire | [`90-annexes/annexe-d-glossaire.md`](90-annexes/annexe-d-glossaire.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 3146 | +109,7 % |
-| 34 | Annexe E — Catalogue de patrons de la confiance agentique | [`90-annexes/annexe-e-catalogue-patrons.md`](90-annexes/annexe-e-catalogue-patrons.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2500 | 4127 | +65,1 % |
+| 32 | Annexe C — Chronologie 2024-2030 | [`90-annexes/annexe-c-chronologie.md`](90-annexes/annexe-c-chronologie.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 5539 | +269,3 % |
+| 33 | Annexe D — Glossaire | [`90-annexes/annexe-d-glossaire.md`](90-annexes/annexe-d-glossaire.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 1500 | 3202 | +113,5 % |
+| 34 | Annexe E — Catalogue de patrons de la confiance agentique | [`90-annexes/annexe-e-catalogue-patrons.md`](90-annexes/annexe-e-catalogue-patrons.md) | **Rédigé et relu adversarialement** | 21 juill. 2026 | 2500 | 4161 | +66,4 % |
 
 ⚠ **Quatre libellés de la colonne « Pièce » divergent du titre H1 porté par le fichier sur disque au 22 juillet 2026** — ch. 2 (« OAuth et SCIM », arbitrage R-G-09), ch. 14 et ch. 20 (arbitrage R-G-38), annexe C (titre développé). **Signalés, non corrigés ici** : la colonne de désignation n'a pas été refaite par le présent report, et trois de ces quatre libellés dépendent d'arbitrages **délégués et révocables**. La colonne « Fichier » fait foi pour l'identification de la pièce.
 
@@ -57,22 +57,25 @@
 
 **Volumétrie** : **160 427 mots réels** pour **102 500 mots de cible cumulée**, soit **+56,5 %**. Les trente-quatre mesures ont été prises par la seule commande de PRDPlan §1.5 (`LC_ALL=C.UTF-8`), sur le corps de chaque pièce — hors en-tête et hors bloc `## Notes` —, **en une passe unique de fin de chaîne le 22 juillet 2026, activité P5.3, après toutes les passes correctives du même jour**. ⚠ **Le total de 160 447 qui précédait est conservé et périmé** : il valait à la clôture de P4. **Six lignes de la colonne « Réel » se déplacent par rapport à lui, et elles seules** — avant-propos 3 955 → **3 947**, ch. 1 2 956 → **2 952**, ch. 12 4 314 → **4 316**, ch. 15 4 171 → **4 167**, ch. 25 6 427 → **6 424**, ch. 28 10 991 → **10 988** —, mouvement net de **−20 mots** : quatre retraits CA-12 du 22 juillet (avant-propos, ch. 1, ch. 25, ch. 28 §28.3) et deux écarts en-tête/registre déjà constatés (ch. 12, ch. 15). ⚠ **Les trente-quatre en-têtes concordent désormais avec cette mesure, champ par champ** : c'était le registre qui était en retard sur les pièces, non l'inverse. ⚠ **Constat daté antérieur, conservé** : par rapport au relevé de 160 379 qui précédait 160 447, seules deux lignes s'étaient déplacées — ch. 27 (10 648 → **10 652**) et annexe A (3 339 → **3 403**). La somme de la colonne « Cible » a été refaite ligne à ligne sur les trente-quatre du tableau le 22 juillet 2026 : elle tombe sur **102 500**, concordante avec le TOC et le PRD §6.1.
 
+
+**Re-mesure du 24 juillet 2026 — relecture de révision.** Une passe de relecture adversariale complémentaire ([`relecture-revision-2026-07-24.md`](../verification/relecture-revision-2026-07-24.md)), conduite sous des lentilles que les passes du 22 juillet n'avaient pas couvertes — relecture substantielle CA-12 des 34 pièces, bornes perdues, marquage CA-07, cohérence inter-pièces —, a appliqué des correctifs chirurgicaux à 29 pièces. Les trente-quatre mesures ont été reprises par la seule commande de PRDPlan §1.5, en une passe unique le 24 juillet 2026 : **160 890 mots** (+57,0 %). ⚠ **Le total de 160 427 du 22 juillet est conservé ci-dessus et périmé.** L'ajout net de **463 mots** vient des marquages et déclarations posés par les correctifs — « Lecture de l'auteur », conditions d'attribution, déclaration d'écart de grain au ch. 28 —, non d'un ajout de matière : *documenter une borne coûte des mots, comme chaque passe l'a mesuré.*
+
 | Bloc | Cible | Réel | Écart |
 |---|---|---|---|
 | Avant-propos | 2 500 | 3 947 | +57,9 % |
-| I — ch. 1 à 4 | 11 000 | 13 891 | +26,3 % |
-| II — ch. 5 à 8 | 12 000 | 18 338 | +52,8 % |
-| III — ch. 9 à 11 | 9 500 | 12 986 | +36,7 % |
+| I — ch. 1 à 4 | 11 000 | 13 911 | +26,5 % |
+| II — ch. 5 à 8 | 12 000 | 18 392 | +53,3 % |
+| III — ch. 9 à 11 | 9 500 | 13 041 | +37,3 % |
 | IV — ch. 12 à 15 | 12 000 | 16 982 | +41,5 % |
-| V — ch. 16 à 18 | 9 000 | 13 104 | +45,6 % |
-| VI — ch. 19 à 21 | 9 500 | 11 700 | +23,2 % |
-| VII — ch. 22 et 23 | 7 000 | 11 523 | +64,6 % |
-| VIII — ch. 24 à 26 | 10 000 | 16 864 | +68,6 % |
-| IX — ch. 27 et 28 | 11 000 | 21 640 | +96,7 % |
-| Annexes A à E | 9 000 | 19 452 | +116,1 % |
-| **Total du volume** | **102 500** | **160 427** | **+56,5 %** |
+| V — ch. 16 à 18 | 9 000 | 13 176 | +46,4 % |
+| VI — ch. 19 à 21 | 9 500 | 11 695 | +23,1 % |
+| VII — ch. 22 et 23 | 7 000 | 11 526 | +64,7 % |
+| VIII — ch. 24 à 26 | 10 000 | 16 917 | +69,2 % |
+| IX — ch. 27 et 28 | 11 000 | 21 722 | +97,5 % |
+| Annexes A à E | 9 000 | 19 581 | +117,6 % |
+| **Total du volume** | **102 500** | **160 890** | **+57,0 %** |
 
-: Volumétrie réelle du volume III au 22 juillet 2026, par bloc, mesurée pièce par pièce en une passe unique de fin de chaîne et sommée depuis les mesures.
+: Volumétrie réelle du volume III au 24 juillet 2026, par bloc, mesurée pièce par pièce en une passe unique de fin de chaîne et sommée depuis les mesures.
 
 **Ce que l'écart est, et la formulation est assumée** : il vient des **bornes rétablies** — niveau [A]/[B]/[C] et degré portés à l'énoncé, statut pré-normatif redit à chaque mention, degré d'absence qualifié (PRD §8.6), nom de produit rendu à son propriétaire, tri prospectif explicité, marquage « Lecture de l'auteur » posé — **et non d'un ajout de matière** ; plusieurs pièces ont grossi **après** leurs correctifs, pas avant, et la trajectoire mesurée de chacune est consignée à son en-tête. *L'écart se documente, il ne s'ampute pas : couper davantage supprimerait des bornes, non du remplissage.*
 
